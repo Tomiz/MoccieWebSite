@@ -1,0 +1,161 @@
+﻿body {
+    margin: 0;
+    padding 0;
+}
+
+/* top nav start */
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #888;
+}
+
+ul.topnav li {
+    float: left;
+}
+
+ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {
+    background-color: #555;
+}
+
+ul.topnav li a.active {
+    background-color: #555; /* color of active link*/
+}
+
+/* top nav right start */
+ul.topnav li.right {
+    float: right;
+}
+
+@media screen and (max-width: 600px) {
+ul.topnav li.right,
+    ul.topnav li {
+        float: none;
+    }
+}
+
+/* Slash separator start*/
+ul.topnav li::before {
+    color: #fff;
+    content: "/";
+    font-size: 2em;
+}
+
+ul.topnav li:last-child:after {
+    content: none;
+}
+
+ul.topnav li a {
+    display: inline-block;
+}
+/* Slash separator end*/
+/* top nav right end */
+
+/* Dropdown nav start */
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: #111;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/* Dropdown nav end *
+
+/* top nav end */
+
+/* Content Start */
+#wrapper {
+    height: 700px;
+    width: 100%;
+    margin: auto;
+    background: radial-gradient(#999, #555, #333);
+    /*background-color: #666;*/
+}
+
+section {
+    width:  1200px;
+    margin: auto;
+    /*float: left;*/
+    height: 100%;
+    /*background-color: #879;*/
+    padding: 0 20px 0 20px;
+    /*margin: 0 0 0 20px;*/
+    /*position: relative;*/
+}
+
+section article.FrontText {
+    /*background-color:red;*/
+    padding: 10px;
+    text-align: center;
+}
+section article.Slider {
+    margin: 30px 0 0 100px;
+    width: 600px;
+    height: 400px;
+    background-color: #FFF;
+    float:  left;
+}
+section article.About h2{
+    text-align: center;
+}
+section article.About {
+    margin: 30px 100px 0 0;
+    background-color: #FFF;
+    width: 350px;
+    height: 400px;
+    float:  right;
+}
+section article.About .profilePic{
+    bottom: 0;
+    float:  right;
+}
+/* Content End */
+
+/* Footer Start */
+footer {
+    background-color: #333;
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+}
+
+footer article {
+    text-align: center;
+    height: 70px;
+}
+
+/* Footer End */
+
+h2 {
+    font-family: Segoe UI Black;
+    padding: 0;
+    margin: 0;
+}
+p {
+    font-family: Segoe UI Black;
+    padding: 0;
+    margin: 0;
+}
+a {
+    font-family: Segoe UI Black;
+}
+

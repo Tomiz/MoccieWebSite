@@ -1,0 +1,77 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<link href="Style/StyleSheet.css" rel="stylesheet" />
+<body>
+    <form id="form1" runat="server">
+        <header>
+            <h2>Header Billeder</h2>
+        </header>
+        <nav>
+            <ul class="topnav">
+                <li class="right"><a href="#contact">Contact</a></li>
+                <li class="right"><a href="#about">About</a></li>
+                <li class="right"><a href="#news">News</a></li>
+                <li class="dropdown right">
+                    <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
+                    <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </li>
+                <li class="right"><a class="active" href="#home">Home</a></li>
+            </ul>
+        </nav>
+
+        <div id="wrapper">
+
+            <section>
+                <article class="FrontText">
+                    <h2>Moccie</h2>
+                    <p>text her</p>
+                </article>
+                <article class="Slider">
+                    <h2>Slider</h2>
+                </article>
+
+                <article class="About">
+                    <h2>About</h2>
+                    <p>text der fylderl lalalalahla</p>
+                    <p>text der fylderl lalalalala</p>
+                    <p>text der fylderl lalalalala</p>
+                    <p>text der fylderl lalalalala</p>
+                    <p>text der fylderl lalalalala</p>
+                    <p>text der fylderl lalalalala</p>
+                    <p>text der fylderl lalalalala</p>
+                    <p>text der fylderl lalalalala</p>
+                    <p>text der fylderl lalalalala</p>
+                    <p>text der fylderl lalalalala</p>
+                    <div class="profilePic">
+                        <img src="Pictures/profilPic.png" width="150" height="150"/>
+                    </div>
+                    
+                </article>
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </section>
+
+        </div>
+
+        <footer>
+            <article>
+                <h2>Footer content here</h2>
+            </article>
+        </footer>
+
+    </form>
+</body>
+</html>
