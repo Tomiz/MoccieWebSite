@@ -20,8 +20,10 @@
             });
         </script>
         <article class="slider">
-            <div>I am a slide.</div>
-            <div>I am another slide.</div>
+            <img src="Pictures/Slider/pic1.jpeg"/>
+            <img src="Pictures/Slider/pic2.jpeg"/>
+            <img src="Pictures/Slider/pic3.jpeg"/>
+            <%--<div>I am another slide.</div>--%>
         </article>
 
         <article class="About">
