@@ -1,6 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <style type="text/css">
+        #CurrentHome {
+            background-color: #555;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <section>
@@ -15,8 +20,10 @@
             });
         </script>
         <article class="slider">
-            <div>I am a slide.</div>
-            <div>I am another slide.</div>
+            <img src="Pictures/Slider/pic1.jpeg"/>
+            <img src="Pictures/Slider/pic2.jpeg"/>
+            <img src="Pictures/Slider/pic3.jpeg"/>
+            <%--<div>I am another slide.</div>--%>
         </article>
 
         <article class="About">

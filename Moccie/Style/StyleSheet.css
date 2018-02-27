@@ -39,9 +39,9 @@ ul.topnav li a:hover:not(.active) {
     background-color: #555;
 }
 
-ul.topnav li a.active {
-    background-color: #555; /* color of active link*/
-}
+/*ul.topnav li a.active {
+    background-color: #555;  color of active link
+}*/
 
 /* top nav right start */
 ul.topnav li.right {
@@ -126,17 +126,6 @@ section article.FrontText p {
     width:600px;
     
     
-}
-section article.Slider {
-    margin: 30px 0 0 100px;
-    width: 600px;
-    height: 400px;
-    background-color: #FFF;
-    float:  left;
-    border: 2px solid #FFF;
-    -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
 }
 section article.About h2{
     text-align: center;
