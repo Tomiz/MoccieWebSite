@@ -67,7 +67,7 @@ ul.topnav li:last-child:before {
 }
 
 ul.topnav li a {
-    /*display: inline-block;*/
+    display: inline-block;
 }*/
 /* Slash separator end*/
 /* top nav right end */

@@ -9,8 +9,14 @@
             <p>text her</p>
         </article>
 
-        <article class="Slider">
-            
+        <script>
+            $(document).ready(function () {
+                $('.slider').bxSlider();
+            });
+        </script>
+        <article class="slider">
+            <div>I am a slide.</div>
+            <div>I am another slide.</div>
         </article>
 
         <article class="About">

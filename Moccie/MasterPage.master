@@ -10,6 +10,9 @@
 </head>
 <link href="Style/StyleSheet.css" rel="stylesheet" />
 <link href="Style/Slider.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link href="Style/jquery.bxslider.css" rel="stylesheet" />
+<script src="Js/jquery.bxslider.js"></script>
 <body>
     <form id="form1" runat="server">
         <header>

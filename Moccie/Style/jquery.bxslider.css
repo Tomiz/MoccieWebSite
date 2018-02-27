@@ -3,12 +3,14 @@
 /** RESET AND LAYOUT
 ===================================*/
 .bx-wrapper {
-  position: relative;
-  margin-bottom: 60px;
-  padding: 0;
-  *zoom: 1;
-  -ms-touch-action: pan-y;
-  touch-action: pan-y;
+    width: 50%;
+    height: 400px;
+    position: relative;
+    margin-bottom: 60px;
+    padding: 0;
+    /**zoom: 1;*/
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
 }
 .bx-wrapper img {
   max-width: 100%;
