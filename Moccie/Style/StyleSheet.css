@@ -39,9 +39,9 @@ ul.topnav li a:hover:not(.active) {
     background-color: #555;
 }
 
-ul.topnav li a.active {
-    background-color: #555; /* color of active link*/
-}
+/*ul.topnav li a.active {
+    background-color: #555;  color of active link
+}*/
 
 /* top nav right start */
 ul.topnav li.right {
