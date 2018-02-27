@@ -8,8 +8,9 @@
             <h2>Moccie</h2>
             <p>text her</p>
         </article>
+
         <article class="Slider">
-            <h2>Slider</h2>
+            
         </article>
 
         <article class="About">
@@ -29,5 +30,7 @@
             </div>
         </article>
     </section>
+
+
 </asp:Content>
 

@@ -9,6 +9,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <link href="Style/StyleSheet.css" rel="stylesheet" />
+<link href="Style/Slider.css" rel="stylesheet" />
 <body>
     <form id="form1" runat="server">
         <header>
