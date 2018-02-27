@@ -149,6 +149,7 @@ section article.About .profilePic{
 
 /* Footer Start */
 footer {
+    clear:both;
     background-color: #333;
     width: 100%;
     bottom: 0;
@@ -159,7 +160,6 @@ footer article {
     text-align: center;
     height: 70px;
 }
-
 /* Footer End */
 
 h2 {
