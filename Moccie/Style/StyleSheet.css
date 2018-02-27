@@ -117,6 +117,15 @@ section article.FrontText {
     /*background-color:red;*/
     padding: 10px;
     text-align: center;
+    width:100%;
+    
+}
+section article.FrontText p {
+    /*background-color:red;*/
+    margin:auto;
+    width:600px;
+    
+    
 }
 section article.Slider {
     margin: 30px 0 0 100px;
@@ -178,3 +187,19 @@ a {
     font-family: Segoe UI Black;
 }
 
+#ProduktGruppe {
+    width: 650px;
+    margin: 50px auto;
+}
+#Grupper {
+    margin: 0 10px 0 0;
+    width: 200px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 25px;
+    float: left;
+}
+div.container {
+    text-align: center;
+    padding: 10px 20px;
+}
