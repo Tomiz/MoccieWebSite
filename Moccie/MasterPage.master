@@ -16,7 +16,8 @@
 <body>
     <form id="form1" runat="server">
         <header>
-            <h2>Header Billeder</h2>
+            <img src="Pictures/banner.png" width="100%"/>
+            <%--<h2>Header Billeder</h2>--%>
         </header>
         <nav>
             <ul class="topnav">
