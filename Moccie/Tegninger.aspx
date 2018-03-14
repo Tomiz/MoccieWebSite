@@ -19,71 +19,70 @@
                 <article id="ProduktGruppe">
                     <div id="Grupper">
                         <asp:LinkButton ID="LinkButtonGrupper" runat="server" OnCommand="LinkButtonGrupper_Command" CssClass="ALink"> <%--CommandArgument'<%#Eval("Id") %>'--%>
-                            <img src="Pictures/Slider/pic1.jpeg" width="250px" height="200px" />
-                            <div class="container">
-                                <p>Beach</p>
-                            </div>
+                            <img src="Pictures/Slider/pic1.jpeg" width="300px" height="150px" />
                         </asp:LinkButton>
                     </div>
-                    <%--<div id="Grupper">
-                        <img src="Pictures/Slider/pic1.jpeg" width="250px" height="200px" />
-                        <div class="container">
-                            <p>Beach</p>
-                        </div>
-                    </div>
+
                     <div id="Grupper">
-                        <img src="Pictures/Slider/pic1.jpeg" width="250px" height="200px" />
-                        <div class="container">
-                            <p>Beach</p>
-                        </div>
+                        <img src="Pictures/Slider/pic1.jpeg" width="300px" height="150px" />
                     </div>
+
                     <div id="Grupper">
-                        <img src="Pictures/Slider/pic1.jpeg" width="250px" height="200px" />
-                        <div class="container">
-                            <p>Beach</p>
-                        </div>
+                        <img src="Pictures/Slider/pic1.jpeg" width="300px" height="150px" />
                     </div>
+
                     <div id="Grupper">
-                        <img src="Pictures/Slider/pic1.jpeg" width="250px" height="200px" />
-                        <div class="container">
-                            <p>Beach</p>
-                        </div>
+                        <img src="Pictures/Slider/pic1.jpeg" width="300px" height="150px" />
                     </div>
-                    <div id="Grupper">
-                        <img src="Pictures/Slider/pic1.jpeg" width="250px" height="200px" />
-                        <div class="container">
-                            <p>Beach</p>
-                        </div>
-                    </div>
-                    <div id="Grupper">
-                        <img src="Pictures/Slider/pic1.jpeg" width="250px" height="200px" />
-                        <div class="container">
-                            <p>Beach</p>
-                        </div>
-                    </div>
-                    <div id="Grupper">
-                        <img src="Pictures/Slider/pic1.jpeg" width="250px" height="200px" />
-                        <div class="container">
-                            <p>Beach</p>
-                        </div>
-                    </div>--%>
+
                 </article>
             </section>
         </asp:View>
         <asp:View ID="ViewTegnGruppeProd" runat="server" EnableViewState="false">
+
             <div id="GruppeMenu">
-                <a href="#">Link 1</a>
+                <asp:Repeater ID="Repeater_ProduktMenu" runat="server" DataSourceID="SqlDataSource3">
+                    <ItemTemplate>
+                        <a href="<%#Eval ("Fk_ProduktKategori") %>"><%#Eval ("Navn") %></a>
+                    </ItemTemplate>
+                </asp:Repeater>
+                <%--<a href="#">Link 1</a>
                 <a href="#">Link 2</a>
                 <a href="#">Link 3</a>
-                <a href="#">Link 4</a>
-
+                <a href="#">Link 4</a>--%>
+                <asp:SqlDataSource runat="server" ID="SqlDataSource3" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT [Fk_ProduktKategori], [Navn] FROM [ProduktGruppe] WHERE ([Fk_ProduktKategori] = @Fk_ProduktKategori)">
+                    <SelectParameters>
+                        <asp:Parameter DefaultValue="1" Name="Fk_ProduktKategori" Type="Int32"></asp:Parameter>
+                    </SelectParameters>
+                </asp:SqlDataSource>
             </div>
-            <article id="ProduktGruppe">
-                <div id="Grupper">
-                    <img src="Pictures/Slider/pic1.jpeg" width="250px" height="200px" />
+
+            <article id="Produktalign">
+                <div id="Produkter">
                     <div class="container">
                         <p>Beach</p>
                     </div>
+                    <img src="Pictures/Slider/pic1.jpeg" width="400px" height="200px" />
+                </div>
+                <div id="Produkter">
+                    <div class="container">
+                        <p>Beach</p>
+                    </div>
+                    <img src="Pictures/Slider/pic1.jpeg" width="400px" height="200px" />
+                </div>
+                <div id="Produkter">
+                    <div class="container">
+                        <p>Beach</p>
+                    </div>
+                    <img src="Pictures/Slider/pic1.jpeg" width="400px" height="200px" />
+                </div>
+                <div id="Produkter">
+                    <div class="container">
+                        <p>Beach</p>
+                    </div>
+                    <img src="Pictures/Slider/pic1.jpeg" width="400px" height="200px" />
+                </div>
+
             </article>
 
         </asp:View>

@@ -216,14 +216,22 @@ a {
     text-decoration:none;
     color:#000;
 }
+#Produkter {
+    margin: 0 20px 0 0;
+    width: 400px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 25px;
+    float: left;
+}
 
 #ProduktGruppe {
-    width: 810px;
+    width: 960px;
     margin: 50px auto;
 }
 #Grupper {
     margin: 0 20px 0 0;
-    width: 250px;
+    width: 300px;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-bottom: 25px;
@@ -233,8 +241,14 @@ div.container {
     text-align: center;
     padding: 10px 20px;
 }
+#Produktalign {
+    width: 1260px;
+    margin: 50px auto;
+}
 #GruppeMenu {
     width: 200px;
+    margin: 0 0 0 60px;
+    float:left;
 }
 #GruppeMenu a {
     background-color: #eee;
@@ -242,6 +256,7 @@ div.container {
     display: block;
     padding: 12px;
     text-decoration: none;
+    text-align:center;
 }
 
     #GruppeMenu a:hover {
