@@ -10,8 +10,14 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <section>
         <article class="FrontText">
-            <h2>Moccie</h2>
-            <p>text her</p>
+            <asp:Repeater ID="Repeater_FrontPageInfo" runat="server" DataSourceID="SqlDataSourceMoccie">
+                <ItemTemplate>
+                    <h2><%#Eval("Overskrift") %></h2>
+                    <p><%#Eval ("Text") %></p>
+                </ItemTemplate>
+            </asp:Repeater>
+
+            <asp:SqlDataSource runat="server" ID="SqlDataSourceIndexText" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT [Overskrift], [Text] FROM [IndexText]"></asp:SqlDataSource>
         </article>
 
         <script>
@@ -27,6 +33,15 @@
         </article>
 
         <article class="About">
+            <asp:Repeater ID="Repeater_AboutSite" runat="server" DataSourceID="SqlDataSourceAboutSite">
+                <ItemTemplate>
+                    <h2><%#Eval("") %> </h2>
+                    <p>
+                        <%#Eval("") %>
+                    </p>
+                </ItemTemplate>
+            </asp:Repeater>
+            <asp:SqlDataSource runat="server" ID="SqlDataSourceAboutSite"></asp:SqlDataSource>
             <h2>About </h2>
             <p>
                 Lorem Ipsum er ganske enkelt fyldtekst fra print- 
