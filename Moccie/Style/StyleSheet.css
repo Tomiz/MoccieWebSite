@@ -211,12 +211,12 @@ a {
 }
 
 #ProduktGruppe {
-    width: 650px;
+    width: 810px;
     margin: 50px auto;
 }
 #Grupper {
-    margin: 0 10px 0 0;
-    width: 200px;
+    margin: 0 20px 0 0;
+    width: 250px;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-bottom: 25px;
