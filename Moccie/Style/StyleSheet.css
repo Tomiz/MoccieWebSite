@@ -187,7 +187,7 @@ footer {
     background-color: #333;
     width: 100%;
     bottom: 0;
-    position:fixed;
+    /*position:fixed;*/
     border-top: 1px solid #FFF;
 }
 
@@ -216,7 +216,7 @@ a {
     text-decoration:none;
     color:#000;
 }
-#Produkter {
+.Produkter {
     margin: 0 20px 0 0;
     width: 400px;
     background-color: white;
@@ -262,3 +262,37 @@ div.container {
     #GruppeMenu a:hover {
         background-color: #ccc;
     }
+#ProduktCenterImage {
+    width: 900px;
+    /*margin: 50px auto;*/
+    float:left;
+}
+
+#ProduktMenu {
+    width: 200px;
+    margin: 0 190px 0 10px;
+    float: left;
+}
+
+#ProduktMenu a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    text-align: center;
+}
+
+#ProduktMenu a:hover {
+    background-color: #ccc;
+}
+#ContentInfo {
+    background-color: white;
+    width: 500px;
+    height: 600px;
+    float:left;
+}
+#ProduktCenter {
+    width: 1800px;
+    margin: 50px auto;
+}
