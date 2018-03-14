@@ -89,13 +89,21 @@
 
         </asp:View>
         <asp:View ID="ViewEnkeltProdukt" runat="server" EnableViewState="false">
-            <div id="ProduktMenu">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-                <a href="#">Link 4</a>
-            </div>
+            <div id="ProduktCenter">
+                <div id="ProduktMenu">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                    <a href="#">Link 4</a>
+                </div>
+                <article id="ProduktCenterImage">
+                    <img src="Pictures/die.jpg">
+                </article>
 
+                <div id="ContentInfo">
+                    <p>hrj</p>
+                </div>
+            </div>
 
         </asp:View>
     </asp:MultiView>
