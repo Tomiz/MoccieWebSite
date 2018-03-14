@@ -16,49 +16,49 @@
 
         <article id="ProduktGruppe">
             <div id="Grupper">
-                <img src="Pictures/Slider/pic1.jpeg"  width="200px" height="200px"/>
+                <img src="Pictures/Slider/pic1.jpeg"  width="250px" height="200px"/>
                 <div class="container">
                     <p>Beach</p>
                 </div>
             </div>
             <div id="Grupper">
-                <img src="Pictures/Slider/pic1.jpeg"  width="200px" height="200px"/>
+                <img src="Pictures/Slider/pic1.jpeg"  width="250px" height="200px"/>
                 <div class="container">
                     <p>Beach</p>
                 </div>
             </div>
             <div id="Grupper">
-                <img src="Pictures/Slider/pic1.jpeg"  width="200px" height="200px"/>
+                <img src="Pictures/Slider/pic1.jpeg"  width="250px" height="200px"/>
                 <div class="container">
                     <p>Beach</p>
                 </div>
             </div>
             <div id="Grupper">
-                <img src="Pictures/Slider/pic1.jpeg"  width="200px" height="200px"/>
+                <img src="Pictures/Slider/pic1.jpeg"  width="250px" height="200px"/>
                 <div class="container">
                     <p>Beach</p>
                 </div>
             </div>
             <div id="Grupper">
-                <img src="Pictures/Slider/pic1.jpeg"  width="200px" height="200px"/>
+                <img src="Pictures/Slider/pic1.jpeg"  width="250px" height="200px"/>
                 <div class="container">
                     <p>Beach</p>
                 </div>
             </div>
             <div id="Grupper">
-                <img src="Pictures/Slider/pic1.jpeg"  width="200px" height="200px"/>
+                <img src="Pictures/Slider/pic1.jpeg"  width="250px" height="200px"/>
                 <div class="container">
                     <p>Beach</p>
                 </div>
             </div>
             <div id="Grupper">
-                <img src="Pictures/Slider/pic1.jpeg"  width="200px" height="200px"/>
+                <img src="Pictures/Slider/pic1.jpeg"  width="250px" height="200px"/>
                 <div class="container">
                     <p>Beach</p>
                 </div>
             </div>
             <div id="Grupper">
-                <img src="Pictures/Slider/pic1.jpeg"  width="200px" height="200px"/>
+                <img src="Pictures/Slider/pic1.jpeg"  width="250px" height="200px"/>
                 <div class="container">
                     <p>Beach</p>
                 </div>
