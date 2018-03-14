@@ -58,25 +58,27 @@
             </div>
 
             <article id="Produktalign">
-                <div id="Produkter">
+                <div class="Produkter">
+                    <asp:LinkButton ID="LinkButtonEnkeltProdukt" runat="server" OnCommand="LinkButtonEnkeltProdukt_Command" CssClass="ALink">
+                    <div class="container">
+                        <p>Beach</p>
+                    </div>
+                    <img src="Pictures/Slider/pic1.jpeg" width="400px" height="200px" />
+                    </asp:LinkButton>
+                </div>
+                <div class="Produkter">
                     <div class="container">
                         <p>Beach</p>
                     </div>
                     <img src="Pictures/Slider/pic1.jpeg" width="400px" height="200px" />
                 </div>
-                <div id="Produkter">
+                <div class="Produkter">
                     <div class="container">
                         <p>Beach</p>
                     </div>
                     <img src="Pictures/Slider/pic1.jpeg" width="400px" height="200px" />
                 </div>
-                <div id="Produkter">
-                    <div class="container">
-                        <p>Beach</p>
-                    </div>
-                    <img src="Pictures/Slider/pic1.jpeg" width="400px" height="200px" />
-                </div>
-                <div id="Produkter">
+                <div class="Produkter">
                     <div class="container">
                         <p>Beach</p>
                     </div>
@@ -84,6 +86,16 @@
                 </div>
 
             </article>
+
+        </asp:View>
+        <asp:View ID="ViewEnkeltProdukt" runat="server" EnableViewState="false">
+            <div id="ProduktMenu">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+                <a href="#">Link 4</a>
+            </div>
+
 
         </asp:View>
     </asp:MultiView>

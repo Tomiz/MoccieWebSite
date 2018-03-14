@@ -19,4 +19,9 @@ public partial class Tegninger : System.Web.UI.Page
     {
         MultiView1.ActiveViewIndex = 1;
     }
+
+    protected void LinkButtonEnkeltProdukt_Command(object sender, CommandEventArgs e)
+    {
+        MultiView1.ActiveViewIndex = 2;
+    }
 }

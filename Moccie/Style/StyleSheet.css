@@ -216,7 +216,7 @@ a {
     text-decoration:none;
     color:#000;
 }
-#Produkter {
+.Produkter {
     margin: 0 20px 0 0;
     width: 400px;
     background-color: white;
@@ -262,3 +262,21 @@ div.container {
     #GruppeMenu a:hover {
         background-color: #ccc;
     }
+#ProduktMenu {
+    width: 200px;
+    margin: 50px 0 0 60px;
+    float: left;
+}
+
+    #ProduktMenu a {
+        background-color: #eee;
+        color: black;
+        display: block;
+        padding: 12px;
+        text-decoration: none;
+        text-align: center;
+    }
+
+        #ProduktMenu a:hover {
+            background-color: #ccc;
+        }
