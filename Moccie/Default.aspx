@@ -42,11 +42,11 @@
                 <p>med layoutprogrammer</p>
                 <p>som Aldus PageMaker, </p>
                 <p>som også indeholdt en</p>
-                <p>udgave af Lorem Ipsum.</p>
+                <p>udgave af Lorem Ipsum.g</p>
             
 
             <%--<div class="PicBox">--%>
-                <%--<img src="Pictures/profilPic.png" width="150" height="150" class="profilePic" />--%>
+                <img src="Pictures/profilPic.png" width="150" height="150" class="profilePic" />
             <%--</div>--%>
         </article>
     </section>
