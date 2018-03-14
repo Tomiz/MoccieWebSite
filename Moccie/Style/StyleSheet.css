@@ -210,6 +210,12 @@ p {
 a {
     font-family: Segoe UI Black;
 }
+.ALink {
+    font-family: Segoe UI Black;
+    list-style:none;
+    text-decoration:none;
+    color:#000;
+}
 
 #ProduktGruppe {
     width: 810px;
@@ -227,3 +233,17 @@ div.container {
     text-align: center;
     padding: 10px 20px;
 }
+#GruppeMenu {
+    width: 200px;
+}
+#GruppeMenu a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+
+    #GruppeMenu a:hover {
+        background-color: #ccc;
+    }
