@@ -5,17 +5,26 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <section>
         <article class="FrontText">
-
+            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+      <br /><asp:Button ID="Button2" runat="server" Text="Button" />
         </article>
 
         <article class="slider">
-
+            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+      <br /><asp:Button ID="Button1" runat="server" Text="Button" />
         </article>
 
-        <article class="About">
+        <article class="Aboutt">
+            <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+            <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>   <img src="../Pictures/profilPic.png" width="150" height="150" class="profilePic" />
+      <br /><asp:Button ID="Button3" runat="server" Text="Button" />
+        </article>
 
-
-            <img src="../Pictures/profilPic.png" width="150" height="150" class="profilePic" />
+        <article class="Footer">
+            <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+      <br /><asp:Button ID="Button4" runat="server" Text="Button" />
         </article>
     </section>
 </asp:Content>
