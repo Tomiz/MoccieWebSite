@@ -18,7 +18,7 @@
         <article class="Aboutt">
             <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
             <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
-            <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>   <img src="../Pictures/profilPic.png" width="150" height="150" class="profilePic" />
+            <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>  
       <br /><asp:Button ID="Button3" runat="server" Text="Button" />
         </article>
 
