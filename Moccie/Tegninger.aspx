@@ -101,7 +101,8 @@
                 </article>
 
                 <div id="ContentInfo">
-                    <p>hrj</p>
+                    <h2>hrj</h2>
+                    <hr />
                 </div>
             </div>
 
