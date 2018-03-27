@@ -103,12 +103,13 @@
                 <div id="ContentInfo">
                     <h2>hrj</h2>
                     <hr />
-                    <p></p>
+                    <p><%# Eval ("ProduktInfo") %></p>
                     <div id="KundeLink">
                         <h2>Link</h2>
                         <hr />
                         <%#Eval ("Fk_Kunde") %>Link<%#Eval ("KundeLink") %>
                     </div>
+                    http://localhost:49777/Pictures/Slider/Pic3.jpeg
                 </div>
             </div>
 
