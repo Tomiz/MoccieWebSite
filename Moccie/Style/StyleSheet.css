@@ -183,7 +183,7 @@ section article.About {
 /* Content End */
 /* Footer Start */
 .footerfix{
-    height:588px;
+    height:587px;
 }
 footer {
     clear: both;
@@ -230,6 +230,12 @@ a {
 }
 .LogoutButton{
     margin:15px 0 0 20%;
+}
+.floatRight{
+    float:right;
+}
+.floatLeft{
+    float:left;
 }
 #ProduktGruppe {
     width: 960px;
@@ -334,7 +340,6 @@ input[type=submit] {
         background-color: #45a049;
     }
 #KontaktForm {
-    margin: 20px 0 20px 0;
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
