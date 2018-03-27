@@ -1,14 +1,14 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Tegninger.aspx.cs" Inherits="Tegninger" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Billeder.aspx.cs" Inherits="Billeder" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <style type="text/css">
-        #CurrentTegn {
+        #CurrentBilled {
             background-color: #555;
         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <asp:MultiView ID="MultiView1" runat="server">
+     <asp:MultiView ID="MultiView1" runat="server">
         <asp:View ID="ViewGrupper1" runat="server" EnableViewState="true">
             <section>
                 <article class="FrontText">
@@ -38,7 +38,7 @@
                 </article>
             </section>
         </asp:View>
-        <asp:View ID="ViewTegnGruppeProd" runat="server" EnableViewState="false">
+        <asp:View ID="ViewBilledGruppeProd" runat="server" EnableViewState="false">
 
             <div id="GruppeMenu">
                 <asp:Repeater ID="Repeater_ProduktMenu" runat="server" DataSourceID="SqlDataSource3">
@@ -115,5 +115,4 @@
         </asp:View>
     </asp:MultiView>
 </asp:Content>
-
 
