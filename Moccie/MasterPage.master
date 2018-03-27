@@ -21,8 +21,8 @@
         </header>
         <nav>
             <ul class="topnav">
-                <li id="Current5" class="right"><a href="#Kontakt">Kontakt</a></li>
-                <li id="CurrentBilled" class="right"><a href="#Billeder">Billeder</a></li>
+                <li id="Current5" class="right"><a href="Kontakt.aspx">Kontakt</a></li>
+                <li id="CurrentBilled" class="right"><a href="Billeder.aspx">Billeder</a></li>
                 <li id="CurrentTegn" class="dropdown right">
                     <a href="Tegninger.aspx" class="dropbtn">Tegninger</a>
                     <div class="dropdown-content">
