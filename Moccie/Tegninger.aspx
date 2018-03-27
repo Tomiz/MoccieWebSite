@@ -104,7 +104,11 @@
                     <h2>hrj</h2>
                     <hr />
                     <p></p>
-                    <div id="KundeLink"><%#Eval ("Fk_Kunde") %>"><%#Eval ("KundeLink") %></div>
+                    <div id="KundeLink">
+                        <h2>Link</h2>
+                        <hr />
+                        <%#Eval ("Fk_Kunde") %>Link<%#Eval ("KundeLink") %>
+                    </div>
                 </div>
             </div>
 

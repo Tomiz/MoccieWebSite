@@ -292,9 +292,16 @@ div.container {
     width: 500px;
     height: 600px;
     float:left;
+    position:relative;
 }
 
 #ProduktCenter {
     width: 1800px;
     margin: 50px auto;
+}
+#KundeLink {
+    width:500px;
+    margin: 0 0 10px 0;
+    bottom: 0;
+    position: absolute;
 }
