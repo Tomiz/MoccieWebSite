@@ -32,7 +32,7 @@
     wrapperClass: 'bx-wrapper',
 
     // TOUCH
-    touchEnabled: true,
+    touchEnabled: false,
     swipeThreshold: 50,
     oneToOneTouch: true,
     preventDefaultSwipeX: true,
@@ -70,8 +70,8 @@
     pause: 6000,
     autoStart: true,
     autoDirection: 'next',
-    stopAutoOnClick: false,
-    autoHover: false,
+    stopAutoOnClick: true,
+    autoHover: true,
     autoDelay: 0,
     autoSlideForOnePage: false,
 
