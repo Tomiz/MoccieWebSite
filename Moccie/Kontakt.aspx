@@ -16,23 +16,29 @@
 
         <article id="KontaktForm">
             <form action="/action_page.php">
-                <label for="fname">First Name</label>
-                <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                <label for="Firstn">Fornavn</label>
+                <input type="text" id="Firstn" name="firstname" placeholder="Dit Fornavn..">
 
-                <label for="lname">Last Name</label>
-                <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                <label for="Lastn">Efternavn</label>
+                <input type="text" id="Lastn" name="lastname" placeholder="Dit Efternavn..">
 
-                <label for="country">Country</label>
-                <select id="country" name="country">
-                    <option value="australia">Australia</option>
-                    <option value="canada">Canada</option>
-                    <option value="usa">USA</option>
+                <label for="Email">Email</label>
+                <input type="text" id="mail" name="Email" placeholder="Din Mail..">
+
+                <label for="Email2">Godkend Email</label>
+                <input type="text" id="mail2" name="Email2" placeholder="Godkend din Mail..">
+
+                <label for="Grund">Årsag</label>
+                <select id="Grund" name="Grund">
+                    <option value="Ide">Forespørgsel</option>
+                    <option value="Order">Bestilling</option>
+                    <option value="question">Spørgsmål</option>
                 </select>
 
-                <label for="subject">Subject</label>
-                <textarea id="subject" name="subject" placeholder="Write something.." style="height: 200px"></textarea>
+                <label for="subject">Begrundelse</label>
+                <textarea id="subject" name="subject" placeholder="Skriv lidt.." style="height: 200px"></textarea>
 
-                <input type="submit" value="Submit">
+                <input type="submit" value="Send">
             </form>
         </article>
     </section>
