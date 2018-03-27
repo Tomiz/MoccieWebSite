@@ -103,6 +103,8 @@
                 <div id="ContentInfo">
                     <h2>hrj</h2>
                     <hr />
+                    <p></p>
+                    <div id="KundeLink"><%#Eval ("Fk_Kunde") %>"><%#Eval ("KundeLink") %></div>
                 </div>
             </div>
 
