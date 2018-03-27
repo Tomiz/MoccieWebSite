@@ -231,6 +231,12 @@ a {
 .LogoutButton{
     margin:15px 0 0 20%;
 }
+.floatRight{
+    float:right;
+}
+.floatLeft{
+    float:left;
+}
 #ProduktGruppe {
     width: 960px;
     margin: 50px auto;
@@ -337,3 +343,4 @@ input[type=submit] {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
+}
