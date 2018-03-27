@@ -17,6 +17,7 @@
         </header>
         <nav>
             <ul class="topnav">
+                <li class="right"><asp:Button ID="ButtonLogout" runat="server" Text="Log ud" CssClass="LogoutButton" OnClick="ButtonLogout_Click"/></li>
                 <li id="CurrentKont" class="right"><a href="KontaktAdmin.aspx">Kontakt</a></li>
                 <li id="CurrentBilled" class="right"><a href="BillederAdmin.aspx">Billeder</a></li>
                 <li id="CurrentTegn" class="dropdown right">
