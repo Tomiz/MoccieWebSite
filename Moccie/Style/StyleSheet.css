@@ -107,7 +107,7 @@ section {
     width:  1200px;
     margin: auto;
     /*float: left;*/
-    height: 588px;
+    height: 100%;
     /*background-color: #879;*/
     padding: 0 20px 0 20px;
     /*margin: 0 0 0 20px;*/
@@ -182,6 +182,9 @@ section article.About {
 }
 /* Content End */
 /* Footer Start */
+.footerfix{
+    height:588px;
+}
 footer {
     clear: both;
     background-color: #333;
