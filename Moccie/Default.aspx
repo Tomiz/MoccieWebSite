@@ -35,7 +35,7 @@
                     <img src="Pictures/Slider/<%#Eval("Billed") %>" />
                 </ItemTemplate>
             </asp:Repeater>
-            <asp:SqlDataSource runat="server" ID="SqlDataSourceSlider" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT Billeder.Billed, Produkter.Id, Produkter.Fk_ProduktKategori, Produkter.Fk_Billeder, Produkter.Navn, Produkter.Kunde, Produkter.KundeLink FROM Produkter INNER JOIN Billeder ON Produkter.Fk_Billeder = Billeder.Id"></asp:SqlDataSource>
+            <asp:SqlDataSource runat="server" ID="SqlDataSourceSlider" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT Billeder.Billed, Produkter.Id, Produkter.Fk_ProduktKategori, Produkter.Fk_Billeder, Produkter.Navn FROM Produkter INNER JOIN Billeder ON Produkter.Fk_Billeder = Billeder.Id"></asp:SqlDataSource>
         </article>
 
         <article class="About">
