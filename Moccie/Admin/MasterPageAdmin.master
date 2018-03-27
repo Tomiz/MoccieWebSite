@@ -16,11 +16,9 @@
             <%--<h2>Header Billeder</h2>--%>
         </header>
         <nav>
-            
             <ul class="topnav">
-                <li id="Current5" class="right"><a href="#contact">Contact</a></li>
-                <li id="CurrentKontakt" class="right"><a href="#about">About</a></li>
-                <li id="CurrentBilled" class="right"><a href="#news">News</a></li>
+                <li id="CurrentKont" class="right"><a href="Kontakt.aspx">Kontakt</a></li>
+                <li id="CurrentBilled" class="right"><a href="Billeder.aspx">Billeder</a></li>
                 <li id="CurrentTegn" class="dropdown right">
                     <a href="Tegninger.aspx" class="dropbtn">Tegninger</a>
                     <div class="dropdown-content">
@@ -28,9 +26,7 @@
                         <a href="#">Priser</a>
                     </div>
                 </li>
-                <li id="CurrentHome" class="right"><a href="Default.aspx">Home</a></li>
-
-                <asp:Button ID="ButtonLogout" runat="server" Text="Log ud" OnClick="ButtonLogout_Click" CssClass="LogoutButton" />
+                <li id="CurrentHome" class="right"><a href="Default.aspx">Hjem</a></li>
             </ul>
         </nav>
 
