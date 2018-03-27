@@ -225,7 +225,9 @@ a {
     margin-bottom: 25px;
     float: left;
 }
-
+.LogoutButton{
+    margin:15px 0 0 20%;
+}
 #ProduktGruppe {
     width: 960px;
     margin: 50px auto;

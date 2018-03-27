@@ -1,0 +1,49 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPageAdmin.master.cs" Inherits="Admin_MasterPageAdmin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="../Style/StyleSheet.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header>
+            <img src="../Pictures/banner.png" width="100%" />
+            <%--<h2>Header Billeder</h2>--%>
+        </header>
+        <nav>
+            
+            <ul class="topnav">
+                <li id="Current5" class="right"><a href="#contact">Contact</a></li>
+                <li id="CurrentKontakt" class="right"><a href="#about">About</a></li>
+                <li id="CurrentBilled" class="right"><a href="#news">News</a></li>
+                <li id="CurrentTegn" class="dropdown right">
+                    <a href="Tegninger.aspx" class="dropbtn">Tegninger</a>
+                    <div class="dropdown-content">
+                        <a href="Tegninger.aspx">Tegninger</a>
+                        <a href="#">Priser</a>
+                    </div>
+                </li>
+                <li id="CurrentHome" class="right"><a href="Default.aspx">Home</a></li>
+
+                <asp:Button ID="ButtonLogout" runat="server" Text="Log ud" OnClick="ButtonLogout_Click" CssClass="LogoutButton" />
+            </ul>
+        </nav>
+
+        <div id="wrapper">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <footer>
+            <article>
+                <h2>Footer content here</h2>
+            </article>
+        </footer>
+    </form>
+</body>
+</html>
