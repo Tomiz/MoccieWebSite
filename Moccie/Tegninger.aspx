@@ -15,15 +15,26 @@
                     <h2>Info om grupperne</h2>
                     <p>Da det er at jeg har flere forskellige former for tegninger har jeg valgt at lave specifikke grupper for hvert emne, så det er nemmere at over skue </p>
                 </article>
-
+                <%--CommandArgument'<%#Eval("Id") %>'--%>
                 <article id="ProduktGruppe">
-                    <div id="Grupper">
-                        <asp:LinkButton ID="LinkButtonGrupper" runat="server" OnCommand="LinkButtonGrupper_Command" CssClass="ALink"> <%--CommandArgument'<%#Eval("Id") %>'--%>
+                    <asp:Repeater ID="RepeaterTegn" runat="server" DataSourceID="SqlDataSourceGruppeKategori">
+                        <ItemTemplate>
+                            <div id="Grupper">
+                                <asp:LinkButton ID="LinkButtonGrupper" runat="server" OnCommand="LinkButtonGrupper_Command" CssClass="ALink" >
+                                    <img src="Pictures/KategoriGruppe/<%#Eval("Billed") %>" width="300px" height="150px" />
+                                </asp:LinkButton>
+                            </div>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                     <asp:SqlDataSource runat="server" ID="SqlDataSourceGruppeKategori" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT * FROM [ProduktGruppe]"></asp:SqlDataSource>
+                    
+                    <%--<div id="Grupper">
+                        <asp:LinkButton ID="LinkButtonGrupper" runat="server" OnCommand="LinkButtonGrupper_Command" CssClass="ALink">
                             <img src="Pictures/Slider/pic1.jpeg" width="300px" height="150px" />
                         </asp:LinkButton>
-                    </div>
+                    </div>--%>
 
-                    <div id="Grupper">
+                   <%-- <div id="Grupper">
                         <img src="Pictures/Slider/pic1.jpeg" width="300px" height="150px" />
                     </div>
 
@@ -33,8 +44,8 @@
 
                     <div id="Grupper">
                         <img src="Pictures/Slider/pic1.jpeg" width="300px" height="150px" />
-                    </div>
-
+                    </div>--%>
+                   
                 </article>
             </section>
         </asp:View>
