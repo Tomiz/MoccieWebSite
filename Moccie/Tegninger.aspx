@@ -20,21 +20,21 @@
                     <asp:Repeater ID="RepeaterTegn" runat="server" DataSourceID="SqlDataSourceGruppeKategori">
                         <ItemTemplate>
                             <div id="Grupper">
-                                <asp:LinkButton ID="LinkButtonGrupper" runat="server" OnCommand="LinkButtonGrupper_Command" CssClass="ALink" >
+                                <asp:LinkButton ID="LinkButtonGrupper" runat="server" OnCommand="LinkButtonGrupper_Command" CssClass="ALink">
                                     <img src="Pictures/KategoriGruppe/<%#Eval("Billed") %>" width="300px" height="150px" />
                                 </asp:LinkButton>
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
-                     <asp:SqlDataSource runat="server" ID="SqlDataSourceGruppeKategori" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT * FROM [ProduktGruppe]"></asp:SqlDataSource>
-                    
+                    <asp:SqlDataSource runat="server" ID="SqlDataSourceGruppeKategori" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT * FROM [ProduktGruppe]"></asp:SqlDataSource>
+
                     <%--<div id="Grupper">
                         <asp:LinkButton ID="LinkButtonGrupper" runat="server" OnCommand="LinkButtonGrupper_Command" CssClass="ALink">
                             <img src="Pictures/Slider/pic1.jpeg" width="300px" height="150px" />
                         </asp:LinkButton>
                     </div>--%>
 
-                   <%-- <div id="Grupper">
+                    <%-- <div id="Grupper">
                         <img src="Pictures/Slider/pic1.jpeg" width="300px" height="150px" />
                     </div>
 
@@ -45,7 +45,6 @@
                     <div id="Grupper">
                         <img src="Pictures/Slider/pic1.jpeg" width="300px" height="150px" />
                     </div>--%>
-                   
                 </article>
             </section>
         </asp:View>
@@ -69,7 +68,21 @@
             </div>
 
             <article id="Produktalign" class="footerfix">
-                <div class="Produkter">
+                <asp:Repeater ID="RepeaterProdukter" runat="server" DataSourceID="SqlDataSourceProdukter">
+                    <ItemTemplate>
+                        <div class="Produkter">
+                            <asp:LinkButton ID="LinkButtonEnkeltProdukt" runat="server" OnCommand="LinkButtonEnkeltProdukt_Command" CssClass="ALink">
+                        <div class="container">
+                            <p><%#Eval("Navn") %></p>
+                        </div>
+                        <img src="Pictures/Produkter/<%#Eval("Billed") %>" width="400px" height="200px" />
+                            </asp:LinkButton>
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+                <asp:SqlDataSource runat="server" ID="SqlDataSourceProdukter" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT Billeder.Billed, Produkter.Navn FROM Billeder INNER JOIN Produkter ON Billeder.Id = Produkter.Fk_ProduktKategori"></asp:SqlDataSource>
+
+                <%--<div class="Produkter">
                     <asp:LinkButton ID="LinkButtonEnkeltProdukt" runat="server" OnCommand="LinkButtonEnkeltProdukt_Command" CssClass="ALink">
                     <div class="container">
                         <p>Beach</p>
@@ -94,8 +107,7 @@
                         <p>Beach</p>
                     </div>
                     <img src="Pictures/Slider/pic1.jpeg" width="400px" height="200px" />
-                </div>
-
+                </div>--%>
             </article>
 
         </asp:View>
