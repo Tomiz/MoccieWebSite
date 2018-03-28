@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     background: radial-gradient(#999, #555, #333);
+    position:relative;
     /*background-color: red;*/
 }
 
@@ -183,14 +184,16 @@ section article.About {
 /* Content End */
 /* Footer Start */
 .footerfix{
-    height:587px;
+    /*height:587px;*/
 }
 footer {
     clear: both;
     background-color: #333;
     width: 100%;
     bottom: 0;
-    /*position:absolute;*/
+    right:0;
+    left:0;
+    position:absolute;
     border-top: 1px solid #FFF;
 }
 
