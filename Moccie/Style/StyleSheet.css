@@ -192,8 +192,9 @@ footer {
     background-color: #333;
     width: 100%;
     bottom: 0;
-    position:absolute;
+    position:fixed;
     border-top: 1px solid #FFF;
+    display:block;
 }
 
 footer article {
