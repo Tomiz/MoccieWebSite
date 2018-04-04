@@ -7,10 +7,10 @@
     /*background-color: red;*/
 }
 
-header{
+header {
     width: 100%;
     height: 100%;
-    background-color:White;
+    background-color: White;
 }
 
 /* top nav start */
@@ -26,33 +26,33 @@ ul.topnav {
     box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
 }
 
-ul.topnav li {
-    float: left;
-}
+    ul.topnav li {
+        float: left;
+    }
 
-ul.topnav li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
+        ul.topnav li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
 
-ul.topnav li a:hover:not(.active) {
-    background-color: #555;
-}
+            ul.topnav li a:hover:not(.active) {
+                background-color: #555;
+            }
 
-/*ul.topnav li a.active {
+        /*ul.topnav li a.active {
     background-color: #555;  color of active link
 }*/
 
-/* top nav right start */
-ul.topnav li.right {
-    float: right;
-}
+        /* top nav right start */
+        ul.topnav li.right {
+            float: right;
+        }
 
 @media screen and (max-width: 600px) {
-ul.topnav li.right,
+    ul.topnav li.right,
     ul.topnav li {
         float: none;
     }
@@ -87,7 +87,6 @@ li a:hover, .dropdown:hover .dropbtn {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-
 }
 
 .dropdown:hover .dropdown-content {
@@ -106,7 +105,7 @@ li a:hover, .dropdown:hover .dropbtn {
 }
 
 section {
-    width:  1200px;
+    width: 1200px;
     margin: auto;
     /*float: left;*/
     height: 100%;
@@ -116,64 +115,70 @@ section {
     /*position: relative;*/
 }
 
-section article.FrontText {
-    /*background-color:red;*/
-    padding: 10px;
-    text-align: center;
-    width:100%;
-    
-}
-section article.FrontText p {
-    /*background-color:red;*/
-    margin:auto;
-    width:600px;
-}
-section article.About h2{
-    text-align: center;
-}
-section article.About p{
-    font-size: 14px;
-    padding: 0 20px 0 20px;
-}
-section article.About {
-    margin: 30px 0 0 100px;
-    background-color: #FFF;
-    width: 350px;
-    height: 400px;
-    float:  left;
-    border: 2px solid #FFF;
-    position: relative;
-    z-index:1;
-    -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
-}
+    section article.FrontText {
+        /*background-color:red;*/
+        padding: 10px;
+        text-align: center;
+        width: 100%;
+    }
 
-@media screen and (max-width: 1100px){
-    section article.About{
+        section article.FrontText p {
+            /*background-color:red;*/
+            margin: auto;
+            width: 600px;
+        }
+
+    section article.About h2 {
+        text-align: center;
+    }
+
+    section article.About p {
+        font-size: 14px;
+        padding: 0 20px 0 20px;
+    }
+
+    section article.About {
+        margin: 30px 0 0 100px;
+        background-color: #FFF;
+        width: 350px;
+        height: 400px;
+        float: left;
+        border: 2px solid #FFF;
+        position: relative;
+        z-index: 1;
+        -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+        box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+    }
+
+@media screen and (max-width: 1100px) {
+    section article.About {
         margin: 30px 0 0 50px;
     }
 }
+
 @media screen and (max-width: 1040px) {
     section article.About {
         margin: 30px 0 0 25px;
     }
 }
+
 @media screen and (max-width: 1010px) {
     section article.About {
         margin: 30px 0 0 10px;
     }
 }
+
 @media screen and (max-width: 990px) {
     section article.About {
         margin: 30px 0 30px 0;
-        clear:left;
+        clear: left;
     }
 }
 
 .profilePic {
     z-index: -2;
-    padding-left:20px;
+    padding-left: 20px;
     right: 0;
     bottom: 0;
     position: absolute;
@@ -184,23 +189,24 @@ section article.About {
 }
 /* Content End */
 /* Footer Start */
-.footerfix{
+.footerfix {
     /*height:587px;*/
 }
+
 footer {
     clear: both;
     background-color: #333;
     width: 100%;
     bottom: 0;
-    position:fixed;
-    border-top: 1px solid #FFF; 
-    display:none;
+    position: fixed;
+    border-top: 1px solid #FFF;
+    display: none;
 }
 
-footer article {
-    text-align: center;
-    height: 70px;
-}
+    footer article {
+        text-align: center;
+        height: 70px;
+    }
 /* Footer End */
 
 h2 {
@@ -209,20 +215,24 @@ h2 {
     margin: 0;
     text-align: center;
 }
+
 p {
     font-family: Segoe UI Black;
     padding: 0;
     margin: 0;
 }
+
 a {
     font-family: Segoe UI Black;
 }
+
 .ALink {
     font-family: Segoe UI Black;
-    list-style:none;
-    text-decoration:none;
-    color:#000;
+    list-style: none;
+    text-decoration: none;
+    color: #000;
 }
+
 .Produkter {
     margin: 0 20px 0 0;
     width: 400px;
@@ -231,19 +241,24 @@ a {
     margin-bottom: 25px;
     float: left;
 }
-.LogoutButton{
-    margin:5px 20px 0 14%;
+
+.LogoutButton {
+    margin: 5px 20px 0 14%;
 }
-.floatRight{
-    float:right;
+
+.floatRight {
+    float: right;
 }
-.floatLeft{
-    float:left;
+
+.floatLeft {
+    float: left;
 }
+
 #ProduktGruppe {
     width: 960px;
     margin: 50px auto;
 }
+
 #Grupper {
     margin: 0 20px 0 0;
     width: 300px;
@@ -252,35 +267,40 @@ a {
     margin-bottom: 25px;
     float: left;
 }
+
 div.container {
     text-align: center;
     padding: 10px 20px;
 }
+
 #Produktalign {
     width: 1260px;
     margin: 50px auto 0 auto;
 }
+
 #GruppeMenu {
     width: 200px;
     margin: 0 0 0 60px;
-    float:left;
-}
-#GruppeMenu a {
-    background-color: #eee;
-    color: black;
-    display: block;
-    padding: 12px;
-    text-decoration: none;
-    text-align:center;
+    float: left;
 }
 
-    #GruppeMenu a:hover {
-        background-color: #ccc;
+    #GruppeMenu a {
+        background-color: #eee;
+        color: black;
+        display: block;
+        padding: 12px;
+        text-decoration: none;
+        text-align: center;
     }
+
+        #GruppeMenu a:hover {
+            background-color: #ccc;
+        }
+
 #ProduktCenterImage {
     width: 900px;
     /*margin: 50px auto;*/
-    float:left;
+    float: left;
 }
 
 #ProduktMenu {
@@ -289,36 +309,39 @@ div.container {
     float: left;
 }
 
-#ProduktMenu a {
-    background-color: #eee;
-    color: black;
-    display: block;
-    padding: 12px;
-    text-decoration: none;
-    text-align: center;
-}
+    #ProduktMenu a {
+        background-color: #eee;
+        color: black;
+        display: block;
+        padding: 12px;
+        text-decoration: none;
+        text-align: center;
+    }
 
-#ProduktMenu a:hover {
-    background-color: #ccc;
-}
+        #ProduktMenu a:hover {
+            background-color: #ccc;
+        }
+
 #ContentInfo {
     background-color: white;
     width: 500px;
     height: 600px;
-    float:left;
-    position:relative;
+    float: left;
+    position: relative;
 }
 
 #ProduktCenter {
     width: 1800px;
     margin: 50px auto;
 }
+
 #KundeLink {
-    width:500px;
+    width: 500px;
     margin: 0 0 10px 0;
     bottom: 0;
     position: absolute;
 }
+
 input[type=text], select, textarea {
     width: 100%;
     padding: 12px;
@@ -342,8 +365,40 @@ input[type=submit] {
     input[type=submit]:hover {
         background-color: #45a049;
     }
+
 #KontaktForm {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
+}
+
+#RanklisteTopP {
+    width:450px;
+    height: 700px;
+    float:left;
+}
+
+    #RanklisteTopP h1 {
+        text-align:center;
+        padding-top:10px;
+        
+    }
+
+#RanklisteTopV {
+    width: 450px;
+    height: 700px;
+    float: right;
+}
+
+    #RanklisteTopV h1 {
+        text-align: center;
+        padding-top: 10px;
+    }
+.RankHeader {
+    background-color: white;
+    border-radius: 20px 20px 0 0;
+    height:50px;
+}
+.Ranker {
+
 }
