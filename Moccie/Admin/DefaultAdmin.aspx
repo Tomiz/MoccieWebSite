@@ -4,27 +4,21 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <section>
-        <article class="FrontText">
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-      <br /><asp:Button ID="Button2" runat="server" Text="Button" />
-        </article>
-
-        <article class="slider">
-            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-      <br /><asp:Button ID="Button1" runat="server" Text="Button" />
+        <article class="">
+            <asp:TextBox ID="TextBox_FrontOverskrift" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBox_FrontText" runat="server"></asp:TextBox>
+      <br /><asp:Button ID="Button_FrontPage" runat="server" Text="Gem" OnClick="Button_FrontPage_Click" />
         </article>
 
         <article class="Aboutt">
-            <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
-            <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
-            <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>  
-      <br /><asp:Button ID="Button3" runat="server" Text="Button" />
+            <asp:TextBox ID="TextBox_AboutOverskrift" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBox_AboutText" runat="server"></asp:TextBox>
+      <br /><asp:Button ID="Button_About" runat="server" Text="Gem" OnClick="Button_About_Click" />
         </article>
 
         <article class="Footer">
             <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
-      <br /><asp:Button ID="Button4" runat="server" Text="Button" />
+      <br /><asp:Button ID="Button_Footer" runat="server" Text="Gem" OnClick="Button_Footer_Click" />
         </article>
     </section>
 </asp:Content>
