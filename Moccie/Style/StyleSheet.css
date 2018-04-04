@@ -193,7 +193,7 @@ footer {
     width: 100%;
     bottom: 0;
     position:fixed;
-    border-top: 1px solid #FFF;
+    border-top: 1px solid #FFF; 
     display:none;
 }
 
