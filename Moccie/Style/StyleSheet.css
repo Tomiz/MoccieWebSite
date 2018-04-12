@@ -411,8 +411,8 @@ input[type=submit] {
     border: none 0px transparent;
 }
 .tekstsize {
-    font-size:20px;
-=======
+    font-size: 20px;
+}
 .DetajleGrid{
     width:1000px;
     margin:auto;
@@ -424,5 +424,5 @@ input[type=submit] {
 }
 #PrisTableRow th {
     border: 1px solid black;
->>>>>>> dc72b59be3ce8a6e669b10d00ac7fb3fd8ed5a6b
+
 }
