@@ -374,7 +374,7 @@ input[type=submit] {
 
 #RanklisteTopP {
     width:450px;
-    height: 700px;
+    height: 600px;
     float:left;
 }
 
@@ -386,7 +386,7 @@ input[type=submit] {
 
 #RanklisteTopV {
     width: 450px;
-    height: 700px;
+    height: 600px;
     float: right;
 }
 
@@ -401,4 +401,13 @@ input[type=submit] {
 }
 .Ranker {
 
+}
+.TekstCenter {
+    text-align:center;
+}
+.NOBorder {
+    border: none 0px transparent;
+}
+.tekstsize {
+    font-size:20px;
 }
