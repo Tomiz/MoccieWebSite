@@ -5,18 +5,25 @@
 <html>
 <head runat="server">
     <title></title>
+    <link href="Style/StyleSheet.css" rel="stylesheet" />
+    <link href="Style/Repeatable.css" rel="stylesheet" />
+    <link href="Style/Default.css" rel="stylesheet" />
+    <link href="Style/Produkter.css" rel="stylesheet" />
+    <link href="Style/Ranklist.css" rel="stylesheet" />
+
+    <link href="Style/Slider.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link href="Style/jquery.bxslider.css" rel="stylesheet" />
+    <script src="Js/jquery.bxslider.js"></script>
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<link href="Style/StyleSheet.css" rel="stylesheet" />
-<link href="Style/Slider.css" rel="stylesheet" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<link href="Style/jquery.bxslider.css" rel="stylesheet" />
-<script src="Js/jquery.bxslider.js"></script>
+
 <body>
     <form id="form1" runat="server">
         <header>
-            <img src="Pictures/banner.png" width="100%"/>
+            <img src="Pictures/banner.png" width="100%" />
             <%--<h2>Header Billeder</h2>--%>
         </header>
         <nav>

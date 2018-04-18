@@ -1,0 +1,37 @@
+﻿#KundeLink {
+    width: 500px;
+    margin: 0 0 10px 0;
+    bottom: 0;
+    position: absolute;
+}
+
+#RanklisteTopP {
+    width: 450px;
+    height: 600px;
+    float: left;
+}
+
+    #RanklisteTopP h1 {
+        text-align: center;
+        padding-top: 10px;
+    }
+
+#RanklisteTopV {
+    width: 450px;
+    height: 600px;
+    float: right;
+}
+
+    #RanklisteTopV h1 {
+        text-align: center;
+        padding-top: 10px;
+    }
+
+.RankHeader {
+    background-color: white;
+    border-radius: 20px 20px 0 0;
+    height: 50px;
+}
+
+.Ranker {
+}

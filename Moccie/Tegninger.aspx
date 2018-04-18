@@ -10,7 +10,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <asp:MultiView ID="MultiView1" runat="server">
         <asp:View ID="ViewGrupper1" runat="server" EnableViewState="true">
-            <section class="footerfix">
+            <section>
                 <article class="FrontText">
                     <h2>Info om grupperne</h2>
                     <p>Da det er at jeg har flere forskellige former for tegninger har jeg valgt at lave specifikke grupper for hvert emne, så det er nemmere at over skue </p>

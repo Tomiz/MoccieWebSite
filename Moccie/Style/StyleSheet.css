@@ -26,30 +26,30 @@ ul.topnav {
     box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
 }
 
-    ul.topnav li {
-        float: left;
-    }
+ul.topnav li {
+    float: left;
+}
 
-        ul.topnav li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
+ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
 
-            ul.topnav li a:hover:not(.active) {
-                background-color: #555;
-            }
+ul.topnav li a:hover:not(.active) {
+    background-color: #555;
+}
 
         /*ul.topnav li a.active {
     background-color: #555;  color of active link
 }*/
 
-        /* top nav right start */
-        ul.topnav li.right {
-            float: right;
-        }
+/* top nav right start */
+ul.topnav li.right {
+    float: right;
+}
 
 @media screen and (max-width: 600px) {
     ul.topnav li.right,
@@ -115,79 +115,21 @@ section {
     /*position: relative;*/
 }
 
-    section article.FrontText {
-        /*background-color:red;*/
-        padding: 10px;
-        text-align: center;
-        width: 100%;
-    }
-
-        section article.FrontText p {
-            /*background-color:red;*/
-            margin: auto;
-            width: 600px;
-        }
-
-    section article.About h2 {
-        text-align: center;
-    }
-
-    section article.About p {
-        font-size: 14px;
-        padding: 0 20px 0 20px;
-    }
-
-    section article.About {
-        margin: 30px 0 0 100px;
-        background-color: #FFF;
-        width: 350px;
-        height: 400px;
-        float: left;
-        border: 2px solid #FFF;
-        position: relative;
-        z-index: 1;
-        -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
-        -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
-        box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
-    }
-
-@media screen and (max-width: 1100px) {
-    section article.About {
-        margin: 30px 0 0 50px;
-    }
+section article.FrontText {
+    /*background-color:red;*/
+    padding: 10px;
+    text-align: center;
+    width: 100%;
 }
 
-@media screen and (max-width: 1040px) {
-    section article.About {
-        margin: 30px 0 0 25px;
-    }
+section article.FrontText p {
+    /*background-color:red;*/
+    margin: auto;
+    width: 600px;
 }
 
-@media screen and (max-width: 1010px) {
-    section article.About {
-        margin: 30px 0 0 10px;
-    }
-}
-
-@media screen and (max-width: 990px) {
-    section article.About {
-        margin: 30px 0 30px 0;
-        clear: left;
-    }
-}
-
-.profilePic {
-    z-index: -2;
-    padding-left: 20px;
-    right: 0;
-    bottom: 0;
-    position: absolute;
-    /*opacity: 0.8;f*/
-    /*margin-top: 12spx;
-    float:right;*/
-    /*clear:both;*/
-}
 /* Content End */
+
 /* Footer Start */
 .footerfix {
     /*height:587px;*/
@@ -209,220 +151,8 @@ footer {
     }
 /* Footer End */
 
-h2 {
-    font-family: Segoe UI Black;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-}
-
-p {
-    font-family: Segoe UI Black;
-    padding: 0;
-    margin: 0;
-}
-
-a {
-    font-family: Segoe UI Black;
-}
-
-.ALink {
-    font-family: Segoe UI Black;
-    list-style: none;
-    text-decoration: none;
-    color: #000;
-}
-
-.Produkter {
-    margin: 0 20px 0 0;
-    width: 400px;
-    background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-bottom: 25px;
-    float: left;
-}
-
-.LogoutButton {
-    margin: 5px 20px 0 14%;
-}
-
-.floatRight {
-    float: right;
-}
-
-.floatLeft {
-    float: left;
-}
-
-#ProduktGruppe {
-    width: 960px;
-    margin: 50px auto;
-}
-
-#Grupper {
-    margin: 0 20px 0 0;
-    width: 300px;
-    background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-bottom: 25px;
-    float: left;
-}
-
-div.container {
-    text-align: center;
-    padding: 10px 20px;
-}
-
-#Produktalign {
-    width: 1260px;
-    margin: 50px auto 0 auto;
-    float:left;
-}
-
-#GruppeMenu {
-    width: 200px;
-    margin: 50px 0 0 60px;
-    float: left;
-}
-
-    #GruppeMenu a {
-        background-color: #eee;
-        color: black;
-        display: block;
-        padding: 12px;
-        text-decoration: none;
-        text-align: center;
-    }
-
-        #GruppeMenu a:hover {
-            background-color: #ccc;
-        }
-
-#ProduktCenterImage {
-    width: 900px;
-    /*margin: 50px auto;*/
-    float: left;
-}
-
-#ProduktMenu {
-    width: 200px;
-    margin: 0 190px 0 10px;
-    float: left;
-}
-
-    #ProduktMenu a {
-        background-color: #eee;
-        color: black;
-        display: block;
-        padding: 12px;
-        text-decoration: none;
-        text-align: center;
-    }
-
-        #ProduktMenu a:hover {
-            background-color: #ccc;
-        }
-
-#ContentInfo {
-    background-color: white;
-    width: 500px;
-    height: 600px;
-    float: left;
-    position: relative;
-}
-
-#ProduktCenter {
-    width: 1800px;
-    margin: 50px auto;
-}
-
-#KundeLink {
-    width: 500px;
-    margin: 0 0 10px 0;
-    bottom: 0;
-    position: absolute;
-}
-
-input[type=text], select, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-}
-
-input[type=submit] {
-    background-color: white;
-    /*color: white;*/
-    padding: 12px 20px;
-    border: none;
-    /*border-radius: 4px;*/
-    cursor: pointer;
-}
-
-    input[type=submit]:hover {
-        background-color: #45a049;
-    }
-
 #KontaktForm {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
-}
-
-#RanklisteTopP {
-    width:450px;
-    height: 600px;
-    float:left;
-}
-
-    #RanklisteTopP h1 {
-        text-align:center;
-        padding-top:10px;
-        
-    }
-
-#RanklisteTopV {
-    width: 450px;
-    height: 600px;
-    float: right;
-}
-
-    #RanklisteTopV h1 {
-        text-align: center;
-        padding-top: 10px;
-    }
-.RankHeader {
-    background-color: white;
-    border-radius: 20px 20px 0 0;
-    height:50px;
-}
-.Ranker {
-
-}
-<<<<<<< HEAD
-.TekstCenter {
-    text-align:center;
-}
-.NOBorder {
-    border: none 0px transparent;
-}
-.tekstsize {
-    font-size: 20px;
-}
-.DetajleGrid{
-    width:1000px;
-    margin:auto;
-    text-align:center;
-}
-.DetajleGridButtons{
-    width:250px;
-    background-color:none;
-}
-#PrisTableRow th {
-    border: 1px solid black;
-
 }

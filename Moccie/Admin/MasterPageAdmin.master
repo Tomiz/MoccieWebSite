@@ -6,6 +6,11 @@
 <head runat="server">
     <title></title>
     <link href="../Style/StyleSheet.css" rel="stylesheet" />
+    <link href="../Style/Admin.css" rel="stylesheet" />
+    <link href="../Style/Repeatable.css" rel="stylesheet" />
+    <link href="../Style/Default.css" rel="stylesheet" />
+    <link href="../Style/Produkter.css" rel="stylesheet" />
+    <link href="../Style/Ranklist.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
