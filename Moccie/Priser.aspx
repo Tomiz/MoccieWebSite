@@ -6,7 +6,7 @@
     <div id="GruppeMenu">
         <asp:Repeater ID="Repeater_ProduktMenu" runat="server" DataSourceID="SqlDataSource3">
             <ItemTemplate>
-                <a href="priser.aspx?Id=<%#Eval ("KategoriNavn") %>"><%#Eval ("KategoriNavn") %></a>
+                <a href="priser.aspx?KategoriNavn=<%#Eval ("KategoriNavn") %>"><%#Eval ("KategoriNavn") %></a>
             </ItemTemplate>
         </asp:Repeater>
         <asp:SqlDataSource runat="server" ID="SqlDataSource3" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT KategoriNavn, Id FROM PrisKategori"></asp:SqlDataSource>
@@ -20,9 +20,9 @@
                 </ItemTemplate>
             </asp:Repeater>
 
-            <asp:SqlDataSource runat="server" ID="SqlDataSourcekategoriOverskrift" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT KategoriNavn FROM PrisKategori WHERE (KategoriNavn = @Id)">
+            <asp:SqlDataSource runat="server" ID="SqlDataSourcekategoriOverskrift" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT KategoriNavn FROM PrisKategori WHERE (KategoriNavn = @KategoriNavn)">
                 <SelectParameters>
-                    <asp:QueryStringParameter QueryStringField="Id" Name="Id" Type="Int32"></asp:QueryStringParameter>
+                    <asp:QueryStringParameter QueryStringField="KategoriNavn" Name="KategoriNavn" Type="String"></asp:QueryStringParameter>
                 </SelectParameters>
             </asp:SqlDataSource>
             <p>Da det er at jeg har flere forskellige former for tegninger har jeg valgt at lave specifikke grupper for hvert emne, så det er nemmere at over skue </p>

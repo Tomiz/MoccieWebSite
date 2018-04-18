@@ -146,7 +146,7 @@ public partial class Priser : System.Web.UI.Page
         // (Type, KategoriDetajler, SlutPris) VALUES (@Type, @KategoriDetajler, @SlutPris)
         cmd.CommandText = "INSERT INTO bestlling (Type) VALUES (@Type)";//"UPDATE forside SET Text = @text, overskrift = @overskrift";
 
-        cmd.Parameters.Add("@Type", SqlDbType.NVarChar).Value = Request.QueryString["Id"];
+        cmd.Parameters.Add("@Type", SqlDbType.NVarChar).Value = Request.QueryString["KategoriNavn"];
         //cmd.Parameters.Add("@KategoriDetajler", SqlDbType.NVarChar).Value = ((Button)e.Item.FindControl("TextBox_overskrift")).Text;
         //cmd.Parameters.Add("@SlutPris", SqlDbType.Int).Value = ((Button)e.Item.FindControl("TextBox_overskrift")).Text;
 
