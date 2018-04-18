@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Web;
@@ -110,5 +113,47 @@ public partial class Priser : System.Web.UI.Page
                 Sbtn.BackColor = Color.Green;
             }
         }
+
+        //if (e.CommandName == "GemKnap")
+        //{
+        //    SqlConnection conn = new SqlConnection();
+        //    conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
+        //    SqlCommand cmd = new SqlCommand();
+        //    cmd.Connection = conn;
+
+        //    // (Type, KategoriDetajler, SlutPris) VALUES (@Type, @KategoriDetajler, @SlutPris)
+        //    cmd.CommandText = "INSERT INTO bestlling (Type) VALUES (@Type)";//"UPDATE forside SET Text = @text, overskrift = @overskrift";
+
+        //    cmd.Parameters.Add("@Type", SqlDbType.NVarChar).Value = Request.QueryString["Id"];
+        //    //cmd.Parameters.Add("@KategoriDetajler", SqlDbType.NVarChar).Value = ((Button)e.Item.FindControl("TextBox_overskrift")).Text;
+        //    //cmd.Parameters.Add("@SlutPris", SqlDbType.Int).Value = ((Button)e.Item.FindControl("TextBox_overskrift")).Text;
+
+        //    conn.Open();
+        //    cmd.ExecuteNonQuery();
+        //    conn.Close();
+
+        //    //Page.DataBind();
+        //}
+    }
+
+    protected void ButtonGem_Click(object sender, EventArgs e)
+    {
+        SqlConnection conn = new SqlConnection();
+        conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
+        SqlCommand cmd = new SqlCommand();
+        cmd.Connection = conn;
+
+        // (Type, KategoriDetajler, SlutPris) VALUES (@Type, @KategoriDetajler, @SlutPris)
+        cmd.CommandText = "INSERT INTO bestlling (Type) VALUES (@Type)";//"UPDATE forside SET Text = @text, overskrift = @overskrift";
+
+        cmd.Parameters.Add("@Type", SqlDbType.NVarChar).Value = Request.QueryString["Id"];
+        //cmd.Parameters.Add("@KategoriDetajler", SqlDbType.NVarChar).Value = ((Button)e.Item.FindControl("TextBox_overskrift")).Text;
+        //cmd.Parameters.Add("@SlutPris", SqlDbType.Int).Value = ((Button)e.Item.FindControl("TextBox_overskrift")).Text;
+
+        conn.Open();
+        cmd.ExecuteNonQuery();
+        conn.Close();
+
+        //Page.DataBind();
     }
 }

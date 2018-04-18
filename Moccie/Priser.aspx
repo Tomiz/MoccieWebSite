@@ -6,7 +6,7 @@
     <div id="GruppeMenu">
         <asp:Repeater ID="Repeater_ProduktMenu" runat="server" DataSourceID="SqlDataSource3">
             <ItemTemplate>
-                <a href="priser.aspx?Id=<%#Eval ("Id") %>"><%#Eval ("KategoriNavn") %></a>
+                <a href="priser.aspx?Id=<%#Eval ("KategoriNavn") %>"><%#Eval ("KategoriNavn") %></a>
             </ItemTemplate>
         </asp:Repeater>
         <asp:SqlDataSource runat="server" ID="SqlDataSource3" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT KategoriNavn, Id FROM PrisKategori"></asp:SqlDataSource>
@@ -20,7 +20,7 @@
                 </ItemTemplate>
             </asp:Repeater>
 
-            <asp:SqlDataSource runat="server" ID="SqlDataSourcekategoriOverskrift" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT [KategoriNavn] FROM [PrisKategori] WHERE ([Id] = @Id)">
+            <asp:SqlDataSource runat="server" ID="SqlDataSourcekategoriOverskrift" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT KategoriNavn FROM PrisKategori WHERE (KategoriNavn = @Id)">
                 <SelectParameters>
                     <asp:QueryStringParameter QueryStringField="Id" Name="Id" Type="Int32"></asp:QueryStringParameter>
                 </SelectParameters>
@@ -82,6 +82,7 @@
                         <th class="DetajleGridButtons">3</th>
                     </tr>
                 </table>
+                <asp:Button ID="ButtonGem" runat="server" Text="Gem" CssClass="floatLeft" OnClick="ButtonGem_Click"/>
                 <asp:SqlDataSource runat="server" ID="SqlDataSourcePriser" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT DISTINCT Detajler.Navn, LidtDetajler.Navn AS LidtDetajler, MellemDetajler.Navn AS MellemDetajler, StorDetajler.Navn AS StorDetajler, LidtDetajler.Id, StorDetajler.Id AS Expr1, MellemDetajler.Id AS Expr2 FROM Detajler INNER JOIN LidtDetajler ON Detajler.Id = LidtDetajler.Fk_Detajler INNER JOIN MellemDetajler ON Detajler.Id = MellemDetajler.Fk_Detajler INNER JOIN StorDetajler ON Detajler.Id = StorDetajler.Fk_detajler"></asp:SqlDataSource>
                
                 <asp:Repeater ID="RepeaterPrisOverslag" runat="server" DataSourceID="SqlDataSourcePris">
@@ -95,6 +96,7 @@
                         <asp:QueryStringParameter QueryStringField="Id" Name="Id" Type="Int32"></asp:QueryStringParameter>
                     </SelectParameters>
                 </asp:SqlDataSource>
+                
             </article>
         </article>
     </section>
