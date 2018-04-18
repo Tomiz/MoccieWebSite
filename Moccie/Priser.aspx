@@ -88,7 +88,7 @@
                 <asp:Repeater ID="RepeaterPrisOverslag" runat="server" DataSourceID="SqlDataSourcePris">
                     <ItemTemplate>
                         <p class="floatRight"><%#Eval("KategoriNavn") %> - <%#Eval("StandardPris") %>€</p>
-                        <%--<asp:Label ID="LabelPris" runat="server" Text='<%#Eval("KategoriNavn")%>' CssClass="floatRight"></asp:Label>--%>
+                        <%--<asp:Label ID="LabelPris" runat="server" Text='<%#Eval("KategoriNavn")%>' CssClass="floatRight"></asp:Label> --%>
                     </ItemTemplate>
                 </asp:Repeater>
                 <asp:SqlDataSource runat="server" ID="SqlDataSourcePris" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT [StandardPris], [KategoriNavn] FROM [PrisKategori] WHERE ([Id] = @Id)">
