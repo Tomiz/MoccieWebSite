@@ -49,18 +49,21 @@
                     </Columns>
                 </asp:GridView>--%>
                 <table id="PrisTableRow" class="DetajleGrid">
-                    <asp:Repeater ID="RepeaterDetajlePriser" runat="server" DataSourceID="SqlDataSourcePriser">
+                    <asp:Repeater ID="RepeaterDetajlePriser" runat="server" DataSourceID="SqlDataSourcePriser" OnItemCommand="RepeaterDetajlePriser_ItemCommand">
                         <ItemTemplate>
                             <tr>
                                 <th class="DetajleGridButtons"><%#Eval("Navn") %></th>
                                 <th class="DetajleGridButtons">
-                                    <asp:Button ID="ButtonLidtDetajler" runat="server" CausesValidation="false" Text='<%#Eval("LidtDetajler") %>' CssClass="DetajleGridButtons" OnCommand="ButtonLidtDetajler_Command" CommandName="DetajlerLidtClick" CommandArgument='<%#Eval("Id") %>'/>
+                                    <%--<asp:Button ID="ButtonLidtDetajler" runat="server" CausesValidation="false" Text='<%#Eval("LidtDetajler") %>' CssClass="DetajleGridButtons" OnCommand="ButtonLidtDetajler_Command" CommandName="DetajlerLidtClick" CommandArgument='<%#Eval("Id") %>'/>--%>
+                                    <asp:Button ID="ButtonLidtDetajler" runat="server" CausesValidation="false" Text='<%#Eval("LidtDetajler") %>' CssClass="DetajleGridButtons" CommandName="DetajlerLidtClick" CommandArgument="lilleKnap"/>
                                 </th>
                                 <th class="DetajleGridButtons">
-                                    <asp:Button ID="ButtonMellemDetajler" runat="server" CausesValidation="false" Text='<%#Eval("MellemDetajler") %>' CssClass="DetajleGridButtons" OnCommand="ButtonMellemDetajler_Command" CommandName="DetajlerMellemClick" CommandArgument='<%#Eval("Id") %>'/>
+                                    <%--<asp:Button ID="ButtonMellemDetajler" runat="server" CausesValidation="false" Text='<%#Eval("MellemDetajler") %>' CssClass="DetajleGridButtons" OnCommand="ButtonMellemDetajler_Command" CommandName="DetajlerMellemClick" CommandArgument='<%#Eval("Id") %>'/>--%>
+                                    <asp:Button ID="ButtonMellemDetajler" runat="server" CausesValidation="false" Text='<%#Eval("MellemDetajler") %>' CssClass="DetajleGridButtons" CommandName="DetajlerMellemClick" CommandArgument="mellemKnap"/>
                                 </th>
                                 <th class="DetajleGridButtons">
-                                    <asp:Button ID="ButtonStorDetajler" runat="server" CausesValidation="false" Text='<%#Eval("StorDetajler") %>' CssClass="DetajleGridButtons" OnCommand="ButtonStorDetajler_Command" CommandName="DetajlerStorClick" CommandArgument='<%#Eval("Id") %>'/>
+                                    <%--<asp:Button ID="ButtonStorDetajler" runat="server" CausesValidation="false" Text='<%#Eval("StorDetajler") %>' CssClass="DetajleGridButtons" OnCommand="ButtonStorDetajler_Command" CommandName="DetajlerStorClick" CommandArgument='<%#Eval("Id") %>'/>--%>
+                                    <asp:Button ID="ButtonStorDetajler" runat="server" CausesValidation="false" Text='<%#Eval("StorDetajler") %>' CssClass="DetajleGridButtons" CommandName="DetajlerStorClick" CommandArgument="storKnap" />
                                 </th>
                             </tr>
                         </ItemTemplate>
