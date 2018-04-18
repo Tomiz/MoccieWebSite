@@ -5,7 +5,7 @@
         #CurrentHome {
             background-color: #555;
         }
-    </style>
+    </style>    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <section class="footerfix">
