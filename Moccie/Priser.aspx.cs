@@ -57,7 +57,7 @@ public partial class Priser : System.Web.UI.Page
     //        }
     //        else
     //        {
-    //            BS.BackColor = Color.Green;
+    //            BS.BackColor = Color.Green; 
     //        }
     //    }
 
