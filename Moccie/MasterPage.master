@@ -35,7 +35,7 @@
                     <a href="Tegninger.aspx" class="dropbtn">Tegninger</a>
                     <div class="dropdown-content">
                         <a href="Tegninger.aspx">Tegninger</a>
-                        <a href="#">Priser</a>
+                        <a href="Priser.aspx">Priser</a>
                     </div>
                 </li>
                 <li id="CurrentHome" class="right"><a href="Default.aspx">Hjem</a></li>
