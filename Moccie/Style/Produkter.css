@@ -93,6 +93,7 @@ div.container {
     width: 1000px;
     margin: auto;
     text-align: center;
+    background-color:white;
 }
 
 .DetajleGridButtons {
@@ -101,5 +102,6 @@ div.container {
 }
 
 #PrisTableRow th {
-    border: 1px solid black;
+    /*border: 1px solid black;*/
+
 }

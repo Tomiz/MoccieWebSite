@@ -53,6 +53,7 @@
                         <ItemTemplate>
                             <tr>
                                 <th class="DetajleGridButtons"><%#Eval("Navn") %></th>
+
                                 <th class="DetajleGridButtons">
                                     <%--<asp:Button ID="ButtonLidtDetajler" runat="server" CausesValidation="false" Text='<%#Eval("LidtDetajler") %>' CssClass="DetajleGridButtons" OnCommand="ButtonLidtDetajler_Command" CommandName="DetajlerLidtClick" CommandArgument='<%#Eval("Id") %>'/>--%>
                                     <asp:Button ID="ButtonLidtDetajler" runat="server" CausesValidation="false" Text='<%#Eval("LidtDetajler") %>' CssClass="DetajleGridButtons" CommandName="DetajlerLidtClick" CommandArgument="lilleKnap"/>
@@ -85,7 +86,6 @@
                
                 <asp:Repeater ID="RepeaterPrisOverslag" runat="server" DataSourceID="SqlDataSourcePris">
                     <ItemTemplate>
-                        <p class="floatRight"><%#Eval("KategoriNavn") %> - <%#Eval("StandardPris") %>€</p>
                         <p class="floatRight"><%#Eval("KategoriNavn") %> - <%#Eval("StandardPris") %>€</p>
                         <%--<asp:Label ID="LabelPris" runat="server" Text='<%#Eval("KategoriNavn")%>' CssClass="floatRight"></asp:Label>--%>
                     </ItemTemplate>
