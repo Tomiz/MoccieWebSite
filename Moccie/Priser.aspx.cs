@@ -65,7 +65,7 @@ public partial class Priser : System.Web.UI.Page
 
     protected void RepeaterDetajlePriser_ItemCommand(object source, RepeaterCommandEventArgs e)
     {
-        //Button BL = (Button)source;
+        //Button BL = (Button)source; 
         Button Lbtn = e.Item.FindControl("ButtonLidtDetajler") as Button;
         Button Mbtn = e.Item.FindControl("ButtonMellemDetajler") as Button;
         Button Sbtn = e.Item.FindControl("ButtonStorDetajler") as Button;
