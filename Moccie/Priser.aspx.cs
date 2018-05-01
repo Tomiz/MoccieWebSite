@@ -138,22 +138,34 @@ public partial class Priser : System.Web.UI.Page
 
     protected void ButtonGem_Click(object sender, EventArgs e)
     {
-        SqlConnection conn = new SqlConnection();
-        conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
-        SqlCommand cmd = new SqlCommand();
-        cmd.Connection = conn;
+        foreach (RepeaterItem item in RepeaterDetajlePriser.Items)
+        {
+            Label l1 = (Label)item.FindControl("Label1");
+            //HiddenField h1 = (HiddenField)item.FindControl("HiddenField_OrderId");
+            if (l1 != null)
+            {
+                string labelKategoriNavn = l1.Text;
+                //string OrderId = h1.Value;
 
-        // (Type, KategoriDetajler, SlutPris) VALUES (@Type, @KategoriDetajler, @SlutPris)
-        cmd.CommandText = "INSERT INTO bestlling (Type) VALUES (@Type)";//"UPDATE forside SET Text = @text, overskrift = @overskrift";
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
 
-        cmd.Parameters.Add("@Type", SqlDbType.NVarChar).Value = Request.QueryString["KategoriNavn"];
-        //cmd.Parameters.Add("@KategoriDetajler", SqlDbType.NVarChar).Value = ((Button)e.Item.FindControl("TextBox_overskrift")).Text;
-        //cmd.Parameters.Add("@SlutPris", SqlDbType.Int).Value = ((Button)e.Item.FindControl("TextBox_overskrift")).Text;
+                // (Type, KategoriDetajler, SlutPris) VALUES (@Type, @KategoriDetajler, @SlutPris)
+                cmd.CommandText = "INSERT INTO bestlling (Type, KategoriDetajler, OrderId) VALUES (@Type, @KategoriDetajler, @OrderId)";//"UPDATE forside SET Text = @text, overskrift = @overskrift";
 
-        conn.Open();
-        cmd.ExecuteNonQuery();
-        conn.Close();
+                cmd.Parameters.Add("@Type", SqlDbType.NVarChar).Value = Request.QueryString["KategoriNavn"];
+                cmd.Parameters.Add("@KategoriDetajler", SqlDbType.NVarChar).Value = labelKategoriNavn;
+                cmd.Parameters.Add("@OrderId", SqlDbType.DateTime).Value = DateTime.Now;
+                //cmd.Parameters.Add("@SlutPris", SqlDbType.Int).Value = ((Button)e.Item.FindControl("TextBox_overskrift")).Text;
 
-        //Page.DataBind();
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+
+                //Page.DataBind();
+            }
+        }
     }
 }

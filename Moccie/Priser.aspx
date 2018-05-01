@@ -63,7 +63,11 @@
                         <ItemTemplate>
                             <tbody>
                                 <tr>
-                                    <th class="DetajleGridButtons"><%#Eval("Navn") %></th>
+                                    <th class="DetajleGridButtons">
+                                        <%--<asp:Literal ID="Literal1" runat="server" Text='<%#Eval("Navn") %>'></asp:Literal>--%>
+                                        <%--<asp:HiddenField ID="HiddenField_OrderId" Value='<%#Eval("Id") %>' runat="server" />--%>
+                                        <asp:Label ID="Label1" runat="server" Text='<%#Eval("Navn") %>'></asp:Label>
+                                    </th>
 
                                     <td class="DetajleGridButtons">
                                         <%--<asp:Button ID="ButtonLidtDetajler" runat="server" CausesValidation="false" Text='<%#Eval("LidtDetajler") %>' CssClass="DetajleGridButtons" OnCommand="ButtonLidtDetajler_Command" CommandName="DetajlerLidtClick" CommandArgument='<%#Eval("Id") %>'/>--%>
