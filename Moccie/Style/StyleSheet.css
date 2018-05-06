@@ -97,11 +97,21 @@ li a:hover, .dropdown:hover .dropbtn {
 /* top nav end */
 
 /* Content Start */
-#wrapper {
-    height: 100%;
-    width: 100%;
-    margin: auto;
-    /*background-color: #666;*/
+#wrapper{
+    width:100%;
+    margin:auto;
+}
+@media screen and (max-height: 1080px) {
+    #wrapper {
+        height: 659px;
+        /*background-color: #666;*/
+    }
+}
+@media screen and (max-height: 900px) {
+    #wrapper {
+        height: 500px;
+        /*background-color: #666;*/
+    }
 }
 
 section {
@@ -140,9 +150,10 @@ footer {
     background-color: #333;
     width: 100%;
     bottom: 0;
-    position: fixed;
+    position: relative;
     border-top: 1px solid #FFF;
-    display: none;
+    margin-top:50px;
+    /*display: none;*/
 }
 
     footer article {

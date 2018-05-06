@@ -11,9 +11,6 @@
                 <asp:TextBox ID="TextBoxUsername" runat="server" Width="200px"></asp:TextBox>
                 <label class="floatLeft">Password:</label>
                 <asp:TextBox ID="TextBoxPassword" runat="server" Width="200px"></asp:TextBox>
-                <%--  <span style="float:left; margin-left:440px;">Brugernavn:</span> <span style="float:right; margin-right:420px;"><asp:TextBox ID="TextBoxUsername" runat="server"></asp:TextBox></span>
-            <br /><br />
-            <span style="float:left; margin-left:440px;">Password:</span> <span style="float:right; margin-right:420px;"><asp:TextBox ID="TextBoxPassword" runat="server"></asp:TextBox></span>--%>
                 <br />
                 <asp:Button ID="ButtonLogin" runat="server" Text="Login" OnClick="ButtonLogin_Click" CssClass="floatLeft"/>
             </div>
