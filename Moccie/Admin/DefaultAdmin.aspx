@@ -11,7 +11,7 @@
                     <ItemTemplate>
                         <asp:TextBox ID="TextBox_FrontOverskrift" runat="server" Text='<%#Eval("Overskrift") %>'></asp:TextBox>
                         <asp:TextBox ID="TextBox_FrontText" runat="server" Text='<%#Eval("Text") %>'></asp:TextBox>
-                        
+
                     </ItemTemplate>
                 </asp:Repeater>
                 <asp:SqlDataSource runat="server" ID="SqlDataSourceoverskrifttext" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT [Overskrift], [Text] FROM [InfoText] WHERE ([Lokation] = @Lokation)">
@@ -24,12 +24,12 @@
             </article>
 
             <article class="Infomation">
-                <h2>Information omkring enten dig selv eller hjemmesiden</h2>
-                <asp:TextBox ID="TextBox_AboutOverskrift" runat="server"></asp:TextBox>
-                <asp:TextBox ID="TextBox_AboutText" runat="server"></asp:TextBox>
-                <asp:FileUpload ID="FileUpload1" runat="server" />
-                <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSourceGetFrontPageImageName">
+                <asp:Repeater ID="RepeaterAdminAboutText" runat="server" DataSourceID="SqlDataSourceGetFrontPageImageName">
                     <ItemTemplate>
+                        <h2>Information omkring enten dig selv eller hjemmesiden</h2>
+                        <asp:TextBox ID="TextBox_AboutOverskrift" runat="server" Text='<%#Eval("Overskrift") %>'></asp:TextBox>
+                        <asp:TextBox ID="TextBox_AboutText" runat="server" Text='<%#Eval("Text") %>'></asp:TextBox>
+                        <asp:FileUpload ID="FileUpload1" runat="server" />
                         <p>
                             <%#Eval("Image") %>
                         </p>

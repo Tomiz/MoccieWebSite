@@ -48,25 +48,34 @@ public partial class Admin_DefaultAdmin : System.Web.UI.Page
 
     protected void Button_About_Click(object sender, EventArgs e)
     {
-        SqlConnection conn = new SqlConnection();
-        conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
-        SqlCommand cmd = new SqlCommand();
-        cmd.Connection = conn;
+        foreach (RepeaterItem item in RepeaterAdminAboutText.Items)
+        {
+            TextBox tAboutOverskrift = (TextBox)item.FindControl("TextBox_AboutOverskrift");
+            TextBox tAboutText = (TextBox)item.FindControl("TextBox_AboutText");
 
-        //cmd.CommandText = "INSERT INTO  [InfoText] (Overskrift, Text) VALUES (@Overskrift, @Text)";
-        cmd.CommandText = "UPDATE IndexText SET Overskrift = @Overskrift, Text = @Text";
+            if (tAboutOverskrift != null && tAboutText != null)
+            {
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+
+                //cmd.CommandText = "INSERT INTO  [InfoText] (Overskrift, Text) VALUES (@Overskrift, @Text)";
+                cmd.CommandText = "UPDATE IndexText SET Overskrift = @Overskrift, Text = @Text";
 
 
-        cmd.Parameters.Add("@Overskrift", SqlDbType.NVarChar).Value = TextBox_AboutOverskrift.Text;
-        cmd.Parameters.Add("@Text", SqlDbType.NVarChar).Value = TextBox_AboutText.Text;
+                cmd.Parameters.Add("@Overskrift", SqlDbType.NVarChar).Value = tAboutOverskrift.Text;
+                cmd.Parameters.Add("@Text", SqlDbType.NVarChar).Value = tAboutText.Text;
 
-        conn.Open();
+                conn.Open();
 
-        cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
 
-        conn.Close();
+                conn.Close();
 
-        Response.Redirect("../Admin/DefaultAdmin.aspx");
+                Response.Redirect("../Admin/DefaultAdmin.aspx");
+            }
+        }
     }
 
     protected void Button_Footer_Click(object sender, EventArgs e)
