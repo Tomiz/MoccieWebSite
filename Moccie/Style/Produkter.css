@@ -53,6 +53,7 @@ div.container {
 
 #ProduktCenterImage {
     width: 900px;
+    margin-bottom:50px;
     /*margin: 50px auto;*/
     float: left;
 }

@@ -25,9 +25,8 @@ public partial class Admin_DefaultAdmin : System.Web.UI.Page
         //cmd.CommandText = "INSERT INTO  [InfoText] (Overskrift, Text) VALUES (@Overskrift, @Text)";
         cmd.CommandText = "UPDATE InfoText SET Overskrift = @Overskrift, Text = @Text WHERE Lokation = 'FrontPage'";
 
-
-        cmd.Parameters.Add("@Overskrift", SqlDbType.NVarChar).Value = TextBox_FrontOverskrift.Text;
-        cmd.Parameters.Add("@Text", SqlDbType.NVarChar).Value = TextBox_FrontText.Text;
+        cmd.Parameters.Add("@Overskrift", SqlDbType.NVarChar).Value = FindControl("TextBox_FrontOverskrift");
+        cmd.Parameters.Add("@Text", SqlDbType.NVarChar).Value = FindControl("TextBox_FrontText");
 
         conn.Open();
 
