@@ -11,17 +11,20 @@ public partial class Tegninger : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            MultiView1.ActiveViewIndex = 0;
+            MultiViewTegn.ActiveViewIndex = 0;
         }
     }
 
     protected void LinkButtonGrupper_Command(object sender, CommandEventArgs e)
     {
-        MultiView1.ActiveViewIndex = 1;
+        //Response.Redirect("Tegninger.aspx?MultiViewTegn=" + 1);
+        //string queryString = "YourQueryString";
+        //Response.Redirect("tegninger.aspx?querystring=" + queryString);
+        MultiViewTegn.ActiveViewIndex = 1;
     }
 
     protected void LinkButtonEnkeltProdukt_Command(object sender, CommandEventArgs e)
     {
-        MultiView1.ActiveViewIndex = 2;
+        MultiViewTegn.ActiveViewIndex = 2;
     }
 }
