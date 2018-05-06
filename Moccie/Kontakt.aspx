@@ -66,5 +66,7 @@
             <input type="submit" value="Send">
         </article>
     </section>
+
+    <div class="footerClear" style="margin-bottom:50px;"></div>
 </asp:Content>
 

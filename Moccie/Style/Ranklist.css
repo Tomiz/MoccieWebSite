@@ -7,8 +7,8 @@
 
 #RanklisteTopP {
     width: 450px;
-    height: 600px;
     float: left;
+    margin-bottom:50px;
 }
 
     #RanklisteTopP h1 {
@@ -18,8 +18,8 @@
 
 #RanklisteTopV {
     width: 450px;
-    height: 600px;
     float: right;
+    margin-bottom: 50px;
 }
 
     #RanklisteTopV h1 {

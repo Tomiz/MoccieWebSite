@@ -19,5 +19,7 @@
             </div>
         </article>
     </section>
+
+    <div class="footerClear" style="margin-bottom:310px;"></div>
 </asp:Content>
 
