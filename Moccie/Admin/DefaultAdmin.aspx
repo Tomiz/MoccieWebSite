@@ -7,8 +7,17 @@
         <div class="AdminArticle">
             <article class="Overskrift">
                 <h2>Overskrift og tekst på forsiden</h2>
-                <asp:TextBox ID="TextBox_FrontOverskrift" runat="server" ></asp:TextBox>
-                <asp:TextBox ID="TextBox_FrontText" runat="server"></asp:TextBox>
+                <asp:Repeater ID="Repeater2" runat="server" DataSourceID="SqlDataSourceoverskrifttext">
+                    <ItemTemplate>
+                        <asp:TextBox ID="TextBox_FrontOverskrift" runat="server" Text="<%#Eval("Overskrift") %>"></asp:TextBox>
+                        <asp:TextBox ID="TextBox_FrontText" runat="server" Text="<%#Eval("Text") %>"></asp:TextBox>
+                    </ItemTemplate>
+                </asp:Repeater>
+                <asp:SqlDataSource runat="server" ID="SqlDataSourceoverskrifttext" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT [Overskrift], [Text] FROM [InfoText] WHERE ([Lokation] = @Lokation)">
+                    <SelectParameters>
+                        <asp:Parameter DefaultValue="FrontPage" Name="Lokation" Type="String"></asp:Parameter>
+                    </SelectParameters>
+                </asp:SqlDataSource>
                 <br />
                 <asp:Button ID="Button_FrontPage" runat="server" Text="Gem" OnClick="Button_FrontPage_Click" />
             </article>
