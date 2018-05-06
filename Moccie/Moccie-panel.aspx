@@ -5,13 +5,17 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <section class="footerfix">
         <article class="FrontText">
-            <div style="width:200px; margin: 20px auto 0 auto;">
+            <div style="width: 200px; margin: 20px auto 0 auto;">
                 <label class="floatLeft">Username:</label>
                 <asp:TextBox ID="TextBoxUsername" runat="server" Width="200px"></asp:TextBox>
                 <label class="floatLeft">Password:</label>
                 <asp:TextBox ID="TextBoxPassword" runat="server" Width="200px"></asp:TextBox>
                 <br />
-                <asp:Button ID="ButtonLogin" runat="server" Text="Login" OnClick="ButtonLogin_Click" CssClass="floatLeft"/>
+                <asp:Button ID="ButtonLogin" runat="server" Text="Login" OnClick="ButtonLogin_Click" CssClass="floatLeft" />
+            </div>
+
+            <div class="ErrorBox">
+                <asp:Label ID="LabelMsg" runat="server" Text="" CssClass="ErrorMsg"></asp:Label>
             </div>
         </article>
     </section>

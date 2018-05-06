@@ -32,17 +32,19 @@ public partial class Moccie_panel : System.Web.UI.Page
         {
             Session["brugernavn"] = reader["Navn"];
             Session["bruger_id"] = reader["Id"];
-            //Session["fk_rolleId"] = reader["fk_rolleId"];
 
             Response.Redirect("Admin/DefaultAdmin.aspx");
         }
-
-
-        //else
-        //{
-        //    Labelfejl.Style.Add("color", "#CC0000");
-        //    Labelfejl.Text = "Forkert brugernavn eller kodeord.";
-        //}
+        else
+        {
+            LabelMsg.Style.Add("color", "#FFF");
+            LabelMsg.Style.Add("background-color", "#E06973");
+            LabelMsg.Style.Add("width", "400px");
+            LabelMsg.Style.Add("height", "100%");
+            LabelMsg.Style.Add("border-radius", "15px");
+            LabelMsg.Style.Add("padding", "25px");
+            LabelMsg.Text = "Forkert brugernavn eller kodeord.";
+        }
         conn.Close();
     }
 }
