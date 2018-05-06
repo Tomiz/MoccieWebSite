@@ -8,7 +8,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <section class="footerfix">
+    <section >
         <article class="FrontText">
             <h2>Info omkring Ranking på min hjemmeside
             </h2>
