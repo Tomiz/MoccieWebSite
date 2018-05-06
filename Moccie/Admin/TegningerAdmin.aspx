@@ -45,7 +45,7 @@
             <asp:Button ID="SletKate" runat="server" Text="Slet" />
         </div>
     </div>
-
+    <div class="footerClear" style="margin-top:477px;"></div>
 
     <script>
         var acc = document.getElementsByClassName("accordion");
