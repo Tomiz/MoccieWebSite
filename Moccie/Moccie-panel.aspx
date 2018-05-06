@@ -6,6 +6,7 @@
     <section class="footerfix">
         <article class="FrontText">
             <div style="width:200px; margin: 20px auto 0 auto;">
+                <asp:Label ID="MessageBox" runat="server" Text="Label" Visible="False"></asp:Label>
                 <label class="floatLeft">Username:</label>
                 <asp:TextBox ID="TextBoxUsername" runat="server" Width="200px"></asp:TextBox>
                 <label class="floatLeft">Password:</label>
