@@ -4,7 +4,7 @@
 
 <html>
 <head runat="server">
-    <title></title>
+    <title>Moccie</title>
     <link href="Style/StyleSheet.css" rel="stylesheet" />
     <link href="Style/Repeatable.css" rel="stylesheet" />
     <link href="Style/Default.css" rel="stylesheet" />
@@ -24,7 +24,6 @@
     <form id="form1" runat="server">
         <header>
             <img src="Pictures/banner.png" width="100%" />
-            <%--<h2>Header Billeder</h2>--%>
         </header>
         <nav>
             <ul class="topnav">

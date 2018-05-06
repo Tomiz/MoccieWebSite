@@ -4,7 +4,7 @@
 
 <html>
 <head runat="server">
-    <title></title>
+    <title>Moccie Admin</title>
     <link href="../Style/StyleSheet.css" rel="stylesheet" />
     <link href="../Style/Admin.css" rel="stylesheet" />
     <link href="../Style/Repeatable.css" rel="stylesheet" />
@@ -17,8 +17,7 @@
 <body>
     <form id="form1" runat="server">
         <header>
-            <img src="../Pictures/banner.png" width="100%" />
-            <%--<h2>Header Billeder</h2>--%>
+            <img src="../Pictures/banner.png" width="100%" style="vertical-align: middle;"/>
         </header>
         <nav>
             <ul class="topnav">
