@@ -23,7 +23,7 @@
             Upload billede<asp:FileUpload ID="FileUpload1" runat="server" />
             <asp:TextBox ID="TextBoxHeaderInfoText" runat="server" Text=""></asp:TextBox>
             <asp:TextBox ID="TextBoxInfoText" runat="server" Text=""></asp:TextBox>
-            <asp:TextBox ID="TextBox4" runat="server" Text="Link to owner"></asp:TextBox>
+            <asp:DropDownList ID="DropDownListKunde" runat="server"><asp:ListItem Text="Opret kunde først" Value="" /></asp:DropDownList>
             <asp:Button ID="Button1" runat="server" Text="Tilføj nyt Elemet" />
         </div>
 
@@ -48,6 +48,18 @@
             <asp:Button ID="SletKate" runat="server" Text="Slet" />
         </div>    
 
+        <asp:Button class="accordion" runat="server" Text="Kunde" OnClientClick="return false;" />
+        <div class="panel">
+            <asp:TextBox ID="Kundenavn" runat="server" Text="Kundenavn"></asp:TextBox>
+            <asp:TextBox ID="KundeLink" runat="server" Text="Kundelink"></asp:TextBox>
+            <asp:DropDownList ID="DropDownListplatform" runat="server"><asp:ListItem Text="Platform" Value="" /></asp:DropDownList>
+            <asp:TextBox ID="Followers" runat="server" Text="Antal followers/subsriber"></asp:TextBox>
+            <asp:Button ID="ButtonGemKunde" runat="server" Text="Tilføj ny Kunde" /><br /><br />
+            <asp:Label ID="kunder" runat="server" Text="Kunder..."></asp:Label>
+            <asp:Button ID="ButtonRedikunde" runat="server" Text="Redigere" />
+            <asp:Button ID="ButtonSletkunde" runat="server" Text="Slet" />
+        </div>
+
     <asp:Button class="accordion" runat="server" Text="Priser" OnClientClick="return false;" />
         <div class="panel">
             <asp:TextBox ID="TextBox5" runat="server" Text="Tilføj ny Kategori"></asp:TextBox>
@@ -55,7 +67,7 @@
             <asp:Label ID="Label1" runat="server" Text="Kategorier..."></asp:Label>
             <asp:Button ID="Button3" runat="server" Text="Redigere" />
             <asp:Button ID="Button4" runat="server" Text="Slet" />
-        </div><br />
+        </div>
 
     </div>
     <div class="footerClear" style="margin-top: 477px;"></div>
