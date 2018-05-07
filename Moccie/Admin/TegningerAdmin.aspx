@@ -62,11 +62,7 @@
 
     <asp:Button class="accordion" runat="server" Text="Priser" OnClientClick="return false;" />
         <div class="panel">
-            <asp:TextBox ID="TextBox5" runat="server" Text="Tilføj ny Kategori"></asp:TextBox>
-            <asp:Button ID="Button2" runat="server" Text="Tilføj ny Kategori" /><br /><br />
-            <asp:Label ID="Label1" runat="server" Text="Kategorier..."></asp:Label>
-            <asp:Button ID="Button3" runat="server" Text="Redigere" />
-            <asp:Button ID="Button4" runat="server" Text="Slet" />
+            
         </div>
 
     </div>
