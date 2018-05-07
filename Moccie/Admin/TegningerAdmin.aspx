@@ -22,7 +22,7 @@
             Upload billede<asp:FileUpload ID="FileUpload1" runat="server" />
             <asp:TextBox ID="TextBox2" runat="server" Text="HeaderInfoText"></asp:TextBox>
             <asp:TextBox ID="TextBox3" runat="server" Text="InfoText"></asp:TextBox>
-            <asp:TextBox ID="TextBox4" runat="server" Text="Link to owner"></asp:TextBox>
+            <asp:DropDownList ID="DropDownListKunde" runat="server"><asp:ListItem Text="Husk at oprette kunde først" Value="" /></asp:DropDownList>
             <asp:Button ID="Button1" runat="server" Text="Tilføj nyt Elemet" />
 
 
@@ -48,6 +48,16 @@
             <asp:Label ID="ShowKate" runat="server" Text="Kategorier..."></asp:Label>
             <asp:Button ID="Redigerekate" runat="server" Text="Redigere" />
             <asp:Button ID="SletKate" runat="server" Text="Slet" />
+        </div>
+    
+
+    <asp:Button class="accordion" runat="server" Text="Priser" OnClientClick="return false;" />
+        <div class="panel">
+            <asp:TextBox ID="TextBox5" runat="server" Text="Tilføj ny Kategori"></asp:TextBox>
+            <asp:Button ID="Button2" runat="server" Text="Tilføj ny Kategori" /><br /><br />
+            <asp:Label ID="Label1" runat="server" Text="Kategorier..."></asp:Label>
+            <asp:Button ID="Button3" runat="server" Text="Redigere" />
+            <asp:Button ID="Button4" runat="server" Text="Slet" />
         </div>
     </div>
     <div class="footerClear" style="margin-top:477px;"></div>
