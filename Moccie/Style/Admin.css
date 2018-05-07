@@ -67,3 +67,6 @@ a {
     background-color: darkgrey;
     overflow: hidden;
 }
+.panel p {
+    padding:0 0 0 10px;
+}
