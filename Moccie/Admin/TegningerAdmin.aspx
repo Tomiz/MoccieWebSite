@@ -13,16 +13,22 @@
         <asp:Button class="accordion" runat="server" Text="Tilføj nyt element" OnClientClick="return false;" />
 
         <div class="panel">
+            <p>Vælg Kategori</p>
             <asp:DropDownList ID="DropDownListGrupper" runat="server" DataSourceID="SqlDataSourceGrupper" DataTextField="Navn" DataValueField="Navn"></asp:DropDownList>
             <asp:SqlDataSource runat="server" ID="SqlDataSourceGrupper" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT [Navn] FROM [ProduktGruppe] WHERE ([Fk_ProduktKategori] = @Fk_ProduktKategori)">
                 <SelectParameters>
                     <asp:Parameter DefaultValue="1" Name="Fk_ProduktKategori" Type="Int32"></asp:Parameter>
                 </SelectParameters>
             </asp:SqlDataSource>
+            <p>Navn på Billedet</p>
             <asp:TextBox ID="TextBoxHeaderText" runat="server" Text=""></asp:TextBox>
-            Upload billede<asp:FileUpload ID="FileUpload1" runat="server" />
+            <p>Upload billed</p>
+            Upload billede<asp:FileUpload ID="FileUpload1" runat="server" /><br /><br />
+            <p>Title på info Box</p>
             <asp:TextBox ID="TextBoxHeaderInfoText" runat="server" Text=""></asp:TextBox>
+            <p>Info i infoboks</p>
             <asp:TextBox ID="TextBoxInfoText" runat="server" Text=""></asp:TextBox>
+            <p>Valg af kunde</p>
             <asp:DropDownList ID="DropDownListKunde" runat="server" DataSourceID="SqlDataSourceKunde" DataTextField="KundeNavn" DataValueField="KundeNavn">
                 <asp:ListItem Text="Opret kunde først" Value="0" />
             </asp:DropDownList>
