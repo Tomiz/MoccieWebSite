@@ -24,7 +24,7 @@
             <asp:TextBox ID="TextBoxHeaderText" runat="server" Text=""></asp:TextBox>
             
             <p>Upload billed</p>
-            Upload billede<asp:FileUpload ID="FileUploadProduktBilled" runat="server" />
+            Upload billede<asp:FileUpload ID="FileUploadProduktBilled" runat="server" /><br /><br />
             <p>Title på info Box</p>
             <asp:TextBox ID="TextBoxHeaderInfoText" runat="server" Text=""></asp:TextBox>
             <p>Info i infoboks</p>
