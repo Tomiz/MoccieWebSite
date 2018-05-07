@@ -58,7 +58,7 @@
             <asp:Label ID="Label1" runat="server" Text="Kategorier..."></asp:Label>
             <asp:Button ID="Button3" runat="server" Text="Redigere" />
             <asp:Button ID="Button4" runat="server" Text="Slet" />
-        </div>
+        </div><br />
     </div>
     <div class="footerClear" style="margin-top:477px;"></div>
 
