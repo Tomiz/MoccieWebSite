@@ -23,7 +23,10 @@
             Upload billede<asp:FileUpload ID="FileUpload1" runat="server" />
             <asp:TextBox ID="TextBoxHeaderInfoText" runat="server" Text=""></asp:TextBox>
             <asp:TextBox ID="TextBoxInfoText" runat="server" Text=""></asp:TextBox>
-            <asp:DropDownList ID="DropDownListKunde" runat="server"><asp:ListItem Text="Opret kunde først" Value="" /></asp:DropDownList>
+            <asp:DropDownList ID="DropDownListKunde" runat="server" DataSourceID="SqlDataSourceKunde" DataTextField="KundeNavn" DataValueField="KundeNavn">
+                <asp:ListItem Text="Opret kunde først" Value="0" />
+            </asp:DropDownList>
+            <asp:SqlDataSource runat="server" ID="SqlDataSourceKunde" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT [KundeNavn] FROM [Kunde]"></asp:SqlDataSource>
             <asp:Button ID="Button1" runat="server" Text="Tilføj nyt Elemet" />
         </div>
 
