@@ -46,9 +46,7 @@
             <asp:Label ID="ShowKate" runat="server" Text="Kategorier..."></asp:Label>
             <asp:Button ID="Redigerekate" runat="server" Text="Redigere" />
             <asp:Button ID="SletKate" runat="server" Text="Slet" />
-        </div>
-<<<<<<< HEAD
-    
+        </div>    
 
     <asp:Button class="accordion" runat="server" Text="Priser" OnClientClick="return false;" />
         <div class="panel">
@@ -58,8 +56,7 @@
             <asp:Button ID="Button3" runat="server" Text="Redigere" />
             <asp:Button ID="Button4" runat="server" Text="Slet" />
         </div><br />
-=======
->>>>>>> 0fe5ba77342150e3b9221448efa21a2ef844a45c
+
     </div>
     <div class="footerClear" style="margin-top: 477px;"></div>
 
