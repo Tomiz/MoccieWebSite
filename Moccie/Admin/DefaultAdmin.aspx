@@ -57,7 +57,16 @@
 
             <article class="Footer">
                 <h2>Footer information( husk "|" mellem info)</h2>
-                <asp:TextBox ID="TextBoxFootertext" runat="server"></asp:TextBox>
+                <asp:Repeater ID="RepeaterFooter" runat="server" DataSourceID="SqlDataSourceFooter">
+                    <ItemTemplate>
+                        <asp:TextBox ID="TextBoxFootertext" runat="server" Text='<%#Eval("Text") %>'></asp:TextBox>
+                    </ItemTemplate>
+                </asp:Repeater>
+                <asp:SqlDataSource runat="server" ID="SqlDataSourceFooter" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT * FROM [InfoText] WHERE ([Lokation] = @Lokation)">
+                    <SelectParameters>
+                        <asp:Parameter DefaultValue="Footer" Name="Lokation" Type="String"></asp:Parameter>
+                    </SelectParameters>
+                </asp:SqlDataSource>
                 <br />
                 <asp:Button ID="Button_Footer" runat="server" Text="Gem" OnClick="Button_Footer_Click" />
             </article>

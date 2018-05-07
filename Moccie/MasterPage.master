@@ -48,7 +48,17 @@
 
         <footer>
             <article>
-                <h2>Footer content here</h2>
+                <asp:Repeater ID="RepeaterFooter" runat="server" DataSourceID="SqlDataSourceFooter">
+                    <ItemTemplate>
+                        <h2><%#Eval("Text") %></h2>
+                    </ItemTemplate>
+                </asp:Repeater>
+                <%--<h2>Footer content here</h2>--%>
+                <asp:SqlDataSource runat="server" ID="SqlDataSourceFooter" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT * FROM [InfoText] WHERE ([Lokation] = @Lokation)">
+                    <SelectParameters>
+                        <asp:Parameter DefaultValue="Footer" Name="Lokation" Type="String"></asp:Parameter>
+                    </SelectParameters>
+                </asp:SqlDataSource>
             </article>
         </footer>
 
