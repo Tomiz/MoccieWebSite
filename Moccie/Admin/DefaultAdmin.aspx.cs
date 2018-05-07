@@ -52,8 +52,9 @@ public partial class Admin_DefaultAdmin : System.Web.UI.Page
         {
             TextBox tAboutOverskrift = (TextBox)item.FindControl("TextBox_AboutOverskrift");
             TextBox tAboutText = (TextBox)item.FindControl("TextBox_AboutText");
+            //FileUpload fAbout = (FileUpload)item.FindControl("FileUploadProilePic");
 
-            if (tAboutOverskrift != null && tAboutText != null)
+            if (tAboutOverskrift != null && tAboutText != null) //&& fAbout != null)
             {
                 SqlConnection conn = new SqlConnection();
                 conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
@@ -63,9 +64,57 @@ public partial class Admin_DefaultAdmin : System.Web.UI.Page
                 //cmd.CommandText = "INSERT INTO  [InfoText] (Overskrift, Text) VALUES (@Overskrift, @Text)";
                 cmd.CommandText = "UPDATE IndexText SET Overskrift = @Overskrift, Text = @Text";
 
+                // indsætter billederne i Databasen
+                //foreach (var billed in fAbout.PostedFiles)
+                //{
+                //    cmd.CommandText += "UPDATE IndexText SET Image = @Image"; //(url, fk_brandeovnId) VALUES ('" + billed.FileName + "', @produktId);";
+                //    //gemmer billederne i en mappe
+                //    billed.SaveAs(Server.MapPath("~/Pictures/") + billed.FileName);
+                //    cmd.Parameters.Add("@Image", SqlDbType.NVarChar).Value = fAbout.FileName;
+                //}
 
                 cmd.Parameters.Add("@Overskrift", SqlDbType.NVarChar).Value = tAboutOverskrift.Text;
                 cmd.Parameters.Add("@Text", SqlDbType.NVarChar).Value = tAboutText.Text;
+
+                conn.Open();
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+
+                Response.Redirect("../Admin/DefaultAdmin.aspx");
+            }
+        }
+    }
+
+    protected void ButtonProfilePic_Click(object sender, EventArgs e)
+    {
+        foreach (RepeaterItem item in RepeaterAdminAboutPicture.Items)
+        {
+            FileUpload fAbout = (FileUpload)item.FindControl("FileUploadProilePic");
+            //FileUpload fAbout = (FileUpload)item.FindControl("FileUploadProilePic");
+
+            if (fAbout != null)
+            {
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+
+                //cmd.CommandText = "INSERT INTO  [InfoText] (Overskrift, Text) VALUES (@Overskrift, @Text)";
+                //cmd.CommandText = "UPDATE IndexText SET Overskrift = @Overskrift, Text = @Text";
+
+                //indsætter billederne i Databasen
+                foreach (var billed in fAbout.PostedFiles)
+                {
+                    cmd.CommandText += "UPDATE IndexText SET Image = @Image"; //(url, fk_brandeovnId) VALUES ('" + billed.FileName + "', @produktId);";
+                    //gemmer billederne i en mappe
+                    billed.SaveAs(Server.MapPath("~/Pictures/Profil/") + billed.FileName);
+                    cmd.Parameters.Add("@Image", SqlDbType.NVarChar).Value = fAbout.FileName;
+                }
+
+                //cmd.Parameters.Add("@Overskrift", SqlDbType.NVarChar).Value = tAboutOverskrift.Text;
+                //cmd.Parameters.Add("@Text", SqlDbType.NVarChar).Value = tAboutText.Text;
 
                 conn.Open();
 
@@ -82,4 +131,6 @@ public partial class Admin_DefaultAdmin : System.Web.UI.Page
     {
 
     }
+
+    
 }

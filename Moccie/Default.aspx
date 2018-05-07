@@ -45,11 +45,13 @@
                     <p>
                         <%#Eval("Text") %>
                     </p>
+
+                    <img src="Pictures/Profil/<%#Eval("Image") %>" width="150" height="150" class="profilePic" />
                 </ItemTemplate>
             </asp:Repeater>
             <asp:SqlDataSource runat="server" ID="SqlDataSourceAboutMoccie" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT * FROM [IndexText]"></asp:SqlDataSource>
 
-            <img src="Pictures/profilPic.png" width="150" height="150" class="profilePic" />
+            
         </article>
     </section>
 

@@ -34,22 +34,30 @@
                         <h2>Information omkring enten dig selv eller hjemmesiden</h2>
                         <asp:TextBox ID="TextBox_AboutOverskrift" runat="server" Text='<%#Eval("Overskrift") %>'></asp:TextBox>
                         <asp:TextBox ID="TextBox_AboutText" runat="server" Text='<%#Eval("Text") %>'></asp:TextBox>
-                        <asp:FileUpload ID="FileUpload1" runat="server" />
-                        <p>
-                            <%#Eval("Image") %>
-                        </p>
-                        <img src="../Pictures/<%#Eval("Image") %>" width="75">
                     </ItemTemplate>
-
                 </asp:Repeater>
                 <asp:SqlDataSource runat="server" ID="SqlDataSourceGetFrontPageImageName" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT * FROM [IndexText]"></asp:SqlDataSource>
                 <br />
                 <asp:Button ID="Button_About" runat="server" Text="Gem" OnClick="Button_About_Click" />
+                <br />
+
+                <asp:Repeater ID="RepeaterAdminAboutPicture" runat="server" DataSourceID="SqlDataSourceProfilePic">
+                    <ItemTemplate>
+                        <asp:FileUpload ID="FileUploadProilePic" runat="server" CssClass="clearBoth Top25" />
+                        <p>
+                            <%#Eval("Image") %>
+                        </p>
+                        <img src="../Pictures/Profil/<%#Eval("Image") %>" width="75">
+                    </ItemTemplate>
+                </asp:Repeater>
+                <asp:SqlDataSource runat="server" ID="SqlDataSourceProfilePic" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT * FROM [IndexText]"></asp:SqlDataSource>
+                <br />
+                <asp:Button ID="ButtonProfilePic" runat="server" Text="Gem" CssClass="Top10"  OnClick="ButtonProfilePic_Click"/>
             </article>
 
             <article class="Footer">
                 <h2>Footer information( husk "|" mellem info)</h2>
-                <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TextBoxFootertext" runat="server"></asp:TextBox>
                 <br />
                 <asp:Button ID="Button_Footer" runat="server" Text="Gem" OnClick="Button_Footer_Click" />
             </article>
