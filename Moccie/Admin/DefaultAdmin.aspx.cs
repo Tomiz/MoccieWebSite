@@ -129,7 +129,31 @@ public partial class Admin_DefaultAdmin : System.Web.UI.Page
 
     protected void Button_Footer_Click(object sender, EventArgs e)
     {
+        foreach (RepeaterItem item in RepeaterFooter.Items)
+        {
+            TextBox tFooter = (TextBox)item.FindControl("TextBoxFootertext");
+            //FileUpload fAbout = (FileUpload)item.FindControl("FileUploadProilePic");
 
+            if (tFooter != null)
+            {
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+
+                cmd.CommandText = "UPDATE InfoText SET Text = @Text WHERE Lokation = 'Footer'";
+                
+                cmd.Parameters.Add("@Text", SqlDbType.NVarChar).Value = tFooter.Text;
+
+                conn.Open();
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+
+                Response.Redirect("../Admin/DefaultAdmin.aspx");
+            }
+        }
     }
 
     
