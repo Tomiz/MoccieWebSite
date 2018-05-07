@@ -20,14 +20,15 @@
                 </SelectParameters>
             </asp:SqlDataSource>
             <asp:TextBox ID="TextBoxHeaderText" runat="server" Text=""></asp:TextBox>
-            Upload billede<asp:FileUpload ID="FileUpload1" runat="server" />
+            Upload billede<asp:FileUpload ID="FileUploadProduktBilled" runat="server" />
             <asp:TextBox ID="TextBoxHeaderInfoText" runat="server" Text=""></asp:TextBox>
             <asp:TextBox ID="TextBoxInfoText" runat="server" Text=""></asp:TextBox>
             <asp:DropDownList ID="DropDownListKunde" runat="server" DataSourceID="SqlDataSourceKunde" DataTextField="KundeNavn" DataValueField="KundeNavn">
                 <asp:ListItem Text="Opret kunde først" Value="0" />
             </asp:DropDownList>
             <asp:SqlDataSource runat="server" ID="SqlDataSourceKunde" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT [KundeNavn] FROM [Kunde]"></asp:SqlDataSource>
-            <asp:Button ID="Button1" runat="server" Text="Tilføj nyt Elemet" />
+            <asp:Button ID="ButtonGemProdukt" runat="server" Text="Tilføj nyt Elemet" />
+            <!--OnClick="ButtonGemProdukt_Click"-->
         </div>
 
         <asp:Button class="accordion" runat="server" Text="Redigere nuværende produkter" OnClientClick="return false;" />
@@ -49,23 +50,32 @@
             <asp:Label ID="ShowKate" runat="server" Text="Kategorier..."></asp:Label>
             <asp:Button ID="Redigerekate" runat="server" Text="Redigere" />
             <asp:Button ID="SletKate" runat="server" Text="Slet" />
-        </div>    
+        </div>
 
         <asp:Button class="accordion" runat="server" Text="Kunde" OnClientClick="return false;" />
         <div class="panel">
             <asp:TextBox ID="Kundenavn" runat="server" Text="Kundenavn"></asp:TextBox>
             <asp:TextBox ID="KundeLink" runat="server" Text="Kundelink"></asp:TextBox>
-            <asp:DropDownList ID="DropDownListplatform" runat="server"><asp:ListItem Text="Platform" Value="" /></asp:DropDownList>
+            <asp:DropDownList ID="DropDownListplatform" runat="server" DataSourceID="SqlDataSourcePlaftform" DataTextField="Navn" DataValueField="Id"></asp:DropDownList>
+            <asp:SqlDataSource runat="server" ID="SqlDataSourcePlaftform" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT * FROM [Platform]"></asp:SqlDataSource>
             <asp:TextBox ID="Followers" runat="server" Text="Antal followers/subsriber"></asp:TextBox>
-            <asp:Button ID="ButtonGemKunde" runat="server" Text="Tilføj ny Kunde" /><br /><br />
-            <asp:Label ID="kunder" runat="server" Text="Kunder..."></asp:Label>
-            <asp:Button ID="ButtonRedikunde" runat="server" Text="Redigere" />
-            <asp:Button ID="ButtonSletkunde" runat="server" Text="Slet" />
+            <asp:Button ID="ButtonGemKunde" runat="server" Text="Tilføj ny Kunde" OnClick="ButtonGemKunde_Click" /><br />
+            <br />
+
+            <asp:Repeater ID="RepeaterKunder" runat="server" DataSourceID="SqlDataSourceKunder">
+                <ItemTemplate>
+                    <asp:Label ID="kunder" runat="server" Text='<%#Eval("KundeNavn") %>'></asp:Label>
+                    <asp:Button ID="ButtonRedikunde" runat="server" Text="Redigere" />
+                    <asp:Button ID="ButtonSletkunde" runat="server" Text="Slet" />
+                    <br />
+                </ItemTemplate>
+            </asp:Repeater>
+
+            <asp:SqlDataSource runat="server" ID="SqlDataSourceKunder" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT [KundeNavn] FROM [Kunde]"></asp:SqlDataSource>
         </div>
 
-    <asp:Button class="accordion" runat="server" Text="Priser" OnClientClick="return false;" />
+        <asp:Button class="accordion" runat="server" Text="Priser" OnClientClick="return false;" />
         <div class="panel">
-            
         </div>
 
     </div>
