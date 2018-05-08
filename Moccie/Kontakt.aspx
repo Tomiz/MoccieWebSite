@@ -24,7 +24,7 @@
             <p>Min mail</p>
             <h2>Moccie@moo.dk</h2>
             <br />
-<%--            <p></p>
+            <%--            <p></p>
             <h2></h2>
             <br />--%>
             <p>Du kan se mig live på</p>
@@ -32,41 +32,43 @@
             <br />
             <p>Eller følge hvad der sker på</p>
             <h2>Twitter.com/M0ccie</h2>
-            <br /><br />
+            <br />
+            <br />
             <img src="Pictures/gMVFPfsX_400x400.jpg" style="border-radius: 50%" />
 
 
         </article>
 
         <article id="KontaktForm">
-
-
             <label for="Firstn">Fornavn</label>
-            <input type="text" id="Firstn" name="firstname" placeholder="Dit Fornavn..">
+            <asp:TextBox ID="TextBoxFornavn" runat="server" placeholder="Dit Fornavn.."></asp:TextBox>
 
             <label for="Lastn">Efternavn</label>
-            <input type="text" id="Lastn" name="lastname" placeholder="Dit Efternavn..">
+            <asp:TextBox ID="TextBoxEfternavn" runat="server" placeholder="Dit Efternavn.."></asp:TextBox>
 
             <label for="Email">Email</label>
-            <input type="text" id="mail" name="Email" placeholder="Din Mail..">
+            <asp:TextBox ID="TextBoxEmail" runat="server" placeholder="Din Mail.."></asp:TextBox>
 
             <label for="Email2">Godkend Email</label>
-            <input type="text" id="mail2" name="Email2" placeholder="Godkend din Mail..">
+            <asp:TextBox ID="TextBoxEmail2" runat="server" placeholder="Godkend din Mail.."></asp:TextBox>
 
             <label for="Grund">Årsag</label>
-            <select id="Grund" name="Grund">
-                <option value="Ide">Forespørgsel</option>
-                <option value="Order">Bestilling</option>
-                <option value="question">Spørgsmål</option>
-            </select>
+            <asp:DropDownList ID="DropDownListGrund" runat="server">
+                <asp:ListItem>Forespørgsel</asp:ListItem>
+                <asp:ListItem>Bestilling</asp:ListItem>
+                <asp:ListItem>Spørgsmål</asp:ListItem>
+            </asp:DropDownList>
 
             <label for="subject">Begrundelse</label>
-            <textarea id="subject" name="subject" placeholder="Skriv lidt.." style="height: 200px"></textarea>
+            <asp:TextBox ID="TextBoxSubject" runat="server" TextMode="MultiLine" Height="200px" placeholder="Skriv lidt.."></asp:TextBox>
 
-            <input type="submit" value="Send">
+            <asp:Button ID="ButtonSendMail" runat="server" Text="Send" OnClick="ButtonSendMail_Click"/>
+            <div class="ErrorBox" style="margin-top:0px; margin-bottom:0px;">
+                <asp:Label ID="LabelMsg" runat="server" Text="" CssClass="ErrorMsg"></asp:Label>
+            </div>
         </article>
     </section>
 
-    <div class="footerClear" style="margin-bottom:50px;"></div>
+    <div class="footerClear" style="margin-bottom: 50px;"></div>
 </asp:Content>
 

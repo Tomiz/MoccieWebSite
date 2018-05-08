@@ -7,7 +7,7 @@
         <article class="FrontText">
             <div style="width: 200px; margin: 20px auto 0 auto;">
                 <label class="floatLeft">Username:</label>
-                <asp:TextBox ID="TextBoxUsername" runat="server" Width="200px"></asp:TextBox>
+                <asp:TextBox ID="TextBoxUsername" runat="server" Width="200px" placeholder="hej"></asp:TextBox>
                 <label class="floatLeft">Password:</label>
                 <asp:TextBox ID="TextBoxPassword" runat="server" Width="200px"></asp:TextBox>
                 <br />
