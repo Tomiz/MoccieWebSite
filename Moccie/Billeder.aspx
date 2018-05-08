@@ -8,113 +8,130 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-     <asp:MultiView ID="MultiView1" runat="server">
-        <asp:View ID="ViewGrupper1" runat="server" EnableViewState="true">
+    <asp:MultiView ID="MultiViewBilled" runat="server" ActiveViewIndex="0">
+
+        <!-- Produkt Gruppe -->
+        <asp:View ID="ViewGrupperGrupper" runat="server">
             <section>
                 <article class="FrontText">
                     <h2>Info om grupperne</h2>
                     <p>Da det er at jeg har flere forskellige former for tegninger har jeg valgt at lave specifikke grupper for hvert emne, så det er nemmere at over skue </p>
                 </article>
-
                 <article id="ProduktGruppe">
-                    <div id="Grupper">
-                        <asp:LinkButton ID="LinkButtonGrupper" runat="server" OnCommand="LinkButtonGrupper_Command" CssClass="ALink"> <%--CommandArgument'<%#Eval("Id") %>'--%>
-                            <img src="Pictures/Slider/pic1.jpeg" width="300px" height="150px" />
-                        </asp:LinkButton>
-                    </div>
-
-                    <div id="Grupper">
-                        <img src="Pictures/Slider/pic1.jpeg" width="300px" height="150px" />
-                    </div>
-
-                    <div id="Grupper">
-                        <img src="Pictures/Slider/pic1.jpeg" width="300px" height="150px" />
-                    </div>
-
-                    <div id="Grupper">
-                        <img src="Pictures/Slider/pic1.jpeg" width="300px" height="150px" />
-                    </div>
-
+                    <asp:Repeater ID="RepeaterTegn" runat="server" DataSourceID="SqlDataSourceGruppeKategori">
+                        <ItemTemplate>
+                            <div id="Grupper">
+                                <asp:LinkButton ID="LinkButtonGrupper" runat="server" OnCommand="LinkButtonGrupper_Command" CommandArgument='<%#Eval("Id") %>' CssClass="ALink">
+                                    <img src="Pictures/KategoriGruppe/<%#Eval("Billed") %>" width="300px" height="150px" />
+                                </asp:LinkButton>
+                            </div>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                    <asp:SqlDataSource runat="server" ID="SqlDataSourceGruppeKategori" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT * FROM [ProduktGruppe] WHERE ([Fk_ProduktKategori] = @Fk_ProduktKategori)">
+                        <SelectParameters>
+                            <asp:Parameter DefaultValue="2" Name="Fk_ProduktKategori" Type="Int32"></asp:Parameter>
+                        </SelectParameters>
+                    </asp:SqlDataSource>
                 </article>
             </section>
         </asp:View>
-        <asp:View ID="ViewBilledGruppeProd" runat="server" EnableViewState="false">
 
+        <!-- Produkt kategorier -->
+        <asp:View ID="ViewBilledGruppeProd" runat="server">
             <div id="GruppeMenu">
-                <asp:Repeater ID="Repeater_ProduktMenu" runat="server" DataSourceID="SqlDataSource3">
+                <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
                     <ItemTemplate>
-                        <a href="<%#Eval ("Fk_ProduktKategori") %>"><%#Eval ("Navn") %></a>
+                        <a href="Billeder.aspx?view=1&KategoriId=<%#Eval ("Id") %>"><%#Eval ("Navn") %></a>
                     </ItemTemplate>
                 </asp:Repeater>
-                <%--<a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-                <a href="#">Link 4</a>--%>
-                <asp:SqlDataSource runat="server" ID="SqlDataSource3" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT [Fk_ProduktKategori], [Navn] FROM [ProduktGruppe] WHERE ([Fk_ProduktKategori] = @Fk_ProduktKategori)">
+                <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT * FROM [ProduktGruppe] WHERE ([Fk_ProduktKategori] = @Fk_ProduktKategori)">
                     <SelectParameters>
                         <asp:Parameter DefaultValue="2" Name="Fk_ProduktKategori" Type="Int32"></asp:Parameter>
                     </SelectParameters>
                 </asp:SqlDataSource>
             </div>
 
-            <article id="Produktalign">
-                <div class="Produkter">
-                    <asp:LinkButton ID="LinkButtonEnkeltProdukt" runat="server" OnCommand="LinkButtonEnkeltProdukt_Command" CssClass="ALink">
-                    <div class="container">
-                        <p>Beach</p>
-                    </div>
-                    <img src="Pictures/Slider/pic1.jpeg" width="400px" height="200px" />
-                    </asp:LinkButton>
-                </div>
-                <div class="Produkter">
-                    <div class="container">
-                        <p>Beach</p>
-                    </div>
-                    <img src="Pictures/Slider/pic1.jpeg" width="400px" height="200px" />
-                </div>
-                <div class="Produkter">
-                    <div class="container">
-                        <p>Beach</p>
-                    </div>
-                    <img src="Pictures/Slider/pic1.jpeg" width="400px" height="200px" />
-                </div>
-                <div class="Produkter">
-                    <div class="container">
-                        <p>Beach</p>
-                    </div>
-                    <img src="Pictures/Slider/pic1.jpeg" width="400px" height="200px" />
-                </div>
-
-            </article>
-
-        </asp:View>
-        <asp:View ID="ViewEnkeltProdukt" runat="server" EnableViewState="false">
-            <div id="ProduktCenter">
-                <div id="ProduktMenu">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                    <a href="#">Link 4</a>
-                </div>
-                <article id="ProduktCenterImage">
-                    <img src="Pictures/die.jpg">
+            <section>
+                <article class="FrontText">
+                    <asp:Repeater ID="Repeater_kategoriOverskrivt" runat="server" DataSourceID="SqlDataSourceKategoriNavn">
+                        <ItemTemplate>
+                            <h2><%#Eval ("Navn") %></h2>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                    <asp:SqlDataSource runat="server" ID="SqlDataSourceKategoriNavn" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT * FROM [ProduktGruppe] WHERE ([Id] = @Id)">
+                        <SelectParameters>
+                            <asp:QueryStringParameter QueryStringField="KategoriId" DefaultValue="0" Name="Id" Type="Int32"></asp:QueryStringParameter>
+                        </SelectParameters>
+                    </asp:SqlDataSource>
                 </article>
 
-                <div id="ContentInfo">
-                    <h2>hrj</h2>
-                    <hr />
-                    <p><%# Eval ("ProduktInfo") %></p>
-                    <div id="KundeLink">
-                        <h2>Link</h2>
-                        <hr />
-                        <%#Eval ("Fk_Kunde") %>Link<%#Eval ("KundeLink") %>
-                    </div>
-                </div>
-            </div>
+                <article id="Produktalign" class="footerfix">
+                    <asp:Repeater ID="RepeaterProdukter" runat="server" DataSourceID="SqlDataSourceProdukter">
+                        <ItemTemplate>
+                            <div class="Produkter">
+                                <asp:LinkButton ID="LinkButtonEnkeltProdukt" runat="server" OnCommand="LinkButtonEnkeltProdukt_Command" CommandArgument='<%#Eval("GruppeId") %>' CommandName='<%#Eval("ProduktId") %>' CssClass="ALink">
+                                <div class="container">
+                                    <p><%#Eval("Navn") %></p>
+                                </div>
+                                <img src="Pictures/Produkter/<%#Eval("Billed") %>" width="400px" height="200px" />
+                                </asp:LinkButton>
+                            </div>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                    <asp:SqlDataSource runat="server" ID="SqlDataSourceProdukter" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT Billeder.Billed, Produkter.Navn, Produkter.Id AS ProduktId, ProduktGruppe.Id AS GruppeId FROM Billeder INNER JOIN Produkter ON Billeder.Id = Produkter.Fk_ProduktKategori INNER JOIN ProduktGruppe ON Produkter.Fk_ProduktGruppe = ProduktGruppe.Id WHERE (Produkter.Fk_ProduktKategori = @ProduktKategori) AND (ProduktGruppe.Id = @GruppeId)">
+                        <SelectParameters>
+                            <asp:Parameter DefaultValue="2" Name="ProduktKategori"></asp:Parameter>
+                            <asp:QueryStringParameter QueryStringField="KategoriId" DefaultValue="0" Name="GruppeId"></asp:QueryStringParameter>
+                        </SelectParameters>
+                    </asp:SqlDataSource>
+                </article>
+            </section>
+        </asp:View>
 
+        <!-- Produkt Enkelte produkt -->
+        <asp:View ID="ViewEnkeltProdukt" runat="server">
+            <div id="ProduktCenter">
+                <div id="ProduktMenu">
+                    <asp:Repeater ID="Repeater2" runat="server" DataSourceID="SqlDataSourceProduktMenu">
+                        <ItemTemplate>
+                            <a href='Billeder.aspx?view=2&KategoriId=<%#Eval("Fk_ProduktKategori") %>&ProduktId=<%#Eval("Id") %>'><%#Eval("Navn") %></a>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                    <asp:SqlDataSource runat="server" ID="SqlDataSourceProduktMenu" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT [Fk_ProduktKategori], [Fk_ProduktGruppe], [Id], [Navn] FROM [Produkter] WHERE ([Fk_ProduktGruppe] = @Fk_ProduktGruppe)">
+                        <SelectParameters>
+                            <asp:QueryStringParameter QueryStringField="KategoriId" DefaultValue="0" Name="Fk_ProduktGruppe" Type="Int32"></asp:QueryStringParameter>
+                        </SelectParameters>
+                    </asp:SqlDataSource>
+                </div>
+
+                <asp:Repeater ID="RepeaterEnkeltProdukt" runat="server" DataSourceID="SqlDataSourceEnkeltProdukt">
+                    <ItemTemplate>
+                        <article id="ProduktCenterImage">
+                            <h2><%#Eval("Navn") %></h2>
+                            <img src="Pictures/Produkter/<%#Eval("Billed") %>" width="850px" class="Top10">
+                        </article>
+
+                        <div id="ContentInfo">
+                            <h2><%#Eval("ProduktHeader") %></h2>
+                            <hr />
+                            <p><%# Eval ("ProduktInfo") %></p>
+                            <div id="KundeLink">
+                                <h2>Link</h2>
+                                <hr />
+                                Link: <a href='<%#Eval("KundeLink") %>'><%#Eval("KundeLink") %></a>
+                            </div>
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+                <asp:SqlDataSource runat="server" ID="SqlDataSourceEnkeltProdukt" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT Billeder.Billed, Produkter.Navn, Produkter.ProduktHeader, Produkter.ProduktInfo, Kunde.KundeLink, Produkter.Id FROM Billeder INNER JOIN Produkter ON Billeder.Id = Produkter.Fk_ProduktKategori INNER JOIN Kunde ON Produkter.Fk_Kunde = Kunde.Id WHERE (Produkter.Id = @Id)">
+                    <SelectParameters>
+                        <asp:QueryStringParameter QueryStringField="ProduktId" DefaultValue="0" Name="Id"></asp:QueryStringParameter>
+                    </SelectParameters>
+                </asp:SqlDataSource>
+            </div>
         </asp:View>
     </asp:MultiView>
 
-    <div class="footerClear" style="margin-bottom:210px;"></div>
+    <div class="footerClear" style="margin-bottom: 385px;"></div>
 </asp:Content>
 

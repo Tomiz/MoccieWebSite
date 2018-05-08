@@ -9,18 +9,38 @@ public partial class Billeder : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!IsPostBack)
+        #region view index
+        //laver en variable kaldet "qs", og laver en querystring kaldet "view" til url'en
+        var qs = Request.QueryString["view"];
+
+        if (qs != null)
         {
-            MultiView1.ActiveViewIndex = 0;
+            // hvis qs er det samme som 1(ViewTegnGruppeProd), viser den index 1 som er et view
+            if (qs == "1")
+            {
+                MultiViewBilled.ActiveViewIndex = 1;
+            }
         }
+
+        if (qs != null)
+        {
+            // hvis qs er det samme som 2(ViewEnkeltProdukt), viser den index 2 som er et view
+            if (qs == "2")
+            {
+                MultiViewBilled.ActiveViewIndex = 2;
+            }
+        }
+        #endregion
     }
     protected void LinkButtonGrupper_Command(object sender, CommandEventArgs e)
     {
-        MultiView1.ActiveViewIndex = 1;
+        //MultiView1.ActiveViewIndex = 1;
+        Response.Redirect("Billeder.aspx?view=1&KategoriId=" + e.CommandArgument);
     }
 
     protected void LinkButtonEnkeltProdukt_Command(object sender, CommandEventArgs e)
     {
-        MultiView1.ActiveViewIndex = 2;
+        //MultiView1.ActiveViewIndex = 2;
+        Response.Redirect("Billeder.aspx?view=2&KategoriId=" + e.CommandArgument + "&ProduktId=" + e.CommandName);
     }
 }
