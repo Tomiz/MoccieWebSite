@@ -94,7 +94,7 @@
                 <div id="ProduktMenu">
                     <asp:Repeater ID="Repeater2" runat="server" DataSourceID="SqlDataSourceProduktMenu">
                         <ItemTemplate>
-                            <a href='Billeder.aspx?view=2&KategoriId=<%#Eval("Fk_ProduktKategori") %>&ProduktId=<%#Eval("Id") %>'><%#Eval("Navn") %></a>
+                            <a href='Billeder.aspx?view=2&KategoriId=<%#Eval("Fk_ProduktGruppe") %>&ProduktId=<%#Eval("Id") %>'><%#Eval("Navn") %></a>
                         </ItemTemplate>
                     </asp:Repeater>
                     <asp:SqlDataSource runat="server" ID="SqlDataSourceProduktMenu" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT [Fk_ProduktKategori], [Fk_ProduktGruppe], [Id], [Navn] FROM [Produkter] WHERE ([Fk_ProduktGruppe] = @Fk_ProduktGruppe)">

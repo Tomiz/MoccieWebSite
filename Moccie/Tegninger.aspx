@@ -93,12 +93,12 @@
         <asp:View ID="ViewEnkeltProdukt" runat="server">
             <div id="ProduktCenter">
                 <div id="ProduktMenu">
-                    <asp:Repeater ID="Repeater2" runat="server" DataSourceID="SqlDataSourceProduktMenu">
+                    <asp:Repeater ID="RepeaterProduktMenu" runat="server" DataSourceID="SqlDataSourceProduktMenu">
                         <ItemTemplate>
-                            <a href='Tegninger.aspx?view=2&KategoriId=<%#Eval("Fk_ProduktKategori") %>&ProduktId=<%#Eval("Id") %>'><%#Eval("Navn") %></a>
+                            <a href='Tegninger.aspx?view=2&KategoriId=<%#Eval("Fk_ProduktGruppe") %>&ProduktId=<%#Eval("Id") %>'><%#Eval("Navn") %></a>
                         </ItemTemplate>
                     </asp:Repeater>
-                    <asp:SqlDataSource runat="server" ID="SqlDataSourceProduktMenu" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT [Fk_ProduktKategori], [Fk_ProduktGruppe], [Id], [Navn] FROM [Produkter] WHERE ([Fk_ProduktGruppe] = @Fk_ProduktGruppe)">
+                    <asp:SqlDataSource runat="server" ID="SqlDataSourceProduktMenu" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT distinct [Fk_ProduktKategori], [Fk_ProduktGruppe], [Id], [Navn] FROM [Produkter] WHERE ([Fk_ProduktGruppe] = @Fk_ProduktGruppe)">
                         <SelectParameters>
                             <asp:QueryStringParameter QueryStringField="KategoriId" DefaultValue="0" Name="Fk_ProduktGruppe" Type="Int32"></asp:QueryStringParameter>
                         </SelectParameters>
