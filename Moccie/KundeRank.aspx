@@ -8,13 +8,23 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <section >
+    <section>
         <article class="FrontText">
             <h2>Info omkring Ranking på min hjemmeside
             </h2>
-            <p>Rank listen er en ny ide, lavet af mine programmøre. For at giver jer et overblink over hvem der har handlet med mig førhend. Jerg har valgt at have to grupper, en til at se hvem jeg har lavet flest ting for, og den anden til at vise det kendste jeg har lavet noget for.</p>
+            <p>Rank listen er en ny ide.</p>
         </article>
-        <div id="RanklisteTopP">
+
+        <div class="Ranker">
+
+            <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSourcerank" RepeatColumns="2" RepeatDirection="Horizontal" CellPadding="10" >
+                <ItemTemplate>
+                    <p>* <%#Eval("KundeNavn") %></p>
+                </ItemTemplate>
+            </asp:DataList>
+            <asp:SqlDataSource runat="server" ID="SqlDataSourcerank" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT [KundeNavn], [HiddenId] FROM [Kunde] ORDER BY [HiddenId]"></asp:SqlDataSource>
+        </div>
+        <%--<div id="RanklisteTopP">
             <div class="RankHeader">
                 <h1>Top number of item bought</h1>
             </div>
@@ -69,7 +79,7 @@
                 </table>
                 <asp:SqlDataSource runat="server" ID="SqlDataSource2" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT Platform.Img AS Picture, Kunde.KundeNavn, Kunde.AntalFollowers AS Follow FROM Kunde INNER JOIN Platform ON Kunde.Fk_Platform = Platform.Id GROUP BY Kunde.KundeNavn, Kunde.AntalFollowers, Platform.Img ORDER BY Follow DESC"></asp:SqlDataSource>
             </div>
-        </div>
+        </div>--%>
     </section>
 </asp:Content>
 
