@@ -11,6 +11,7 @@
     <link href="../Style/Default.css" rel="stylesheet" />
     <link href="../Style/Produkter.css" rel="stylesheet" />
     <link href="../Style/Ranklist.css" rel="stylesheet" />
+    <script src="../Scripts/ckeditor/ckeditor.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>

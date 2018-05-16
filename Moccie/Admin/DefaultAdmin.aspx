@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/MasterPageAdmin.master" AutoEventWireup="true" CodeFile="DefaultAdmin.aspx.cs" Inherits="Admin_DefaultAdmin" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/MasterPageAdmin.master" AutoEventWireup="true" CodeFile="DefaultAdmin.aspx.cs" Inherits="Admin_DefaultAdmin" validateRequest="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <style type="text/css">
@@ -33,7 +33,12 @@
                     <ItemTemplate>
                         <h2>Information omkring enten dig selv eller hjemmesiden</h2>
                         <asp:TextBox ID="TextBox_AboutOverskrift" runat="server" Text='<%#Eval("Overskrift") %>'></asp:TextBox>
-                        <asp:TextBox ID="TextBox_AboutText" runat="server" Text='<%#Eval("Text") %>'></asp:TextBox>
+                        <asp:TextBox ID="TextBox_AboutText" runat="server" TextMode="MultiLine" Rows="3" Text='<%#Eval("Text") %>'></asp:TextBox>
+
+                        <script type="text/javascript">
+                            CKEDITOR.replace("ContentPlaceHolder1_RepeaterAdminAboutText_TextBox_AboutText_0");
+                        </script>
+
                     </ItemTemplate>
                 </asp:Repeater>
                 <asp:SqlDataSource runat="server" ID="SqlDataSourceGetFrontPageImageName" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT * FROM [IndexText]"></asp:SqlDataSource>
@@ -52,7 +57,7 @@
                 </asp:Repeater>
                 <asp:SqlDataSource runat="server" ID="SqlDataSourceProfilePic" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT * FROM [IndexText]"></asp:SqlDataSource>
                 <br />
-                <asp:Button ID="ButtonProfilePic" runat="server" Text="Gem" CssClass="Top10"  OnClick="ButtonProfilePic_Click"/>
+                <asp:Button ID="ButtonProfilePic" runat="server" Text="Gem" CssClass="Top10" OnClick="ButtonProfilePic_Click" />
             </article>
 
             <article class="Footer">
