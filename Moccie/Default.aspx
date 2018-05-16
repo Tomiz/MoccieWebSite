@@ -32,10 +32,10 @@
         <article class="slider">
             <asp:Repeater ID="Repeater_slider" runat="server" DataSourceID="SqlDataSourceSlider">
                 <ItemTemplate>
-                    <img src="Pictures/Slider/<%#Eval("Billed") %>" />
+                    <img src="Pictures/Produkter/<%#Eval("Billed") %>" />
                 </ItemTemplate>
             </asp:Repeater>
-            <asp:SqlDataSource runat="server" ID="SqlDataSourceSlider" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT TOP (3) Billeder.Billed, Produkter.Id, Produkter.Fk_ProduktKategori, Produkter.Fk_Billeder, Produkter.Navn FROM Produkter INNER JOIN Billeder ON Produkter.Fk_Billeder = Billeder.Id ORDER BY Produkter.Id DESC"></asp:SqlDataSource>
+            <asp:SqlDataSource runat="server" ID="SqlDataSourceSlider" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT TOP (3) Produkter.Id, Produkter.Navn, Billeder.Billed, Billeder.Fk_ProduktBilled FROM Produkter INNER JOIN Billeder ON Produkter.Id = Billeder.Fk_ProduktBilled ORDER BY Produkter.Id DESC"></asp:SqlDataSource>
         </article>
 
         <article class="About">

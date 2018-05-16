@@ -30,8 +30,6 @@ public partial class Tegninger : System.Web.UI.Page
                 MultiViewTegn.ActiveViewIndex = 2;
             }
         }
-
-
         #endregion
     }
 
@@ -39,11 +37,5 @@ public partial class Tegninger : System.Web.UI.Page
     {
         // bruger querystring til at redirect til det rigtige view (ViewTegnGruppeProd i dette tilfælde)
         Response.Redirect("Tegninger.aspx?view=1&KategoriId=" + e.CommandArgument);
-    }
-
-    protected void LinkButtonEnkeltProdukt_Command(object sender, CommandEventArgs e)
-    {
-        // bruger querystring til at redirect til det rigtige view (ViewEnkeltProdukt i dette tilfælde)
-        Response.Redirect("Tegninger.aspx?view=2&KategoriId=" + e.CommandArgument + "&ProduktId=" + e.CommandName);
     }
 }
