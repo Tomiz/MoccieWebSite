@@ -30,17 +30,19 @@ public partial class Billeder : System.Web.UI.Page
                 MultiViewBilled.ActiveViewIndex = 2;
             }
         }
+
+
         #endregion
     }
     protected void LinkButtonGrupper_Command(object sender, CommandEventArgs e)
     {
-        //MultiView1.ActiveViewIndex = 1;
+        // bruger querystring til at redirect til det rigtige view (ViewTegnGruppeProd i dette tilfælde)
         Response.Redirect("Billeder.aspx?view=1&KategoriId=" + e.CommandArgument);
     }
 
     protected void LinkButtonEnkeltProdukt_Command(object sender, CommandEventArgs e)
     {
-        //MultiView1.ActiveViewIndex = 2;
+        // bruger querystring til at redirect til det rigtige view (ViewEnkeltProdukt i dette tilfælde)
         Response.Redirect("Billeder.aspx?view=2&KategoriId=" + e.CommandArgument + "&ProduktId=" + e.CommandName);
     }
 }

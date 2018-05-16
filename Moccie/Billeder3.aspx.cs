@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Tegninger : System.Web.UI.Page
+public partial class Billeder : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -18,7 +18,7 @@ public partial class Tegninger : System.Web.UI.Page
             // hvis qs er det samme som 1(ViewTegnGruppeProd), viser den index 1 som er et view
             if (qs == "1")
             {
-                MultiViewTegn.ActiveViewIndex = 1;
+                MultiViewBilled.ActiveViewIndex = 1;
             }
         }
 
@@ -27,23 +27,20 @@ public partial class Tegninger : System.Web.UI.Page
             // hvis qs er det samme som 2(ViewEnkeltProdukt), viser den index 2 som er et view
             if (qs == "2")
             {
-                MultiViewTegn.ActiveViewIndex = 2;
+                MultiViewBilled.ActiveViewIndex = 2;
             }
         }
-
-
         #endregion
     }
-
     protected void LinkButtonGrupper_Command(object sender, CommandEventArgs e)
     {
-        // bruger querystring til at redirect til det rigtige view (ViewTegnGruppeProd i dette tilfælde)
-        Response.Redirect("Tegninger.aspx?view=1&KategoriId=" + e.CommandArgument);
+        //MultiView1.ActiveViewIndex = 1;
+        Response.Redirect("Billeder.aspx?view=1&KategoriId=" + e.CommandArgument);
     }
 
     protected void LinkButtonEnkeltProdukt_Command(object sender, CommandEventArgs e)
     {
-        // bruger querystring til at redirect til det rigtige view (ViewEnkeltProdukt i dette tilfælde)
-        Response.Redirect("Tegninger.aspx?view=2&KategoriId=" + e.CommandArgument + "&ProduktId=" + e.CommandName);
+        //MultiView1.ActiveViewIndex = 2;
+        Response.Redirect("Billeder.aspx?view=2&KategoriId=" + e.CommandArgument + "&ProduktId=" + e.CommandName);
     }
 }
