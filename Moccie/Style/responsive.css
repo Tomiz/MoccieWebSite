@@ -8,15 +8,25 @@
 }
 
 .menuitemrep {
-    padding: 8px;
+
     margin-top: 7px;
-    border-bottom: 1px solid #f1f1f1;
+
+}
+.headrep {
+    float: left;
+    width: 62%;
+    padding: 0 20px;
+    overflow: hidden;
 }
 
 .mainrep {
     float: left;
-    width: 60%;
-    padding: 0 20px;
+
+    overflow: hidden;
+}
+.mainrep2 {
+    float: left;
+    /*padding: 0 20px;*/
     overflow: hidden;
 }
 
@@ -28,21 +38,27 @@
     margin-top: 7px;
 }
 
-@media only screen and (max-width:800px) {
+@media only screen and (max-width:500px) {
     /* For tablets: */
-    .main {
-        width: 80%;
+    .headrep {
+        clear:both;
+        width:60%;
+        padding: 0 ;
+    }
+    
+    .mainrep .mainrep2 {
+        width: 60%;
         padding: 0;
     }
 
-    .right {
+    .rightrep {
         width: 100%;
     }
 }
 
 @media only screen and (max-width:500px) {
     /* For mobile phones: */
-    .menu, .main, .right {
+    .menurep, .mainrep, .mainrep2, .rightrep, .headrep {
         width: 100%;
     }
 }
