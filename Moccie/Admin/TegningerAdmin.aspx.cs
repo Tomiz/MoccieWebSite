@@ -25,7 +25,7 @@ public partial class Admin_TegningerAdmin : System.Web.UI.Page
             cmd.Connection = conn;
 
 
-            cmd.CommandText += "INSERT INTO  Produkter (Fk_ProduktKategori, Fk_ProduktGruppe, Navn, ProduktHeader, ProduktInfo, Fk_Kunde) VALUES (1, @Fk_ProduktGrupper, @Navn, @ProduktHeader, @ProduktInfo, @Fk_Kunde);";
+            cmd.CommandText += "INSERT INTO  Produkter (Fk_ProduktKategori, Fk_ProduktGruppe, Navn, ProduktHeader, ProduktInfo, Fk_Kunde, Dato) VALUES (1, @Fk_ProduktGrupper, @Navn, @ProduktHeader, @ProduktInfo, @Fk_Kunde, @Dato);";
 
             //finder automatisk ID'et på produktet som den skal bruge
             cmd.CommandText += " Declare @produktId Int ; SET @produktId = @@Identity ;";
@@ -54,7 +54,7 @@ public partial class Admin_TegningerAdmin : System.Web.UI.Page
             cmd.Parameters.Add("@ProduktHeader", SqlDbType.NVarChar).Value = TextBoxHeaderInfoText.Text;
             cmd.Parameters.Add("@ProduktInfo", SqlDbType.NVarChar).Value = TextBoxInfoText.Text;
             cmd.Parameters.Add("@Fk_Kunde", SqlDbType.Int).Value = DropDownListKunde.SelectedValue;
-            //cmd.Parameters.Add("@Fk_Billeder", SqlDbType.Int).Value = UniqueID;
+            cmd.Parameters.Add("@Dato", SqlDbType.DateTime).Value = TextBoxDate.Text;
 
             conn.Open();
 
