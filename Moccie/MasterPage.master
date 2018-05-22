@@ -10,7 +10,9 @@
     <link href="Style/Default.css" rel="stylesheet" />
     <link href="Style/Produkter.css" rel="stylesheet" />
     <link href="Style/Ranklist.css" rel="stylesheet" />
+    <link href="Style/responsive.css" rel="stylesheet" />
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="Style/Slider.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link href="Style/jquery.bxslider.css" rel="stylesheet" />
