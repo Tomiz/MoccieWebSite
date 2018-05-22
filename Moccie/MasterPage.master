@@ -17,6 +17,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link href="Style/jquery.bxslider.css" rel="stylesheet" />
     <script src="Js/jquery.bxslider.js"></script>
+    <link href="Js/NinjaSlider/ninja-slider.css" rel="stylesheet" />
+    <script src="Js/NinjaSlider/ninja-slider.js"></script>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
