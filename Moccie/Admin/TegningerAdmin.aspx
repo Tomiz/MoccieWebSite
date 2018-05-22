@@ -21,6 +21,8 @@
                     <asp:Parameter DefaultValue="1" Name="Fk_ProduktKategori" Type="Int32"></asp:Parameter>
                 </SelectParameters>
             </asp:SqlDataSource>
+            <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+            <br />
             <p>Navn på Billedet</p>
             <asp:TextBox ID="TextBoxHeaderText" runat="server" Text="" placeholder="Produkt Navn"></asp:TextBox>
 
