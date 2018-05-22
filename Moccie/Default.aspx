@@ -5,7 +5,7 @@
         #CurrentHome {
             background-color: #555;
         }
-    </style>    
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <section class="footerfix">
@@ -24,7 +24,21 @@
             </asp:SqlDataSource>
         </article>
 
-        <script>
+        <article class="slider_box">
+            <div id="ninja-slider">
+                <div class="inner">
+                    <ul>
+                        <asp:Repeater ID="Repeater_slider" runat="server" DataSourceID="SqlDataSourceSlider">
+                            <ItemTemplate>
+                                <li><a class="ns-img" href="Pictures/Produkter/<%#Eval("Billed") %>"></a></li>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                        <asp:SqlDataSource runat="server" ID="SqlDataSourceSlider" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT TOP (3) Produkter.Id, Produkter.Navn, Billeder.Billed, Billeder.Fk_ProduktBilled FROM Produkter INNER JOIN Billeder ON Produkter.Id = Billeder.Fk_ProduktBilled ORDER BY Produkter.Id DESC"></asp:SqlDataSource>
+                    </ul>
+                </div>
+            </div>
+        </article>
+        <%--<script>
             $(document).ready(function () {
                 $('.slider').bxSlider();
             });
@@ -36,7 +50,7 @@
                 </ItemTemplate>
             </asp:Repeater>
             <asp:SqlDataSource runat="server" ID="SqlDataSourceSlider" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT TOP (3) Produkter.Id, Produkter.Navn, Billeder.Billed, Billeder.Fk_ProduktBilled FROM Produkter INNER JOIN Billeder ON Produkter.Id = Billeder.Fk_ProduktBilled ORDER BY Produkter.Id DESC"></asp:SqlDataSource>
-        </article>
+        </article>--%>
 
         <article class="About">
             <asp:Repeater ID="Repeater_AboutSite" runat="server" DataSourceID="SqlDataSourceAboutMoccie">
@@ -50,11 +64,9 @@
                 </ItemTemplate>
             </asp:Repeater>
             <asp:SqlDataSource runat="server" ID="SqlDataSourceAboutMoccie" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT * FROM [IndexText]"></asp:SqlDataSource>
-
-            
         </article>
     </section>
 
-
+    <%--<div class="footerClear" style="margin-bottom: 200px;"></div>--%>
 </asp:Content>
 
