@@ -8,7 +8,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <section>
+    <section style="width:1200px; margin:auto;">
         <article class="FrontText">
             <h2>Kontakt</h2>
             <p>Da du skal have muligheden for at enten kontakte mig eller bestille hos mig er det muligt at skrive til mig via min kontakt side.</p>
