@@ -55,10 +55,12 @@
             <div>
                 <asp:Repeater ID="RepeaterRedigerProdukter" runat="server" DataSourceID="SqlDataSourceRedProdukt" OnItemCommand="RepeaterRedigerProdukter_ItemCommand">
                     <ItemTemplate>
+                        <span style="margin-left:5px; margin-right:40px;">Kategori. </span><span style="margin-right:165px;"> Navn på billedet.</span><span style="margin-right:55px;"> Kunde.</span> <span>Overskift på tekst.</span><br />
                         <asp:DropDownList ID="DropDownListProduktKategorier" runat="server" DataTextField="Navn" DataValueField="ProduktGruppeId" DataSourceID="SqlDataSourceProduktkategoriDropdown" SelectedValue='<%# Eval("GruppeId") %>' Width="100px"></asp:DropDownList>
                         <asp:TextBox ID="TextBoxProduktNavn" runat="server" Text='<%#Eval("Navn") %>' Width="275"></asp:TextBox>
                         <asp:DropDownList ID="DropDownListProduktEjer" runat="server" DataSourceID="SqlDataSourceProduktKunder" DataTextField="KundeNavn" DataValueField="Id" Width="100px" SelectedValue='<%# Eval("KundeId") %>'></asp:DropDownList>
                         <asp:TextBox ID="TextBoxProduktheader" runat="server" Text='<%#Eval("ProduktHeader") %>' Width="275"></asp:TextBox>
+                        <span style="margin-left:5px;">Information omkring billedet.</span><br />
                         <asp:TextBox ID="TextBoxProduktInfo" runat="server" Text='<%#Eval("ProduktInfo") %>' TextMode="MultiLine" Height="100"></asp:TextBox>
 
                         <asp:Button ID="RedigerProd" runat="server" Text="Rediger" CommandArgument='<%#Eval("ProduktId") %>' CommandName="RedigerProdukt" />
@@ -100,7 +102,7 @@
             <asp:TextBox ID="KundeLink" runat="server" Text="" placeholder="Kunde Link"></asp:TextBox>
             <asp:DropDownList ID="DropDownListplatform" runat="server" DataSourceID="SqlDataSourcePlaftform" DataTextField="Navn" DataValueField="Id"></asp:DropDownList>
             <asp:SqlDataSource runat="server" ID="SqlDataSourcePlaftform" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT * FROM [Platform]"></asp:SqlDataSource>
-            <asp:TextBox ID="Followers" runat="server" Text="" placeHolder="Antal followers/subsriber"></asp:TextBox>
+            <%--<asp:TextBox ID="Followers" runat="server" Text="" placeHolder="Antal followers/subsriber"></asp:TextBox>--%>
             <asp:Button ID="ButtonGemKunde" runat="server" Text="Tilføj ny Kunde" OnClick="ButtonGemKunde_Click" /><br />
             <br />
 
@@ -119,6 +121,7 @@
         <!-- Priser -->
         <asp:Button class="accordion" runat="server" Text="Priser" OnClientClick="return false;" />
         <div class="panel">
+            
         </div>
 
     </div>

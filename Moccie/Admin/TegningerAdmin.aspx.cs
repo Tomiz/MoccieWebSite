@@ -87,12 +87,12 @@ public partial class Admin_TegningerAdmin : System.Web.UI.Page
         cmd.Connection = conn;
 
 
-        cmd.CommandText = "INSERT INTO Kunde (KundeNavn, KundeLink, Fk_Platform, AntalFollowers) VALUES (@KundeNavn, @KundeLink, @Fk_Platform, @AntalFollowers)";
+        cmd.CommandText = "INSERT INTO Kunde (KundeNavn, KundeLink, Fk_Platform) VALUES (@KundeNavn, @KundeLink, @Fk_Platform)";/*, AntalFollowers & , @AntalFollowers*/
 
         cmd.Parameters.Add("@KundeNavn", SqlDbType.NVarChar).Value = Kundenavn.Text;
         cmd.Parameters.Add("@KundeLink", SqlDbType.NVarChar).Value = KundeLink.Text;
         cmd.Parameters.Add("@Fk_Platform", SqlDbType.Int).Value = DropDownListplatform.SelectedValue;
-        cmd.Parameters.Add("@AntalFollowers", SqlDbType.Int).Value = Followers.Text;
+        //cmd.Parameters.Add("@AntalFollowers", SqlDbType.Int).Value = Followers.Text;
 
         conn.Open();
 
@@ -103,7 +103,7 @@ public partial class Admin_TegningerAdmin : System.Web.UI.Page
         //tømmer textboxes
         Kundenavn.Text = "";
         KundeLink.Text = "";
-        Followers.Text = "";
+        //Followers.Text = "";
         Page.DataBind();
 
     }
