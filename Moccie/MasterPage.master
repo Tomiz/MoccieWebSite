@@ -23,7 +23,7 @@
 <body>
     <form id="form1" runat="server">
         <header>
-            <img src="Pictures/banner.png" width="100%" />
+            <a href="Default.aspx"><img src="Pictures/banner.png" width="100%" /></a>
         </header>
         <nav>
             <ul class="topnav">
