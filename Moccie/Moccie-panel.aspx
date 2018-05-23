@@ -14,7 +14,7 @@
                 <asp:Button ID="ButtonLogin" runat="server" Text="Login" OnClick="ButtonLogin_Click" CssClass="floatLeft" />
             </div>
 
-            <div class="ErrorBox">
+            <div class="ErrorBox" style="margin-top:100px;">
                 <asp:Label ID="LabelMsg" runat="server" Text="" CssClass="ErrorMsg"></asp:Label>
             </div>
         </article>

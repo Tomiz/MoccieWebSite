@@ -81,11 +81,13 @@ input[type=submit]:hover {
     font-size: 20px;
 }
 .ErrorBox{
-    margin:75px auto;
+    margin:auto;
     clear:both;
     padding:20px;
-    width:400px;
+    /*width:400px;*/
     height:100%;
+    margin-bottom: 50px;
+    
 }
 .width100{
     width:100%;

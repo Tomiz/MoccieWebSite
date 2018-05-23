@@ -18,7 +18,7 @@
                     <p>Da det er at jeg har flere forskellige former for tegninger har jeg valgt at lave specifikke grupper for hvert emne, så det er nemmere at over skue </p>
                 </article>
                 <article id="ProduktGruppe">
-                    
+
                     <asp:Repeater ID="RepeaterTegn" runat="server" DataSourceID="SqlDataSourceGruppeKategori">
                         <ItemTemplate>
                             <div class="mainrep">
@@ -35,7 +35,7 @@
                             <asp:Parameter DefaultValue="1" Name="Fk_ProduktKategori" Type="Int32"></asp:Parameter>
                         </SelectParameters>
                     </asp:SqlDataSource>
-                        
+
                 </article>
             </section>
 
@@ -45,33 +45,34 @@
         <!-- Produkt kategorier -->
         <asp:View ID="ViewTegnGruppeProd" runat="server">
             <div class="menurep">
-            <div id="GruppeMenu">
-                <a href="Tegninger.aspx?view=0">Tilbage</a>
-                <div class="menuitemrep">
-                    <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
-                        <ItemTemplate>
-                            <a href="Tegninger.aspx?view=1&KategoriId=<%#Eval ("Id") %>"><%#Eval ("Navn") %></a>
-                        </ItemTemplate>
-                    </asp:Repeater>
+                <div id="GruppeMenu">
+                    <a href="Tegninger.aspx?view=0">Tilbage</a>
+                    <div class="menuitemrep">
+                        <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
+                            <ItemTemplate>
+                                <a href="Tegninger.aspx?view=1&KategoriId=<%#Eval ("Id") %>"><%#Eval ("Navn") %></a>
+                            </ItemTemplate>
+                        </asp:Repeater>
+
+                        <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT Distinct * FROM [ProduktGruppe] WHERE ([Fk_ProduktKategori] = @Fk_ProduktKategori)">
+                            <SelectParameters>
+                                <asp:Parameter DefaultValue="1" Name="Fk_ProduktKategori" Type="Int32"></asp:Parameter>
+                            </SelectParameters>
+                        </asp:SqlDataSource>
+                    </div>
                 </div>
-                <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT Distinct * FROM [ProduktGruppe] WHERE ([Fk_ProduktKategori] = @Fk_ProduktKategori)">
-                    <SelectParameters>
-                        <asp:Parameter DefaultValue="1" Name="Fk_ProduktKategori" Type="Int32"></asp:Parameter>
-                    </SelectParameters>
-                </asp:SqlDataSource>
             </div>
-                </div>
 
             <section>
                 <article class="FrontText">
-                    
-                        <asp:Repeater ID="Repeater_kategoriOverskrivt" runat="server" DataSourceID="SqlDataSourceKategoriNavn">
-                            <ItemTemplate>
-                                <div class="headrep2">
+
+                    <asp:Repeater ID="Repeater_kategoriOverskrivt" runat="server" DataSourceID="SqlDataSourceKategoriNavn">
+                        <ItemTemplate>
+                            <div class="headrep2">
                                 <h2><%#Eval ("Navn") %></h2>
-                                </div>
-                            </ItemTemplate>
-                        </asp:Repeater>
+                            </div>
+                        </ItemTemplate>
+                    </asp:Repeater>
 
                     <asp:SqlDataSource runat="server" ID="SqlDataSourceKategoriNavn" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT * FROM [ProduktGruppe] WHERE ([Id] = @Id)">
                         <SelectParameters>
@@ -123,10 +124,10 @@
 
                     <asp:Repeater ID="RepeaterProduktMenu" runat="server" DataSourceID="SqlDataSourceProduktMenu">
                         <ItemTemplate>
-                            <a href='Tegninger.aspx?view=2&KategoriId=<%#Eval("Fk_ProduktGruppe") %>&ProduktId=<%#Eval("Id") %>&KundeId=<%#Eval("Fk_Kunde") %>'><%#Eval("Navn") %></a>
+                            <a title="Dette er produkter lavet til <%#Eval("KundeNavn") %>" href='Tegninger.aspx?view=2&KategoriId=<%#Eval("Fk_ProduktGruppe") %>&ProduktId=<%#Eval("Id") %>&KundeId=<%#Eval("Fk_Kunde") %>'><%#Eval("Navn") %></a>
                         </ItemTemplate>
                     </asp:Repeater>
-                    <asp:SqlDataSource runat="server" ID="SqlDataSourceProduktMenu" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT DISTINCT Fk_ProduktKategori, Fk_ProduktGruppe, Id, Navn, Fk_Kunde FROM Produkter WHERE (Fk_ProduktGruppe = @Fk_ProduktGruppe) AND (Fk_Kunde = @KundeId)">
+                    <asp:SqlDataSource runat="server" ID="SqlDataSourceProduktMenu" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT DISTINCT Produkter.Fk_ProduktKategori, Produkter.Fk_ProduktGruppe, Produkter.Id, Produkter.Navn, Produkter.Fk_Kunde, Kunde.KundeNavn FROM Produkter INNER JOIN Kunde ON Produkter.Fk_Kunde = Kunde.Id WHERE (Produkter.Fk_ProduktGruppe = @Fk_ProduktGruppe) AND (Produkter.Fk_Kunde = @KundeId)">
                         <SelectParameters>
                             <asp:QueryStringParameter QueryStringField="KategoriId" DefaultValue="0" Name="Fk_ProduktGruppe" Type="Int32"></asp:QueryStringParameter>
                             <asp:QueryStringParameter QueryStringField="KundeId" DefaultValue="0" Name="KundeId"></asp:QueryStringParameter>
@@ -138,7 +139,7 @@
                     <ItemTemplate>
                         <article id="ProduktCenterImage" class="mainrep">
                             <h2><%#Eval("Navn") %></h2>
-                            <img src="Pictures/Produkter/<%#Eval("Billed") %>" Id="produktImage"  class="Top10">
+                            <img src="Pictures/Produkter/<%#Eval("Billed") %>" id="produktImage" class="Top10">
                         </article>
 
                         <div id="ContentInfo" class="rightrep">
@@ -148,7 +149,7 @@
                             <div id="KundeLink">
                                 <h2>Link</h2>
                                 <hr />
-                                <p>Link: <a href='<%#Eval("KundeLink") %>'><%#Eval("KundeLink") %></a></p>
+                                <p>Link: <a href='http://www.<%#Eval("KundeLink") %>'><%#Eval("KundeLink") %></a></p>
                             </div>
                         </div>
                     </ItemTemplate>
@@ -164,7 +165,7 @@
         </asp:View>
     </asp:MultiView>
 
-    
+
 </asp:Content>
 
 

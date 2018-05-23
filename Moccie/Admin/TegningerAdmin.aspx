@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/MasterPageAdmin.master" AutoEventWireup="true" CodeFile="TegningerAdmin.aspx.cs" Inherits="Admin_TegningerAdmin" validateRequest="false" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/MasterPageAdmin.master" AutoEventWireup="true" CodeFile="TegningerAdmin.aspx.cs" Inherits="Admin_TegningerAdmin" ValidateRequest="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <style type="text/css">
@@ -10,6 +10,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
     <div class="tegnogbilled">
+        <div class="ErrorBox" style="margin-left:80px;">
+            <asp:Label ID="Label_besked" runat="server" Text=""  CssClass="ErrorMsg"></asp:Label>
+        </div>
+
         <asp:Button class="accordion" runat="server" Text="Tilføj nyt Produkt" OnClientClick="return false;" />
 
         <!-- Tilføj nyt Produkt -->
@@ -23,8 +27,8 @@
             </asp:SqlDataSource>
 
             <p>Dato</p>
-            <asp:TextBox ID="TextBoxDate" runat="server" TextMode="Date" CssClass="textbox" Width="165px" ></asp:TextBox>
-            
+            <asp:TextBox ID="TextBoxDate" runat="server" TextMode="Date" CssClass="textbox" Width="165px"></asp:TextBox>
+
             <p>Navn på Billedet</p>
             <asp:TextBox ID="TextBoxHeaderText" runat="server" Text="" placeholder="Produkt Navn"></asp:TextBox>
 
@@ -55,12 +59,12 @@
             <div>
                 <asp:Repeater ID="RepeaterRedigerProdukter" runat="server" DataSourceID="SqlDataSourceRedProdukt" OnItemCommand="RepeaterRedigerProdukter_ItemCommand">
                     <ItemTemplate>
-                        <span style="margin-left:5px; margin-right:40px;">Kategori. </span><span style="margin-right:165px;"> Navn på billedet.</span><span style="margin-right:55px;"> Kunde.</span> <span>Overskift på tekst.</span><br />
+                        <span style="margin-left: 5px; margin-right: 40px;">Kategori. </span><span style="margin-right: 165px;">Navn på billedet.</span><span style="margin-right: 55px;"> Kunde.</span> <span>Overskift på tekst.</span><br />
                         <asp:DropDownList ID="DropDownListProduktKategorier" runat="server" DataTextField="Navn" DataValueField="ProduktGruppeId" DataSourceID="SqlDataSourceProduktkategoriDropdown" SelectedValue='<%# Eval("GruppeId") %>' Width="100px"></asp:DropDownList>
                         <asp:TextBox ID="TextBoxProduktNavn" runat="server" Text='<%#Eval("Navn") %>' Width="275"></asp:TextBox>
                         <asp:DropDownList ID="DropDownListProduktEjer" runat="server" DataSourceID="SqlDataSourceProduktKunder" DataTextField="KundeNavn" DataValueField="Id" Width="100px" SelectedValue='<%# Eval("KundeId") %>'></asp:DropDownList>
                         <asp:TextBox ID="TextBoxProduktheader" runat="server" Text='<%#Eval("ProduktHeader") %>' Width="275"></asp:TextBox>
-                        <span style="margin-left:5px;">Information omkring billedet.</span><br />
+                        <span style="margin-left: 5px;">Information omkring billedet.</span><br />
                         <asp:TextBox ID="TextBoxProduktInfo" runat="server" Text='<%#Eval("ProduktInfo") %>' TextMode="MultiLine" Height="100"></asp:TextBox>
 
                         <asp:Button ID="RedigerProd" runat="server" Text="Rediger" CommandArgument='<%#Eval("ProduktId") %>' CommandName="RedigerProdukt" />
@@ -79,19 +83,25 @@
         <!-- Tilføj/Slet kategorier -->
         <asp:Button class="accordion" runat="server" Text="Tilføj/Slet kategorier" OnClientClick="return false;" />
         <div class="panel">
-            <asp:TextBox ID="NyKate" runat="server" Text="" Placeholder="Tilføj Ny Kategori"></asp:TextBox><br />
-            <asp:FileUpload ID="FileUploadkategori" runat="server" CssClass="clearBoth width100" />
-            <asp:Button ID="GemKate" runat="server" Text="Tilføj ny Kategori" CssClass="clearBoth Top10" /><br />
+            <asp:TextBox ID="NyKate" runat="server" Text="" Placeholder="Tilføj Ny Kategori" Width="50%"></asp:TextBox>
+            <asp:DropDownList ID="DropDownListProduktKategori" runat="server" DataSourceID="SqlDataSourceKategoriProdukt" DataTextField="Navn" DataValueField="Id" Width="45%"></asp:DropDownList>
             <br />
-            <asp:Repeater ID="Repeaterkategorier" runat="server" DataSourceID="SqlDataSourceKategorier">
+            <asp:FileUpload ID="FileUploadkategori" runat="server" CssClass="clearBoth width100" />
+            <asp:Button ID="GemKate" runat="server" Text="Tilføj ny Kategori" CssClass="clearBoth Top10" OnClick="GemKate_Click" /><br />
+            <br />
+            <asp:Repeater ID="Repeaterkategorier" runat="server" DataSourceID="SqlDataSourceKategorier" OnItemCommand="Repeaterkategorier_ItemCommand">
                 <ItemTemplate>
                     <asp:TextBox ID="TextBoxShowKate" runat="server" Text='<%#Eval("Navn") %>' Width="200"></asp:TextBox>
+                    <asp:FileUpload ID="FileUploadProilePic" runat="server" CssClass="clearBoth Top25" />
+                    <img src="../Pictures/KategoriGruppe/<%#Eval("Billed") %>" width="75">
                     <asp:Button ID="Redigerekate" runat="server" Text="Redigere" />
-                    <asp:Button ID="SletKate" runat="server" Text="Slet" />
+                    <asp:Button ID="SletKate" runat="server" Text="Slet" CommandArgument='<%#Eval("Id") %>' CommandName="SletKate" />
+                    <hr />
                     <br />
                 </ItemTemplate>
             </asp:Repeater>
-            <asp:SqlDataSource runat="server" ID="SqlDataSourceKategorier" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT [Navn] FROM [ProduktGruppe]"></asp:SqlDataSource>
+            <asp:SqlDataSource runat="server" ID="SqlDataSourceKategoriProdukt" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT * FROM [ProduktKategori]"></asp:SqlDataSource>
+            <asp:SqlDataSource runat="server" ID="SqlDataSourceKategorier" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT [Navn], [Billed], [Id] FROM [ProduktGruppe]"></asp:SqlDataSource>
 
         </div>
 
@@ -121,8 +131,9 @@
         <!-- Priser -->
         <asp:Button class="accordion" runat="server" Text="Priser" OnClientClick="return false;" />
         <div class="panel">
-            
         </div>
+
+
 
     </div>
     <div class="footerClear" style="margin-top: 477px;"></div>
