@@ -8,8 +8,20 @@
 }
 
 #ProduktGruppe {
-    width: 52%;
+    width: 100%; /*52%*/
     margin: 50px auto;
+    clear:both;
+    margin-left:470px;
+}
+@media only screen and (max-width:1470px) {
+    #ProduktGruppe {
+        margin-left: 200px;
+    }
+}
+@media only screen and (max-width:1200px) {
+    #ProduktGruppe {
+        margin-left: 50px;
+    }
 }
 
 #Grupper {
