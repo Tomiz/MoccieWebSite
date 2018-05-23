@@ -25,13 +25,7 @@
                 <li class="right"><asp:Button ID="ButtonLogout" runat="server" Text="Log ud" CssClass="LogoutButton" OnClick="ButtonLogout_Click"/></li>
                 <li id="CurrentKont" class="right"><a href="KontaktAdmin.aspx">Kontakt</a></li>
                 <li id="CurrentBilled" class="right"><a href="BillederAdmin.aspx">Billeder</a></li>
-                <li id="CurrentTegn" class="dropdown right">
-                    <a href="TegningerAdmin.aspx" class="dropbtn">Tegninger</a>
-                    <div class="dropdown-content">
-                        <a href="TegningerAdmin.aspx">Tegninger</a>
-                        <a href="#">Priser</a>
-                    </div>
-                </li>
+                <li id="CurrentTegn" class="right"><a href="TegningerAdmin.aspx">Tegninger</a></li>
                 <li id="CurrentHome" class="right"><a href="DefaultAdmin.aspx">Hjem</a></li>
             </ul>
         </nav>

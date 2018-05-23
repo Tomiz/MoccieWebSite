@@ -115,8 +115,8 @@ li a:hover, .dropdown:hover .dropbtn {
 }
 
 section {
-    width: 1200px;
-    margin: auto;
+    /*width: 1200px;
+    margin: auto;*/
     /*float: left;*/
     height: 100%;
     /*background-color: #879;*/
@@ -135,7 +135,7 @@ section article.FrontText {
 section article.FrontText p {
     /*background-color:red;*/
     margin: auto;
-    width: 600px;
+    width: 35%;
 }
 
 /* Content End */

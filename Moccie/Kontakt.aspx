@@ -11,7 +11,8 @@
     <section>
         <article class="FrontText">
             <h2>Kontakt</h2>
-            <p>Da det skal være muliget at enten kontakte mig eller bestille hos mig er der oprettet en seperat side for dette</p>
+            <p>Da du skal have muligheden for at enten kontakte mig eller bestille hos mig er det muligt at skrive til mig via min kontakt side.</p>
+            <br />
         </article>
 
 
@@ -28,10 +29,13 @@
             <h2></h2>
             <br />--%>
             <p>Du kan se mig live på</p>
-            <h2>Twitch.tv/Moccie</h2>
+            <h2><asp:HyperLink ID="Hyper1" runat="server" NavigateUrl="http://www.Twitch.tv/Moccie">Twitch.tv/Moccie</</asp:HyperLink></h2>
             <br />
             <p>Eller følge hvad der sker på</p>
-            <h2>Twitter.com/M0ccie</h2>
+            <h2><asp:HyperLink ID="Hyper2" runat="server" NavigateUrl="http://www.Twitter.com/M0ccie">Twitter.com/M0ccie</asp:HyperLink></h2>
+            <br />
+            <p>Du kan også se mine tegninger på min Facebook side</p>
+            <h2><asp:HyperLink ID="Hyper3" runat="server" NavigateUrl="https://www.facebook.com/MoccieMoo/">Facebook.com/M0ccieMoo</asp:HyperLink></h2>
             <br />
             <br />
             <img src="Pictures/gMVFPfsX_400x400.jpg" style="border-radius: 50%" />

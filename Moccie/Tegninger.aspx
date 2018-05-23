@@ -13,17 +13,20 @@
         <!-- Produkt Gruppe -->
         <asp:View ID="ViewGrupperGrupper" runat="server" EnableViewState="true">
             <section>
-                <article class="FrontText">
+                <article class="FrontText mainrep">
                     <h2>Info om grupperne</h2>
                     <p>Da det er at jeg har flere forskellige former for tegninger har jeg valgt at lave specifikke grupper for hvert emne, så det er nemmere at over skue </p>
                 </article>
                 <article id="ProduktGruppe">
+                    
                     <asp:Repeater ID="RepeaterTegn" runat="server" DataSourceID="SqlDataSourceGruppeKategori">
                         <ItemTemplate>
-                            <div id="Grupper">
-                                <asp:LinkButton ID="LinkButtonGrupper" runat="server" OnCommand="LinkButtonGrupper_Command" CommandArgument='<%#Eval("Id") %>' CssClass="ALink">
+                            <div class="mainrep">
+                                <div id="Grupper">
+                                    <asp:LinkButton ID="LinkButtonGrupper" runat="server" OnCommand="LinkButtonGrupper_Command" CommandArgument='<%#Eval("Id") %>' CssClass="ALink">
                                     <img src="Pictures/KategoriGruppe/<%#Eval("Billed") %>" width="300px" height="150px" />
-                                </asp:LinkButton>
+                                    </asp:LinkButton>
+                                </div>
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
@@ -32,35 +35,42 @@
                             <asp:Parameter DefaultValue="1" Name="Fk_ProduktKategori" Type="Int32"></asp:Parameter>
                         </SelectParameters>
                     </asp:SqlDataSource>
+                        
                 </article>
             </section>
         </asp:View>
 
         <!-- Produkt kategorier -->
         <asp:View ID="ViewTegnGruppeProd" runat="server">
-
+            <div class="menurep">
             <div id="GruppeMenu">
                 <a href="Tegninger.aspx?view=0">Tilbage</a>
-
-                <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
-                    <ItemTemplate>
-                        <a href="Tegninger.aspx?view=1&KategoriId=<%#Eval ("Id") %>"><%#Eval ("Navn") %></a>
-                    </ItemTemplate>
-                </asp:Repeater>
+                <div class="menuitemrep">
+                    <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
+                        <ItemTemplate>
+                            <a href="Tegninger.aspx?view=1&KategoriId=<%#Eval ("Id") %>"><%#Eval ("Navn") %></a>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </div>
                 <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT Distinct * FROM [ProduktGruppe] WHERE ([Fk_ProduktKategori] = @Fk_ProduktKategori)">
                     <SelectParameters>
                         <asp:Parameter DefaultValue="1" Name="Fk_ProduktKategori" Type="Int32"></asp:Parameter>
                     </SelectParameters>
                 </asp:SqlDataSource>
             </div>
+                </div>
 
             <section>
                 <article class="FrontText">
-                    <asp:Repeater ID="Repeater_kategoriOverskrivt" runat="server" DataSourceID="SqlDataSourceKategoriNavn">
-                        <ItemTemplate>
-                            <h2><%#Eval ("Navn") %></h2>
-                        </ItemTemplate>
-                    </asp:Repeater>
+                    
+                        <asp:Repeater ID="Repeater_kategoriOverskrivt" runat="server" DataSourceID="SqlDataSourceKategoriNavn">
+                            <ItemTemplate>
+                                <div class="headrep">
+                                <h2><%#Eval ("Navn") %></h2>
+                                </div>
+                            </ItemTemplate>
+                        </asp:Repeater>
+
                     <asp:SqlDataSource runat="server" ID="SqlDataSourceKategoriNavn" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT * FROM [ProduktGruppe] WHERE ([Id] = @Id)">
                         <SelectParameters>
                             <asp:QueryStringParameter QueryStringField="KategoriId" DefaultValue="0" Name="Id" Type="Int32"></asp:QueryStringParameter>
@@ -71,7 +81,7 @@
                 <article id="Produktalign" class="footerfix">
                     <asp:Repeater ID="RepeaterProdukter" runat="server" DataSourceID="SqlDataSourceProdukter">
                         <ItemTemplate>
-                            <div class="Produkter">
+                            <div class="Produkter mainrep2">
                                 <%--<asp:LinkButton ID="LinkButtonEnkeltProdukt" runat="server" OnCommand="LinkButtonEnkeltProdukt_Command" CommandArgument='<%#Eval("GruppeId") %>' CommandName='<%#Eval("ProduktId") %>' CssClass="ALink">--%>
                                 <a href="Tegninger.aspx?view=2&KategoriId=<%#Eval("GruppeId") %>&ProduktId=<%#Eval("ProduktId") %>&KundeId=<%#Eval("Fk_Kunde") %>">
                                     <div class="container">
@@ -107,7 +117,7 @@
                             <asp:QueryStringParameter QueryStringField="KategoriId" DefaultValue="0" Name="Fk_ProduktGruppe2" Type="Int32"></asp:QueryStringParameter>
                         </SelectParameters>
                     </asp:SqlDataSource>
-                    
+
                     <asp:Repeater ID="RepeaterProduktMenu" runat="server" DataSourceID="SqlDataSourceProduktMenu">
                         <ItemTemplate>
                             <a href='Tegninger.aspx?view=2&KategoriId=<%#Eval("Fk_ProduktGruppe") %>&ProduktId=<%#Eval("Id") %>&KundeId=<%#Eval("Fk_Kunde") %>'><%#Eval("Navn") %></a>

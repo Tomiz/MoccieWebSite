@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/MasterPageAdmin.master" AutoEventWireup="true" CodeFile="TegningerAdmin.aspx.cs" Inherits="Admin_TegningerAdmin" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/MasterPageAdmin.master" AutoEventWireup="true" CodeFile="TegningerAdmin.aspx.cs" Inherits="Admin_TegningerAdmin" validateRequest="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <style type="text/css">
@@ -21,6 +21,10 @@
                     <asp:Parameter DefaultValue="1" Name="Fk_ProduktKategori" Type="Int32"></asp:Parameter>
                 </SelectParameters>
             </asp:SqlDataSource>
+
+            <p>Dato</p>
+            <asp:TextBox ID="TextBoxDate" runat="server" TextMode="Date" CssClass="textbox" Width="165px" ></asp:TextBox>
+            
             <p>Navn på Billedet</p>
             <asp:TextBox ID="TextBoxHeaderText" runat="server" Text="" placeholder="Produkt Navn"></asp:TextBox>
 
@@ -30,13 +34,18 @@
             <p>Title på info Box</p>
             <asp:TextBox ID="TextBoxHeaderInfoText" runat="server" Text="" Placeholder="Produkt Info Title"></asp:TextBox>
             <p>Info i infoboks</p>
-            <asp:TextBox ID="TextBoxInfoText" runat="server" Text="" Placeholder="Produkt Info text"></asp:TextBox>
+            <asp:TextBox ID="TextBoxInfoText" runat="server" TextMode="MultiLine" Rows="3" Text="" Placeholder="Produkt Info text"></asp:TextBox>
+            <script type="text/javascript">
+                CKEDITOR.replace("ContentPlaceHolder1_TextBoxInfoText");
+            </script>
+
+            <br />
             <p>Valg af kunde</p>
             <asp:DropDownList ID="DropDownListKunde" runat="server" DataSourceID="SqlDataSourceKunde" DataTextField="KundeNavn" DataValueField="Id">
                 <asp:ListItem Text="Opret kunde først" Value="0" />
             </asp:DropDownList>
             <asp:SqlDataSource runat="server" ID="SqlDataSourceKunde" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT [KundeNavn], [Id] FROM [Kunde]"></asp:SqlDataSource>
-            <asp:Button ID="ButtonGemProdukt" runat="server" Text="Tilføj nyt Elemet" OnClick="ButtonGemProdukt_Click"/>
+            <asp:Button ID="ButtonGemProdukt" runat="server" Text="Tilføj nyt Elemet" OnClick="ButtonGemProdukt_Click" />
             <!--OnClick="ButtonGemProdukt_Click"-->
         </div>
 
@@ -44,7 +53,7 @@
         <asp:Button class="accordion" runat="server" Text="Redigere nuværende produkter" OnClientClick="return false;" />
         <div class="panel">
             <div>
-                <asp:Repeater ID="RepeaterRedigerProdukter" runat="server" DataSourceID="SqlDataSourceRedProdukt"  OnItemCommand="RepeaterRedigerProdukter_ItemCommand">
+                <asp:Repeater ID="RepeaterRedigerProdukter" runat="server" DataSourceID="SqlDataSourceRedProdukt" OnItemCommand="RepeaterRedigerProdukter_ItemCommand">
                     <ItemTemplate>
                         <asp:DropDownList ID="DropDownListProduktKategorier" runat="server" DataTextField="Navn" DataValueField="ProduktGruppeId" DataSourceID="SqlDataSourceProduktkategoriDropdown" SelectedValue='<%# Eval("GruppeId") %>' Width="100px"></asp:DropDownList>
                         <asp:TextBox ID="TextBoxProduktNavn" runat="server" Text='<%#Eval("Navn") %>' Width="275"></asp:TextBox>
@@ -52,7 +61,7 @@
                         <asp:TextBox ID="TextBoxProduktheader" runat="server" Text='<%#Eval("ProduktHeader") %>' Width="275"></asp:TextBox>
                         <asp:TextBox ID="TextBoxProduktInfo" runat="server" Text='<%#Eval("ProduktInfo") %>' TextMode="MultiLine" Height="100"></asp:TextBox>
 
-                        <asp:Button ID="RedigerProd" runat="server" Text="Rediger" CommandArgument='<%#Eval("ProduktId") %>' CommandName="RedigerProdukt"/>
+                        <asp:Button ID="RedigerProd" runat="server" Text="Rediger" CommandArgument='<%#Eval("ProduktId") %>' CommandName="RedigerProdukt" />
                         <asp:Button ID="SletProd" runat="server" Text="Slet" CommandArgument='<%#Eval("ProduktId") %>' CommandName="SletProdukt" />
                         <hr />
                     </ItemTemplate>
