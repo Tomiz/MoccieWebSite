@@ -99,6 +99,8 @@ li a:hover, .dropdown:hover .dropbtn {
 /* Content Start */
 #wrapper {
     width: 100%;
+    min-height:699px;
+    max-height:100%;
     margin: auto;
 }
 @media screen and (max-height: 1080px) {

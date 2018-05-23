@@ -18,10 +18,15 @@
     padding: 0 20px;
     overflow: hidden;
 }
+.headrep2 {
+    float: left;
+    width: 62%;
+    padding: 0 20px;
+    overflow: hidden;
+}
 
 .mainrep {
     float: left;
-
     overflow: hidden;
 }
 .mainrep2 {
@@ -53,6 +58,7 @@
 
     .rightrep {
         width: 100%;
+        /*margin-left: 300px;*/
     }
 }
 
@@ -60,5 +66,66 @@
     /* For mobile phones: */
     .menurep, .mainrep, .mainrep2, .rightrep, .headrep {
         width: 100%;
+    }
+}
+
+@media only screen and (max-width:1400px) {
+    /* For tablets: */
+    .headrep2 {
+        clear: both;
+        width: 60%;
+        padding: 0;
+        margin-top:50px;
+    }
+}
+
+
+
+@media only screen and (max-width:1780px) {
+    #ProduktMenu {
+        margin: 0 140px 0 60px;
+    }
+}
+
+@media only screen and (max-width:1740px) {
+    #ProduktMenu {
+        margin: 0 90px 0 60px;
+    }
+}
+
+@media only screen and (max-width:1680px) {
+    #ProduktMenu {
+        margin: 0 50px 0 60px;
+    }
+}
+
+@media only screen and (max-width:900px) {
+    #ProduktCenterImage {
+        width: 800px;
+    }
+}
+@media only screen and (max-width:780px) {
+    #ProduktCenterImage {
+        width: 700px;
+    }
+}
+@media only screen and (max-width:690px) {
+    #ProduktCenterImage {
+        width: 600px;
+    }
+}
+@media only screen and (max-width:590px) {
+    #ProduktCenterImage {
+        width: 500px;
+    }
+}
+@media only screen and (max-width:1626px) {
+    #ContentInfo {
+        margin:0 0 50px 35%;
+    }
+}
+@media only screen and (max-width:1226px) {
+    #ContentInfo {
+        margin: 0 0 50px 50px;
     }
 }

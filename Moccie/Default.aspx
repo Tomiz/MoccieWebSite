@@ -67,6 +67,6 @@
         </article>
     </section>
 
-    <div class="footerClear" style="margin-bottom: 200px;"></div>
+    <%--<div class="footerClear" style="margin-bottom: 99px;"></div>--%>
 </asp:Content>
 

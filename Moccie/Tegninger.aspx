@@ -38,6 +38,8 @@
                         
                 </article>
             </section>
+
+            <%--<div class="footerClear" style="margin-bottom: 99px;"></div>--%>
         </asp:View>
 
         <!-- Produkt kategorier -->
@@ -65,7 +67,7 @@
                     
                         <asp:Repeater ID="Repeater_kategoriOverskrivt" runat="server" DataSourceID="SqlDataSourceKategoriNavn">
                             <ItemTemplate>
-                                <div class="headrep">
+                                <div class="headrep2">
                                 <h2><%#Eval ("Navn") %></h2>
                                 </div>
                             </ItemTemplate>
@@ -101,6 +103,7 @@
                     </asp:SqlDataSource>
                 </article>
             </section>
+            <%--<div class="footerClear" style="margin-bottom: 50px;"></div>--%>
         </asp:View>
 
         <!-- Produkt Enkelte produkt -->
@@ -133,19 +136,19 @@
 
                 <asp:Repeater ID="RepeaterEnkeltProdukt" runat="server" DataSourceID="SqlDataSourceEnkeltProdukt">
                     <ItemTemplate>
-                        <article id="ProduktCenterImage">
+                        <article id="ProduktCenterImage" class="mainrep">
                             <h2><%#Eval("Navn") %></h2>
-                            <img src="Pictures/Produkter/<%#Eval("Billed") %>" width="850px" class="Top10">
+                            <img src="Pictures/Produkter/<%#Eval("Billed") %>" Id="produktImage"  class="Top10">
                         </article>
 
-                        <div id="ContentInfo">
+                        <div id="ContentInfo" class="rightrep">
                             <h2><%#Eval("ProduktHeader") %></h2>
                             <hr />
                             <p><%# Eval ("ProduktInfo") %></p>
                             <div id="KundeLink">
                                 <h2>Link</h2>
                                 <hr />
-                                Link: <a href='<%#Eval("KundeLink") %>'><%#Eval("KundeLink") %></a>
+                                <p>Link: <a href='<%#Eval("KundeLink") %>'><%#Eval("KundeLink") %></a></p>
                             </div>
                         </div>
                     </ItemTemplate>
@@ -156,10 +159,12 @@
                     </SelectParameters>
                 </asp:SqlDataSource>
             </div>
+
+            <%--<div class="footerClear" style="margin-bottom: 90px;"></div>--%>
         </asp:View>
     </asp:MultiView>
 
-    <div class="footerClear" style="margin-bottom: 385px;"></div>
+    
 </asp:Content>
 
 
