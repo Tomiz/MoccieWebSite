@@ -11,6 +11,8 @@
     <link href="Style/Produkter.css" rel="stylesheet" />
     <link href="Style/Ranklist.css" rel="stylesheet" />
     <link href="Style/responsive.css" rel="stylesheet" />
+    <link href="Style/SliderCss.css" rel="stylesheet" />
+
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="Style/Slider.css" rel="stylesheet" />

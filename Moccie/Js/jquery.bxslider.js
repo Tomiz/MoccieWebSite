@@ -14,7 +14,7 @@
     slideSelector: '',
     infiniteLoop: true,
     hideControlOnEnd: false,
-    speed: 2000,
+    speed: 100000000,
     easing: null,
     slideMargin: 0,
     startSlide: 0,
@@ -66,7 +66,7 @@
     autoControlsSelector: null,
 
     // AUTO
-    auto: true,
+    auto: false,
     pause: 6000,
     autoStart: true,
     autoDirection: 'next',

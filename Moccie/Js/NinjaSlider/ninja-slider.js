@@ -3,7 +3,7 @@ var nsOptions =
 {
     sliderId: "ninja-slider",
     transitionType: "slide",
-    autoAdvance: true,
+    autoAdvance: false,
     rewind: false,
     n: false,
     delay: "default",
