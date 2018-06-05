@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Kontakt.aspx.cs" Inherits="Kontakt" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Kontakt.aspx.cs" Inherits="Kontakt" ValidateRequest="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <style type="text/css">
@@ -64,7 +64,13 @@
             </asp:DropDownList>
 
             <label for="subject">Begrundelse</label>
-            <asp:TextBox ID="TextBoxSubject" runat="server" TextMode="MultiLine" Height="200px" placeholder="Skriv lidt.."></asp:TextBox>
+
+            <asp:TextBox ID="TextBoxSubject" runat="server" TextMode="MultiLine" Rows="3" Text="" Placeholder="Produkt Info text"></asp:TextBox>
+            <script type="text/javascript">
+                CKEDITOR.replace("ContentPlaceHolder1_TextBoxSubject");
+            </script>
+
+<%--            <asp:TextBox ID="TextBoxSubject" runat="server" TextMode="MultiLine" Height="200px" placeholder="Skriv lidt.."></asp:TextBox>--%>
 
             <asp:Button ID="ButtonSendMail" runat="server" Text="Send" OnClick="ButtonSendMail_Click"/>
             <div class="ErrorBox" style="margin-top:0px; margin-bottom:0px;">

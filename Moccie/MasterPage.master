@@ -21,6 +21,8 @@
     <script src="Js/jquery.bxslider.js"></script>
     <link href="Js/NinjaSlider/ninja-slider.css" rel="stylesheet" />
     <script src="Js/NinjaSlider/ninja-slider.js"></script>
+    <script src="../Scripts/ckeditor/ckeditor.js"></script>
+
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
