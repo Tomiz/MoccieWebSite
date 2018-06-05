@@ -59,8 +59,17 @@ public partial class Admin_TegningerAdmin : System.Web.UI.Page
 
             conn.Close();
 
+            TextBoxHeaderText.Text = "";
+            TextBoxHeaderInfoText.Text = "";
+            TextBoxInfoText.Text = "";
+            
             Page.DataBind();
-            Label_besked.Text = "";
+            Label_besked.Text = "Produkt tilføjet til databasen";
+            Label_besked.Style.Add("color", "#FFF");
+            Label_besked.Style.Add("background-color", "#E06973");
+            Label_besked.Style.Add("height", "100%");
+            Label_besked.Style.Add("border-radius", "15px");
+            Label_besked.Style.Add("padding", "25px");
             Label_besked.Style.Clear();
 
         }
