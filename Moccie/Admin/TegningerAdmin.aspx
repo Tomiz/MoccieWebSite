@@ -92,9 +92,9 @@
             <asp:Repeater ID="Repeaterkategorier" runat="server" DataSourceID="SqlDataSourceKategorier" OnItemCommand="Repeaterkategorier_ItemCommand">
                 <ItemTemplate>
                     <asp:TextBox ID="TextBoxShowKate" runat="server" Text='<%#Eval("Navn") %>' Width="200"></asp:TextBox>
-                    <asp:FileUpload ID="FileUploadProilePic" runat="server" CssClass="clearBoth Top25" />
+                    <asp:FileUpload ID="FileUploadKategori" runat="server" CssClass="clearBoth Top25" />
                     <img src="../Pictures/KategoriGruppe/<%#Eval("Billed") %>" width="75">
-                    <asp:Button ID="Redigerekate" runat="server" Text="Redigere" />
+                    <asp:Button ID="Redigerekate" runat="server" Text="Redigere" CommandArgument='<%#Eval("Id") %>' CommandName="RediKate"/>
                     <asp:Button ID="SletKate" runat="server" Text="Slet" CommandArgument='<%#Eval("Id") %>' CommandName="SletKate" />
                     <hr />
                     <br />

@@ -15,7 +15,7 @@
 
                 <div class="accordion"><%#Eval("Fornavn") %> | <%#Eval("AArsag") %> | <%#Eval("Dato") %></div>
             <%--<asp:Button class="accordion" runat="server" Text='<%#Eval("Fornavn") %> ' OnClientClick="return false;" />--%>
-                <div class="panel">
+                <div class="panel2">
                     <label><%#Eval("Fornavn") %> <%#Eval("Efternavn") %> | Email: <%#Eval("Email") %></label>
                     <label class="floatRight"><%#Eval("Dato") %></label>
                     <br /><br />
