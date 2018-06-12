@@ -287,16 +287,14 @@ public partial class Admin_TegningerAdmin : System.Web.UI.Page
                 cmd.ExecuteNonQuery();
                 conn.Close();
 
-                    //reloader repeateren
-                    Repeaterkategorier.DataBind();
-                    Label_besked.Text = "";
-                    Label_besked.Style.Clear();
-                    //}
-                }
+                //reloader repeateren
+                Repeaterkategorier.DataBind();
+                Label_besked.Text = "";
+                Label_besked.Style.Clear();
+                //}
             }
         }
     }
-
 
     protected void RepeaterKunder_ItemCommand(object source, RepeaterCommandEventArgs e)
     {
