@@ -62,7 +62,7 @@ public partial class Admin_TegningerAdmin : System.Web.UI.Page
             TextBoxHeaderText.Text = "";
             TextBoxHeaderInfoText.Text = "";
             TextBoxInfoText.Text = "";
-            
+
             Page.DataBind();
             Label_besked.Text = "Produkt tilføjet til databasen";
             Label_besked.Style.Add("color", "#FFF");
@@ -226,7 +226,7 @@ public partial class Admin_TegningerAdmin : System.Web.UI.Page
             catch (Exception ex)
             {
                 //trace error log here
-                
+
                 sqlTransaction.Rollback();
                 Label_besked.Text = "Alle produkter i denne kategori gruppe skal slettes, før du kan slette kategori gruppen";
                 Label_besked.Style.Add("color", "#FFF");
@@ -245,6 +245,55 @@ public partial class Admin_TegningerAdmin : System.Web.UI.Page
             //conn.Close();
             //reloader repeateren
             Repeaterkategorier.DataBind();
+        }
+
+        if (e.CommandName == "RediKate")
+        {
+
+            foreach (RepeaterItem item in Repeaterkategorier.Items)
+            {
+                FileUpload fAbout = (FileUpload)item.FindControl("FileUploadKategori");
+
+                //FileUploadkategori.SaveAs(Server.MapPath("~/Pictures/KategoriGruppe/") + fAbout.FileName);
+
+                //if (File.Exists(Server.MapPath("~/Pictures/KategoriGruppe/") + fAbout.FileName))
+                //{
+                if (fAbout != null)
+                {
+                    SqlConnection conn = new SqlConnection();
+                    conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+
+                    foreach (var billed in fAbout.PostedFiles)
+                    {
+                        cmd.CommandText += "UPDATE ProduktGruppe SET Billed = @Billed"; //(url, fk_brandeovnId) VALUES ('" + billed.FileName + "', @produktId);";
+                                                                                  //gemmer billederne i en mappe
+                        billed.SaveAs(Server.MapPath("~/Pictures/KategoriGruppe/") + billed.FileName);
+                        cmd.Parameters.Add("@Billed", SqlDbType.NVarChar).Value = fAbout.FileName;
+                    }
+
+                    ////opadatere tablene i databasen
+                    //cmd.CommandText += "UPDATE ProduktGruppe SET Navn = @Navn WHERE Id = @Id";
+
+                    ////finder Id'et på produktet når man trykker på knappen
+                    //cmd.Parameters.Add("@Id", SqlDbType.Int).Value = e.CommandArgument;
+
+                    ////finder de foreskellige textboxes med e.item.findcontrol("navn på textbox")
+                    //cmd.Parameters.Add("@Navn", SqlDbType.NVarChar).Value = ((TextBox)e.Item.FindControl("TextBoxShowKate")).Text;
+
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+
+                    //reloader repeateren
+                    Repeaterkategorier.DataBind();
+                    Label_besked.Text = "";
+                    Label_besked.Style.Clear();
+                    //}
+                }
+            }
         }
     }
 }
