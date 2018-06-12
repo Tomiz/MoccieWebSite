@@ -83,11 +83,11 @@ public partial class Admin_TegningerAdmin : System.Web.UI.Page
         cmd.Connection = conn;
 
 
-        cmd.CommandText = "INSERT INTO Kunde (KundeNavn, KundeLink, Fk_Platform) VALUES (@KundeNavn, @KundeLink, @Fk_Platform)";/*, AntalFollowers & , @AntalFollowers*/
+        cmd.CommandText = "INSERT INTO Kunde (KundeNavn, KundeLink) VALUES (@KundeNavn, @KundeLink)";/*, AntalFollowers & , @AntalFollowers*/
 
         cmd.Parameters.Add("@KundeNavn", SqlDbType.NVarChar).Value = Kundenavn.Text;
         cmd.Parameters.Add("@KundeLink", SqlDbType.NVarChar).Value = KundeLink.Text;
-        cmd.Parameters.Add("@Fk_Platform", SqlDbType.Int).Value = DropDownListplatform.SelectedValue;
+        //cmd.Parameters.Add("@Fk_Platform", SqlDbType.Int).Value = DropDownListplatform.SelectedValue;
 
         conn.Open();
 
@@ -267,8 +267,8 @@ public partial class Admin_TegningerAdmin : System.Web.UI.Page
 
                     foreach (var billed in fAbout.PostedFiles)
                     {
-                        cmd.CommandText += "UPDATE ProduktGruppe SET Billed = @Billed"; //(url, fk_brandeovnId) VALUES ('" + billed.FileName + "', @produktId);";
-                                                                                  //gemmer billederne i en mappe
+                        cmd.CommandText += "UPDATE ProduktGruppe SET Billed = @Billed WHERE Id = @Id"; //(url, fk_brandeovnId) VALUES ('" + billed.FileName + "', @produktId);";
+                                                                                                       //gemmer billederne i en mappe
                         billed.SaveAs(Server.MapPath("~/Pictures/KategoriGruppe/") + billed.FileName);
                         cmd.Parameters.Add("@Billed", SqlDbType.NVarChar).Value = fAbout.FileName;
                     }
@@ -294,6 +294,58 @@ public partial class Admin_TegningerAdmin : System.Web.UI.Page
                     //}
                 }
             }
+        }
+    }
+
+
+    protected void RepeaterKunder_ItemCommand(object source, RepeaterCommandEventArgs e)
+    {
+        if (e.CommandName == "RediKunde")
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+
+            //opadatere tablene i databasen
+            cmd.CommandText = "UPDATE Kunde SET KundeNavn = @KundeNavn WHERE Id = @Id";
+
+            //finder Id'et på produktet når man trykker på knappen
+            cmd.Parameters.Add("@Id", SqlDbType.Int).Value = e.CommandArgument;
+
+            //finder de foreskellige textboxes med e.item.findcontrol("navn på textbox")
+            cmd.Parameters.Add("@KundeNavn", SqlDbType.NVarChar).Value = ((TextBox)e.Item.FindControl("TextBoxShowKate")).Text;
+
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+            //reloader repeateren
+            RepeaterKunder.DataBind();
+            Label_besked.Text = "";
+            Label_besked.Style.Clear();
+        }
+        if (e.CommandName == "SletKunde")
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+
+            //opadatere tablene i databasen
+            cmd.CommandText = "DELETE FROM Kunde WHERE Id = @Id";
+
+            //finder Id'et på produktet når man trykker på knappen
+            cmd.Parameters.Add("@Id", SqlDbType.Int).Value = e.CommandArgument;
+
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+            //reloader repeateren
+            RepeaterKunder.DataBind();
+            Label_besked.Text = "";
+            Label_besked.Style.Clear();
         }
     }
 }
