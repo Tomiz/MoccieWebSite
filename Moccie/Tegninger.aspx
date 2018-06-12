@@ -147,7 +147,6 @@
                             <hr />
                             <p><%# Eval ("ProduktInfo") %></p>
                             <div id="KundeLink">
-                                <h2>Link</h2>
                                 <hr />
                                 <p>Link: <a href='http://www.<%#Eval("KundeLink") %>'><%#Eval("KundeLink") %></a></p>
                             </div>

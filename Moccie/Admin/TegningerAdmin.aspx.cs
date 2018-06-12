@@ -249,50 +249,50 @@ public partial class Admin_TegningerAdmin : System.Web.UI.Page
 
         if (e.CommandName == "RediKate")
         {
-
             foreach (RepeaterItem item in Repeaterkategorier.Items)
             {
-                FileUpload fAbout = (FileUpload)item.FindControl("FileUploadKategori");
+                FileUpload fKategori = (FileUpload)item.FindControl("FileUploadKategoriUpdate");
 
-                //FileUploadkategori.SaveAs(Server.MapPath("~/Pictures/KategoriGruppe/") + fAbout.FileName);
+                //fKategori.SaveAs(Server.MapPath("~/Pictures/KategoriGruppe/") + fKategori.FileName); //\Pictures\KategoriGruppe
 
-                //if (File.Exists(Server.MapPath("~/Pictures/KategoriGruppe/") + fAbout.FileName))
+                //if (File.Exists(Server.MapPath("~/Pictures/KategoriGruppe/") + fKategori.FileName))
                 //{
-                if (fAbout != null)
+                //if (fKategori != null)
+                //{
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+
+                foreach (var billed in fKategori.PostedFiles)
                 {
-                    SqlConnection conn = new SqlConnection();
-                    conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = conn;
-
-                    foreach (var billed in fAbout.PostedFiles)
-                    {
-                        cmd.CommandText += "UPDATE ProduktGruppe SET Billed = @Billed"; //(url, fk_brandeovnId) VALUES ('" + billed.FileName + "', @produktId);";
-                                                                                  //gemmer billederne i en mappe
-                        billed.SaveAs(Server.MapPath("~/Pictures/KategoriGruppe/") + billed.FileName);
-                        cmd.Parameters.Add("@Billed", SqlDbType.NVarChar).Value = fAbout.FileName;
-                    }
-
-                    ////opadatere tablene i databasen
-                    //cmd.CommandText += "UPDATE ProduktGruppe SET Navn = @Navn WHERE Id = @Id";
-
-                    ////finder Id'et på produktet når man trykker på knappen
-                    //cmd.Parameters.Add("@Id", SqlDbType.Int).Value = e.CommandArgument;
-
-                    ////finder de foreskellige textboxes med e.item.findcontrol("navn på textbox")
-                    //cmd.Parameters.Add("@Navn", SqlDbType.NVarChar).Value = ((TextBox)e.Item.FindControl("TextBoxShowKate")).Text;
-
-
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-
-                    //reloader repeateren
-                    Repeaterkategorier.DataBind();
-                    Label_besked.Text = "";
-                    Label_besked.Style.Clear();
-                    //}
+                    cmd.CommandText += "UPDATE ProduktGruppe SET Billed = @Billed WHERE Id = @Id"; //(url, fk_brandeovnId) VALUES ('" + billed.FileName + "', @produktId);";
+                    //gemmer billederne i en mappe
+                    billed.SaveAs(Server.MapPath(@"~\Pictures\KategoriGruppe\") + billed.FileName);
+                    cmd.Parameters.Add("@Billed", SqlDbType.NVarChar).Value = fKategori.FileName;
+                    cmd.Parameters.Add("@Id", SqlDbType.Int).Value = e.CommandArgument;
                 }
+
+                ////opadatere tablene i databasen
+                //cmd.CommandText += "UPDATE ProduktGruppe SET Navn = @Navn WHERE Id = @Id";
+
+                ////finder Id'et på produktet når man trykker på knappen
+                //cmd.Parameters.Add("@Id", SqlDbType.Int).Value = e.CommandArgument;
+
+                ////finder de foreskellige textboxes med e.item.findcontrol("navn på textbox")
+                //cmd.Parameters.Add("@Navn", SqlDbType.NVarChar).Value = ((TextBox)e.Item.FindControl("TextBoxShowKate")).Text;
+
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+
+                //reloader repeateren
+                Repeaterkategorier.DataBind();
+                Label_besked.Text = "";
+                Label_besked.Style.Clear();
+                //}
+                //}
             }
         }
     }

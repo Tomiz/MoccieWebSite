@@ -43,6 +43,9 @@
     }
 .ImageSlide {
     background-position: center center;
+    right: 10px;
+    left: 10px;
+    margin: auto;
 }
 
 .w3-content {

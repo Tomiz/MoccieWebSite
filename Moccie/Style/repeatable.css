@@ -68,7 +68,9 @@ input[type=submit]:hover {
 .Top25{
     margin-top:25px;
 }
-
+.bottom10{
+    margin-bottom:10px;
+}
 .TekstCenter {
     text-align: center;
 }

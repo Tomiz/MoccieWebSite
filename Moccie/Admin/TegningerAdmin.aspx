@@ -65,15 +65,18 @@
                         <asp:DropDownList ID="DropDownListProduktEjer" runat="server" DataSourceID="SqlDataSourceProduktKunder" DataTextField="KundeNavn" DataValueField="Id" Width="100px" SelectedValue='<%# Eval("KundeId") %>'></asp:DropDownList>
                         <asp:TextBox ID="TextBoxProduktheader" runat="server" Text='<%#Eval("ProduktHeader") %>' Width="275"></asp:TextBox>
                         <span style="margin-left: 5px;">Information omkring billedet.</span><br />
-                        <asp:TextBox ID="TextBoxProduktInfo" runat="server" Text='<%#Eval("ProduktInfo") %>' TextMode="MultiLine" Height="100"></asp:TextBox>
-
+                        <asp:TextBox ID="TextBoxProduktInfo" runat="server" Text='<%#Eval("ProduktInfo") %>' TextMode="MultiLine" Height="100" Width="80%"></asp:TextBox>
+                        <img src="../Pictures/Produkter/<%#Eval("Billed") %>" width="125" class="floatRight produktpicTilføj" />
+                        <br />
                         <asp:Button ID="RedigerProd" runat="server" Text="Rediger" CommandArgument='<%#Eval("ProduktId") %>' CommandName="RedigerProdukt" />
                         <asp:Button ID="SletProd" runat="server" Text="Slet" CommandArgument='<%#Eval("ProduktId") %>' CommandName="SletProdukt" />
+
+                        
                         <hr />
                     </ItemTemplate>
                 </asp:Repeater>
 
-                <asp:SqlDataSource runat="server" ID="SqlDataSourceRedProdukt" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT DISTINCT Produkter.ProduktHeader, Produkter.Navn, Produkter.ProduktInfo, ProduktGruppe.Navn AS ProduktKategori, Produkter.Id AS ProduktId, Kunde.Id AS KundeId, Kunde.KundeNavn, ProduktGruppe.Id AS GruppeId, ProduktKategori.Id FROM Produkter INNER JOIN ProduktGruppe ON Produkter.Fk_ProduktGruppe = ProduktGruppe.Id INNER JOIN Kunde ON Produkter.Fk_Kunde = Kunde.Id INNER JOIN ProduktKategori ON Produkter.Fk_ProduktKategori = ProduktKategori.Id AND ProduktGruppe.Fk_ProduktKategori = ProduktKategori.Id WHERE (ProduktKategori.Id = 1)"></asp:SqlDataSource>
+                <asp:SqlDataSource runat="server" ID="SqlDataSourceRedProdukt" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT DISTINCT Produkter.ProduktHeader, Produkter.Navn, Produkter.ProduktInfo, ProduktGruppe.Navn AS ProduktKategori, Produkter.Id AS ProduktId, Kunde.Id AS KundeId, Kunde.KundeNavn, ProduktGruppe.Id AS GruppeId, ProduktKategori.Id, Billeder.Id AS Expr1, Billeder.Billed, Billeder.Fk_ProduktBilled FROM Produkter INNER JOIN ProduktGruppe ON Produkter.Fk_ProduktGruppe = ProduktGruppe.Id INNER JOIN Kunde ON Produkter.Fk_Kunde = Kunde.Id INNER JOIN ProduktKategori ON Produkter.Fk_ProduktKategori = ProduktKategori.Id AND ProduktGruppe.Fk_ProduktKategori = ProduktKategori.Id INNER JOIN Billeder ON Produkter.Id = Billeder.Fk_ProduktBilled WHERE (ProduktKategori.Id = 1)"></asp:SqlDataSource>
                 <asp:SqlDataSource runat="server" ID="SqlDataSourceProduktkategoriDropdown" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT DISTINCT Id AS ProduktGruppeId, Navn FROM ProduktGruppe"></asp:SqlDataSource>
                 <asp:SqlDataSource runat="server" ID="SqlDataSourceProduktKunder" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT [KundeNavn], [Id] FROM [Kunde]"></asp:SqlDataSource>
 
@@ -92,9 +95,9 @@
             <asp:Repeater ID="Repeaterkategorier" runat="server" DataSourceID="SqlDataSourceKategorier" OnItemCommand="Repeaterkategorier_ItemCommand">
                 <ItemTemplate>
                     <asp:TextBox ID="TextBoxShowKate" runat="server" Text='<%#Eval("Navn") %>' Width="200"></asp:TextBox>
-                    <asp:FileUpload ID="FileUploadKategori" runat="server" CssClass="clearBoth Top25" />
+                    <asp:FileUpload ID="FileUploadKategoriUpdate" runat="server" CssClass="clearBoth Top25" />
                     <img src="../Pictures/KategoriGruppe/<%#Eval("Billed") %>" width="75">
-                    <asp:Button ID="Redigerekate" runat="server" Text="Redigere" CommandArgument='<%#Eval("Id") %>' CommandName="RediKate"/>
+                    <asp:Button ID="Redigerekate" runat="server" Text="Redigere" CommandArgument='<%#Eval("Id") %>' CommandName="RediKate" />
                     <asp:Button ID="SletKate" runat="server" Text="Slet" CommandArgument='<%#Eval("Id") %>' CommandName="SletKate" />
                     <hr />
                     <br />

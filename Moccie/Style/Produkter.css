@@ -181,3 +181,6 @@ div.container {
             table.blueTable tfoot td {
                 font-size: 23px;
             }
+.produktpicTilføj{
+    max-height:170px;
+}
