@@ -86,12 +86,14 @@
         <!-- Tilføj/Slet kategorier -->
         <asp:Button class="accordion" runat="server" Text="Tilføj/Slet kategorier" OnClientClick="return false;" />
         <div class="panel">
+            <span style="margin-left: 5px; margin-right: 250px;">Navn på Kategorien</span> <span>Hvilken Gruppe sklal den ligge under</span>
             <asp:TextBox ID="NyKate" runat="server" Text="" Placeholder="Tilføj Ny Kategori" Width="50%"></asp:TextBox>
             <asp:DropDownList ID="DropDownListProduktKategori" runat="server" DataSourceID="SqlDataSourceKategoriProdukt" DataTextField="Navn" DataValueField="Id" Width="45%"></asp:DropDownList>
-            <br />
-            <asp:FileUpload ID="FileUploadkategori" runat="server" CssClass="clearBoth width100" />
+            <br /> Billed skal være 300x150
+            <asp:FileUpload ID="FileUploadkategori" runat="server" CssClass="clearBoth width100"/>
             <asp:Button ID="GemKate" runat="server" Text="Tilføj ny Kategori" CssClass="clearBoth Top10" OnClick="GemKate_Click" /><br />
             <br />
+            <hr />
             <asp:Repeater ID="Repeaterkategorier" runat="server" DataSourceID="SqlDataSourceKategorier" OnItemCommand="Repeaterkategorier_ItemCommand">
                 <ItemTemplate>
                     <asp:TextBox ID="TextBoxShowKate" runat="server" Text='<%#Eval("Navn") %>' Width="200"></asp:TextBox>
@@ -117,22 +119,22 @@
         <div class="panel">
             <asp:TextBox ID="Kundenavn" runat="server" Text="" placeholder="Kunde Navn"></asp:TextBox>
             <asp:TextBox ID="KundeLink" runat="server" Text="" placeholder="Kunde Link"></asp:TextBox>
-            <asp:DropDownList ID="DropDownListplatform" runat="server" DataSourceID="SqlDataSourcePlaftform" DataTextField="Navn" DataValueField="Id"></asp:DropDownList>
+            <%--<asp:DropDownList ID="DropDownListplatform" runat="server" DataSourceID="SqlDataSourcePlaftform" DataTextField="Navn" DataValueField="Id"></asp:DropDownList>--%>
             <asp:SqlDataSource runat="server" ID="SqlDataSourcePlaftform" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT * FROM [Platform]"></asp:SqlDataSource>
             <%--<asp:TextBox ID="Followers" runat="server" Text="" placeHolder="Antal followers/subsriber"></asp:TextBox>--%>
             <asp:Button ID="ButtonGemKunde" runat="server" Text="Tilføj ny Kunde" OnClick="ButtonGemKunde_Click" /><br />
             <br />
-
-            <asp:Repeater ID="RepeaterKunder" runat="server" DataSourceID="SqlDataSourceKunder">
+            <hr />
+            <asp:Repeater ID="RepeaterKunder" runat="server" DataSourceID="SqlDataSourceKunder" OnItemCommand="RepeaterKunder_ItemCommand">
                 <ItemTemplate>
                     <asp:TextBox ID="TextBoxShowKate" runat="server" Text='<%#Eval("KundeNavn") %>' Width="200"></asp:TextBox>
-                    <asp:Button ID="ButtonRedikunde" runat="server" Text="Redigere" />
-                    <asp:Button ID="ButtonSletkunde" runat="server" Text="Slet" />
+                    <asp:Button ID="ButtonRedikunde" runat="server" Text="Redigere" CommandArgument='<%#Eval("Id") %>' CommandName="RediKunde"/>
+                    <asp:Button ID="ButtonSletkunde" runat="server" Text="Slet" CommandArgument='<%#Eval("Id") %>' CommandName="SletKunde" />
                     <br />
                 </ItemTemplate>
             </asp:Repeater>
 
-            <asp:SqlDataSource runat="server" ID="SqlDataSourceKunder" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT [KundeNavn] FROM [Kunde]"></asp:SqlDataSource>
+            <asp:SqlDataSource runat="server" ID="SqlDataSourceKunder" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT * FROM [Kunde]"></asp:SqlDataSource>
         </div>
 
         <!-- Priser -->
