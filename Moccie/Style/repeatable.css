@@ -17,6 +17,15 @@ a {
     color:#000;
 }
 
+hr {
+    border: 0;
+    border-top: 2px solid #d4d4d4;
+    margin: 20px 0;
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+
 input[type=text], select, textarea {
     width: 100%;
     padding: 12px;

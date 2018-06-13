@@ -134,24 +134,32 @@
                             <asp:QueryStringParameter QueryStringField="KategoriId" DefaultValue="0" Name="Fk_ProduktGruppe2" Type="Int32"></asp:QueryStringParameter>
                         </SelectParameters>
                     </asp:SqlDataSource>
+                        <div class="menuitemrep">
+                            <asp:Repeater ID="Repeater2" runat="server" DataSourceID="SqlDataSource1">
+                                <ItemTemplate>
+                                    <a href="Tegninger.aspx?view=1&KategoriId=<%#Eval ("Id") %>"><%#Eval ("Navn") %></a>
+                                </ItemTemplate>
+                            </asp:Repeater>
 
-                    <asp:Repeater ID="RepeaterProduktMenu" runat="server" DataSourceID="SqlDataSourceProduktMenu">
-                        <ItemTemplate>
-                            <a title="Dette er produkter lavet til <%#Eval("KundeNavn") %>" href='Tegninger.aspx?view=2&KategoriId=<%#Eval("Fk_ProduktGruppe") %>&ProduktId=<%#Eval("Id") %>&KundeId=<%#Eval("Fk_Kunde") %>'><%#Eval("Navn") %></a>
-                        </ItemTemplate>
-                    </asp:Repeater>
-                    <asp:SqlDataSource runat="server" ID="SqlDataSourceProduktMenu" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT DISTINCT Produkter.Fk_ProduktKategori, Produkter.Fk_ProduktGruppe, Produkter.Id, Produkter.Navn, Produkter.Fk_Kunde, Kunde.KundeNavn FROM Produkter INNER JOIN Kunde ON Produkter.Fk_Kunde = Kunde.Id WHERE (Produkter.Fk_ProduktGruppe = @Fk_ProduktGruppe) AND (Produkter.Fk_Kunde = @KundeId)">
-                        <SelectParameters>
-                            <asp:QueryStringParameter QueryStringField="KategoriId" DefaultValue="0" Name="Fk_ProduktGruppe" Type="Int32"></asp:QueryStringParameter>
-                            <asp:QueryStringParameter QueryStringField="KundeId" DefaultValue="0" Name="KundeId"></asp:QueryStringParameter>
-                        </SelectParameters>
-                    </asp:SqlDataSource>
+                            <asp:SqlDataSource runat="server" ID="SqlDataSource3" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT Distinct * FROM [ProduktGruppe] WHERE ([Fk_ProduktKategori] = @Fk_ProduktKategori)">
+                                <SelectParameters>
+                                    <asp:Parameter DefaultValue="1" Name="Fk_ProduktKategori" Type="Int32"></asp:Parameter>
+                                </SelectParameters>
+                            </asp:SqlDataSource>
+                        </div>
+                    </div>
+
+
                 </div>
+
 
                 <asp:Repeater ID="RepeaterEnkeltProdukt" runat="server" DataSourceID="SqlDataSourceEnkeltProdukt">
                     <ItemTemplate>
                         <article id="ProduktCenterImage" class="mainrep">
-                            <h2><%#Eval("Navn") %></h2>
+                            <div style="height: 45px;">
+                                <h2><%#Eval("Navn") %></h2>
+                            </div>
+
                             <img src="Pictures/Produkter/<%#Eval("Billed") %>" id="produktImage" class="Top10">
                         </article>
 
@@ -171,9 +179,27 @@
                         <asp:QueryStringParameter QueryStringField="ProduktId" DefaultValue="0" Name="Id"></asp:QueryStringParameter>
                     </SelectParameters>
                 </asp:SqlDataSource>
+
+                <div id="ProduktMenuRight">
+                    <a style="width: 400px;">
+                        <h2>Andre produkter fra samme kunde</h2>
+                    </a>
+                    <div class="produkterCenter">
+                        <asp:Repeater ID="RepeaterProduktMenu" runat="server" DataSourceID="SqlDataSourceProduktMenu">
+                            <ItemTemplate>
+                                <a title="Dette er produkter lavet til <%#Eval("KundeNavn") %>" href='Tegninger.aspx?view=2&KategoriId=<%#Eval("Fk_ProduktGruppe") %>&ProduktId=<%#Eval("Id") %>&KundeId=<%#Eval("Fk_Kunde") %>'><%#Eval("Navn") %></a>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </div>
+                    <asp:SqlDataSource runat="server" ID="SqlDataSourceProduktMenu" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT DISTINCT Produkter.Fk_ProduktKategori, Produkter.Fk_ProduktGruppe, Produkter.Id, Produkter.Navn, Produkter.Fk_Kunde, Kunde.KundeNavn FROM Produkter INNER JOIN Kunde ON Produkter.Fk_Kunde = Kunde.Id WHERE (Produkter.Fk_ProduktGruppe = @Fk_ProduktGruppe) AND (Produkter.Fk_Kunde = @KundeId)">
+                        <SelectParameters>
+                            <asp:QueryStringParameter QueryStringField="KategoriId" DefaultValue="0" Name="Fk_ProduktGruppe" Type="Int32"></asp:QueryStringParameter>
+                            <asp:QueryStringParameter QueryStringField="KundeId" DefaultValue="0" Name="KundeId"></asp:QueryStringParameter>
+                        </SelectParameters>
+                    </asp:SqlDataSource>
+                </div>
             </div>
 
-            <%--<div class="footerClear" style="margin-bottom: 90px;"></div>--%>
         </asp:View>
     </asp:MultiView>
 

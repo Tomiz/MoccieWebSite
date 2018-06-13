@@ -78,6 +78,28 @@ div.container {
     width:94.5%;
 }
 
+#ProduktMenuRight {
+    width: 200px;
+    margin: 20px 190px 0 0;
+    float: left;
+}
+    #ProduktMenuRight a {
+        background-color: #eee;
+        color: black;
+        display: block;
+        padding: 12px;
+        text-decoration: none;
+        text-align: center;
+    }
+
+        #ProduktMenuRight a:hover {
+            background-color: #ccc;
+        }
+.produkterCenter {
+    margin:5px 0 50px 50%;
+    width: 100%;
+}
+
 #ProduktMenu {
     width: 200px;
     margin: 0 190px 0 60px;
@@ -104,7 +126,7 @@ div.container {
     }
 
     #ContentInfo {
-        background-color: white;
+        background-color: #eee;
         width: 400px;
         /*width:22.25%;*/
         height: 100%;
@@ -115,6 +137,9 @@ div.container {
 
         #ContentInfo p {
             padding: 0 10px 0 10px;
+        }
+        #ContentInfo h2{
+            padding:10px 0 0 0;
         }
 
     /*.DetajleGrid {
