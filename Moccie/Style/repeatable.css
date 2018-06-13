@@ -3,6 +3,7 @@
     padding: 0;
     margin: 0;
     text-align: center;
+    color: #4999aa;
 }
 
 p {
@@ -47,7 +48,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-    background-color: #45a049;
+    background-color: darkgrey;
 }
 
 .ALink {

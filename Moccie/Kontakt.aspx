@@ -29,31 +29,30 @@
 
 
         <article id="TekstForm">
-
-
-            <p>Mit navn er</p>
-            <h2>Monique Løfqvist</h2>
             <br />
-            <p>Min mail</p>
+                        <img src="Pictures/gMVFPfsX_400x400.jpg" style="border-radius: 50%; width:250px;"/>
+            <div style="color:#4999aa;">                
+            <%--<p>Mit navn er</p>--%>
+            <h2>Monique Løfqvist</h2>
+            <%--<p>Min mail</p>--%>
             <h2>Moccie@moo.dk</h2>
             <br />
             <%--            <p></p>
             <h2></h2>
             <br />--%>
-            <p>Du kan se mig live på</p>
+            <%--<p>Du kan se mig live på</p>--%>
             <h2>
                 <asp:HyperLink ID="Hyper1" runat="server" NavigateUrl="http://www.Twitch.tv/Moccie">Twitch.tv/Moccie</</asp:HyperLink></h2>
             <br />
-            <p>Eller følge hvad der sker på</p>
+            <%--<p>Eller følge hvad der sker på</p>--%>
             <h2>
                 <asp:HyperLink ID="Hyper2" runat="server" NavigateUrl="http://www.Twitter.com/M0ccie">Twitter.com/M0ccie</asp:HyperLink></h2>
             <br />
-            <p>Du kan også se mine tegninger på min Facebook side</p>
+            <%--<p>Du kan også se mine tegninger på min Facebook side</p>--%>
             <h2>
                 <asp:HyperLink ID="Hyper3" runat="server" NavigateUrl="https://www.facebook.com/MoccieMoo/">Facebook.com/M0ccieMoo</asp:HyperLink></h2>
             <br />
-            <br />
-            <img src="Pictures/gMVFPfsX_400x400.jpg" style="border-radius: 50%" />
+            </div>
 
 
         </article>
@@ -73,7 +72,7 @@
 
             <label for="Grund">Årsag</label>
             <asp:DropDownList ID="DropDownListGrund" runat="server">
-                <asp:ListItem>Forespørgsel</asp:ListItem>
+                <%--<asp:ListItem>Forespørgsel</asp:ListItem>--%>
                 <asp:ListItem>Bestilling</asp:ListItem>
                 <asp:ListItem>Spørgsmål</asp:ListItem>
             </asp:DropDownList>
