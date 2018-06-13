@@ -31,10 +31,9 @@
         <article id="TekstForm">
             <br />
                         <img src="Pictures/gMVFPfsX_400x400.jpg" style="border-radius: 50%; width:250px;"/>
-
+            <div style="color:#4999aa;">                
             <%--<p>Mit navn er</p>--%>
             <h2>Monique Løfqvist</h2>
-            <br />
             <%--<p>Min mail</p>--%>
             <h2>Moccie@moo.dk</h2>
             <br />
@@ -53,7 +52,7 @@
             <h2>
                 <asp:HyperLink ID="Hyper3" runat="server" NavigateUrl="https://www.facebook.com/MoccieMoo/">Facebook.com/M0ccieMoo</asp:HyperLink></h2>
             <br />
-            
+            </div>
 
 
         </article>
