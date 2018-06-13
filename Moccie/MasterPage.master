@@ -61,7 +61,7 @@
             <article>
                 <asp:Repeater ID="RepeaterFooter" runat="server" DataSourceID="SqlDataSourceFooter">
                     <ItemTemplate>
-                        <h2><%#Eval("Text") %></h2>
+                        <h3><%#Eval("Text") %></h3>
                     </ItemTemplate>
                 </asp:Repeater>
                 <%--<h2>Footer content here</h2>--%>
