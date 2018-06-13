@@ -14,6 +14,33 @@
             <asp:Label ID="Label_besked" runat="server" Text=""  CssClass="ErrorMsg"></asp:Label>
         </div>
 
+        <asp:Button class="accordion" runat="server" Text="Ændre Overskrift" OnClientClick="return false;" />
+
+        <!-- Ændre Overskrift -->
+        <div class="panel">
+
+
+         <article class="Overskrift">
+                <h2>Overskrift og tekst på forsiden</h2>
+                <asp:Repeater ID="RepeaterAdminDefaultTextboxText" runat="server" DataSourceID="SqlDataSourceoverskrifttext">
+                    <ItemTemplate>
+                        <asp:TextBox ID="TextBox_tegnOverskrift" runat="server" Text='<%#Eval("Overskrift") %>'></asp:TextBox>
+                        <asp:TextBox ID="TextBox_tegnText" runat="server" Text='<%#Eval("Text") %>'></asp:TextBox>
+
+                    </ItemTemplate>
+                </asp:Repeater>
+             <asp:SqlDataSource runat="server" ID="SqlDataSourceoverskrifttext" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT Overskrift, Text FROM InfoText WHERE (Lokation = @Lokation)">
+                 <SelectParameters>
+                     <asp:Parameter DefaultValue="TegnPage" Name="Lokation" Type="String"></asp:Parameter>
+                    </SelectParameters>
+                </asp:SqlDataSource>
+                <br />
+                <asp:Button ID="Button_FrontPage" runat="server" Text="Gem" OnClick="Button_tegnPage_Click" />
+            </article>
+
+             <!--OnClick="ButtonGemProdukt_Click"-->
+        </div>
+
         <asp:Button class="accordion" runat="server" Text="Tilføj nyt Produkt" OnClientClick="return false;" />
 
         <!-- Tilføj nyt Produkt -->

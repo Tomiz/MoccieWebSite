@@ -14,9 +14,30 @@
         <asp:View ID="ViewGrupperGrupper" runat="server" EnableViewState="true">
             <section>
                 <article class="FrontText mainrep">
-                    <h2>Info om grupperne</h2>
-                    <p>Da det er at jeg har flere forskellige former for tegninger har jeg valgt at lave specifikke grupper for hvert emne, så det er nemmere at over skue </p>
+
+                    <asp:Repeater ID="Repeater_TegnPageInfo" runat="server" DataSourceID="SqlDataSourceIndexText">
+                        <ItemTemplate>
+                            <h2><%#Eval("Overskrift") %></h2>
+                            <p><%#Eval ("Text") %></p>
+                        </ItemTemplate>
+                    </asp:Repeater>
+
+                    <asp:SqlDataSource runat="server" ID="SqlDataSourceIndexText" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT * FROM [InfoText] WHERE ([Lokation] = @Lokation)">
+                        <SelectParameters>
+                            <asp:Parameter DefaultValue="TegnPage" Name="Lokation" Type="String"></asp:Parameter>
+                        </SelectParameters>
+                    </asp:SqlDataSource>
                 </article>
+
+
+
+
+                <h2>Info om grupperne</h2>
+                <p>Da det er at jeg har flere forskellige former for tegninger har jeg valgt at lave specifikke grupper for hvert emne, så det er nemmere at over skue </p>
+
+
+
+
                 <article id="ProduktGruppe">
 
                     <asp:Repeater ID="RepeaterTegn" runat="server" DataSourceID="SqlDataSourceGruppeKategori">

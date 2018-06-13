@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/MasterPageAdmin.master" AutoEventWireup="true" CodeFile="BillederAdmin.aspx.cs" Inherits="Admin_NewsAdmin" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/MasterPageAdmin.master" AutoEventWireup="true" CodeFile="BillederAdmin.aspx.cs" Inherits="Admin_NewsAdmin" ValidateRequest="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <style type="text/css">
@@ -12,6 +12,33 @@
     <div class="tegnogbilled">
         <div class="ErrorBox" style="margin-left: 80px;">
             <asp:Label ID="Label_besked" runat="server" Text="" CssClass="ErrorMsg"></asp:Label>
+        </div>
+
+        <asp:Button class="accordion" runat="server" Text="Ændre Overskrift" OnClientClick="return false;" />
+
+        <!-- Ændre Overskrift -->
+        <div class="panel">
+
+
+            <article class="Overskrift">
+                <h2>Overskrift og tekst på forsiden</h2>
+                <asp:Repeater ID="RepeaterAdminDefaultTextboxText" runat="server" DataSourceID="SqlDataSourceoverskrifttext">
+                    <ItemTemplate>
+                        <asp:TextBox ID="TextBox_PicOverskrift" runat="server" Text='<%#Eval("Overskrift") %>'></asp:TextBox>
+                        <asp:TextBox ID="TextBox_PicText" runat="server" Text='<%#Eval("Text") %>'></asp:TextBox>
+
+                    </ItemTemplate>
+                </asp:Repeater>
+                <asp:SqlDataSource runat="server" ID="SqlDataSourceoverskrifttext" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT Overskrift, Text FROM InfoText WHERE (Lokation = @Lokation)">
+                    <SelectParameters>
+                        <asp:Parameter DefaultValue="PicPage" Name="Lokation" Type="String"></asp:Parameter>
+                    </SelectParameters>
+                </asp:SqlDataSource>
+                <br />
+                <asp:Button ID="Button_PicPage" runat="server" Text="Gem" OnClick="Button_PicPage_Click" />
+            </article>
+
+            <!--OnClick="Ændre Overskrift_Click"-->
         </div>
 
         <asp:Button class="accordion" runat="server" Text="Tilføj nyt Produkt" OnClientClick="return false;" />
