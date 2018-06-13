@@ -42,15 +42,15 @@
             <br />--%>
             <%--<p>Du kan se mig live på</p>--%>
             <h2>
-                <asp:HyperLink ID="Hyper1" runat="server" NavigateUrl="http://www.Twitch.tv/Moccie">Twitch.tv/Moccie</</asp:HyperLink></h2>
+                <asp:HyperLink ID="Hyper1" runat="server" NavigateUrl="http://www.Twitch.tv/Moccie" style="color:#4999aa;">Twitch.tv/Moccie</</asp:HyperLink></h2>
             <br />
             <%--<p>Eller følge hvad der sker på</p>--%>
             <h2>
-                <asp:HyperLink ID="Hyper2" runat="server" NavigateUrl="http://www.Twitter.com/M0ccie">Twitter.com/M0ccie</asp:HyperLink></h2>
+                <asp:HyperLink ID="Hyper2" runat="server" NavigateUrl="http://www.Twitter.com/M0ccie" style="color:#4999aa;">Twitter.com/M0ccie</asp:HyperLink></h2>
             <br />
             <%--<p>Du kan også se mine tegninger på min Facebook side</p>--%>
             <h2>
-                <asp:HyperLink ID="Hyper3" runat="server" NavigateUrl="https://www.facebook.com/MoccieMoo/">Facebook.com/M0ccieMoo</asp:HyperLink></h2>
+                <asp:HyperLink ID="Hyper3" runat="server" NavigateUrl="https://www.facebook.com/MoccieMoo/" style="color:#4999aa;">Facebook.com/M0ccieMoo</asp:HyperLink></h2>
             <br />
             </div>
 
