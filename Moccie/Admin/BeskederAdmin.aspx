@@ -13,13 +13,13 @@
         <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
             <ItemTemplate>
 
-                <div class="accordion"><%#Eval("Fornavn") %> | <%#Eval("AArsag") %> | <%#Eval("Dato") %></div>
+                <div class="accordion" ><%#Eval("Fornavn") %> | <%#Eval("AArsag") %> | <%#Eval("Dato") %></div>
             <%--<asp:Button class="accordion" runat="server" Text='<%#Eval("Fornavn") %> ' OnClientClick="return false;" />--%>
-                <div class="panel2">
+                <div class="panel2" style="background-color:#4fa0b1;">
                     <label><%#Eval("Fornavn") %> <%#Eval("Efternavn") %> | Email: <%#Eval("Email") %></label>
                     <label class="floatRight"><%#Eval("Dato") %></label>
                     <br /><br />
-                    <label>Besked</label>
+                    <%--<label>Besked</label>--%>
                     <hr />
                     <label><%#Eval("Begrundelse") %></label>
 

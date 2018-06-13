@@ -5,24 +5,27 @@
         #CurrentTegn {
             background-color: #555;
         }
+        #According_Current {
+            background-color: #ccc;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
     <div class="tegnogbilled">
         <h2>* Felter der er røde virker ikke!</h2>
-        
-        <div class="ErrorBox" style="margin-left:80px;">
-            <asp:Label ID="Label_besked" runat="server" Text=""  CssClass="ErrorMsg"></asp:Label>
+
+        <div class="ErrorBox" style="margin-left: 80px;">
+            <asp:Label ID="Label_besked" runat="server" Text="" CssClass="ErrorMsg"></asp:Label>
         </div>
 
-        <asp:Button class="accordion" runat="server" Text="Ændre Overskrift" OnClientClick="return false;" />
+        <asp:Button id="According_Current" class="accordion" runat="server" Text="Ændre Overskrift" OnClientClick="return false;" />
 
         <!-- Ændre Overskrift -->
         <div class="panel">
 
 
-         <article class="Overskrift">
+            <article class="Overskrift">
                 <h2>Overskrift og tekst på forsiden</h2>
                 <asp:Repeater ID="RepeaterAdminDefaultTextboxText" runat="server" DataSourceID="SqlDataSourceoverskrifttext">
                     <ItemTemplate>
@@ -31,16 +34,16 @@
 
                     </ItemTemplate>
                 </asp:Repeater>
-             <asp:SqlDataSource runat="server" ID="SqlDataSourceoverskrifttext" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT Overskrift, Text FROM InfoText WHERE (Lokation = @Lokation)">
-                 <SelectParameters>
-                     <asp:Parameter DefaultValue="TegnPage" Name="Lokation" Type="String"></asp:Parameter>
+                <asp:SqlDataSource runat="server" ID="SqlDataSourceoverskrifttext" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT Overskrift, Text FROM InfoText WHERE (Lokation = @Lokation)">
+                    <SelectParameters>
+                        <asp:Parameter DefaultValue="TegnPage" Name="Lokation" Type="String"></asp:Parameter>
                     </SelectParameters>
                 </asp:SqlDataSource>
                 <br />
                 <asp:Button ID="Button_FrontPage" runat="server" Text="Gem" OnClick="Button_tegnPage_Click" />
             </article>
 
-             <!--OnClick="ButtonGemProdukt_Click"-->
+            <!--OnClick="ButtonGemProdukt_Click"-->
         </div>
 
         <asp:Button class="accordion" runat="server" Text="Tilføj nyt Produkt" OnClientClick="return false;" />
@@ -94,13 +97,17 @@
                         <asp:DropDownList ID="DropDownListProduktEjer" runat="server" DataSourceID="SqlDataSourceProduktKunder" DataTextField="KundeNavn" DataValueField="Id" Width="100px" SelectedValue='<%# Eval("KundeId") %>'></asp:DropDownList>
                         <asp:TextBox ID="TextBoxProduktheader" runat="server" Text='<%#Eval("ProduktHeader") %>' Width="275"></asp:TextBox>
                         <span style="margin-left: 5px;">Information omkring billedet.</span><br />
-                        <asp:TextBox ID="TextBoxProduktInfo" runat="server" Text='<%#Eval("ProduktInfo") %>' TextMode="MultiLine" Height="100" Width="80%"></asp:TextBox>
+                        <asp:TextBox ID="TextBoxProduktInfo" runat="server" Text='<%#Eval("ProduktInfo") %>' TextMode="MultiLine" Rows="3" Height="100" Width="80%"></asp:TextBox>
+                            <script type="text/javascript">
+                                CKEDITOR.replace("ContentPlaceHolder1_RepeaterRedigerProdukter_TextBoxProduktInfo_{0}"); // Need fixet
+                            </script>
+
                         <img src="../Pictures/Produkter/<%#Eval("Billed") %>" width="125" class="floatRight produktpicTilføj" />
                         <br />
                         <asp:Button ID="RedigerProd" runat="server" Text="Rediger" CommandArgument='<%#Eval("ProduktId") %>' CommandName="RedigerProdukt" />
                         <asp:Button ID="SletProd" runat="server" Text="Slet" CommandArgument='<%#Eval("ProduktId") %>' CommandName="SletProdukt" />
 
-                        
+
                         <hr />
                     </ItemTemplate>
                 </asp:Repeater>
@@ -118,8 +125,9 @@
             <span style="margin-left: 5px; margin-right: 250px;">Navn på Kategorien</span> <span>Hvilken Gruppe sklal den ligge under</span>
             <asp:TextBox ID="NyKate" runat="server" Text="" Placeholder="Tilføj Ny Kategori" Width="50%"></asp:TextBox>
             <asp:DropDownList ID="DropDownListProduktKategori" runat="server" DataSourceID="SqlDataSourceKategoriProdukt" DataTextField="Navn" DataValueField="Id" Width="45%"></asp:DropDownList>
-            <br /> Billed skal være 300x150
-            <asp:FileUpload ID="FileUploadkategori" runat="server" CssClass="clearBoth width100"/>
+            <br />
+            Billed skal være 300x150
+            <asp:FileUpload ID="FileUploadkategori" runat="server" CssClass="clearBoth width100" />
             <asp:Button ID="GemKate" runat="server" Text="Tilføj ny Kategori" CssClass="clearBoth Top10" OnClick="GemKate_Click" /><br />
             <br />
             <hr />
@@ -128,7 +136,7 @@
                     <asp:TextBox ID="TextBoxShowKate" runat="server" Text='<%#Eval("Navn") %>' Width="200"></asp:TextBox>
                     <asp:FileUpload ID="FileUploadKategoriUpdate" runat="server" CssClass="clearBoth Top25" />
                     <img src="../Pictures/KategoriGruppe/<%#Eval("Billed") %>" width="75">
-                    <asp:Button ID="Redigerekate" runat="server" Text="Rediger" CommandArgument='<%#Eval("Id") %>' CommandName="RediKate" style="background-color:red" />
+                    <asp:Button ID="Redigerekate" runat="server" Text="Rediger" CommandArgument='<%#Eval("Id") %>' CommandName="RediKate" Style="background-color: red" />
                     <asp:Button ID="SletKate" runat="server" Text="Slet" CommandArgument='<%#Eval("Id") %>' CommandName="SletKate" />
                     <hr />
                     <br />
@@ -177,20 +185,20 @@
     <div class="footerClear" style="margin-top: 477px;"></div>
 
     <script>
-        var acc = document.getElementsByClassName("accordion");
-        var i;
+                var acc = document.getElementsByClassName("accordion");
+                var i;
 
-        for (i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function () {
-                this.classList.toggle("active");
-                var panel = this.nextElementSibling;
-                if (panel.style.display === "block") {
-                    panel.style.display = "none";
-                } else {
-                    panel.style.display = "block";
+                for (i = 0; i < acc.length; i++) {
+                    acc[i].addEventListener("click", function () {
+                        this.classList.toggle("active");
+                        var panel = this.nextElementSibling;
+                        if (panel.style.display === "block") {
+                            panel.style.display = "none";
+                        } else {
+                            panel.style.display = "block";
+                        }
+                    });
                 }
-            });
-        }
     </script>
 </asp:Content>
 

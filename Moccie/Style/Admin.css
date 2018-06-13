@@ -59,13 +59,13 @@ a {
 }
 
     .active, .accordion:hover {
-        background-color: #ccc;
+        background-color: Darkgrey;
     }
 
 .panel {
     padding: 10px 18px;
     display: none;
-    background-color: darkgrey;
+    background-color: #4999aa;
     overflow: hidden;
 }
 .panel p {

@@ -73,7 +73,7 @@
 
             <label for="Grund">Årsag</label>
             <asp:DropDownList ID="DropDownListGrund" runat="server">
-                <asp:ListItem>Forespørgsel</asp:ListItem>
+                <%--<asp:ListItem>Forespørgsel</asp:ListItem>--%>
                 <asp:ListItem>Bestilling</asp:ListItem>
                 <asp:ListItem>Spørgsmål</asp:ListItem>
             </asp:DropDownList>
