@@ -36,7 +36,10 @@
 
 div.container {
     text-align: center;
-    padding: 10px 20px;
+    padding: 9px 20px;
+    height: 41px;
+    font-size: 17px;
+    font-weight: bold;
 }
 
 #Produktalign {

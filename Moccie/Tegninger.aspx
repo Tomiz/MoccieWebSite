@@ -30,14 +30,6 @@
                 </article>
 
 
-
-
-                <h2>Info om grupperne</h2>
-                <p>Da det er at jeg har flere forskellige former for tegninger har jeg valgt at lave specifikke grupper for hvert emne, så det er nemmere at over skue </p>
-
-
-
-
                 <article id="ProduktGruppe">
 
                     <asp:Repeater ID="RepeaterTegn" runat="server" DataSourceID="SqlDataSourceGruppeKategori">
