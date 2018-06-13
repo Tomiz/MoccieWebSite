@@ -68,6 +68,15 @@ input[type=submit]:hover {
 .Top25{
     margin-top:25px;
 }
+.Top35 {
+    margin-top: 35px;
+}
+.Top40 {
+    margin-top: 40px;
+}
+.Top60 {
+    margin-top: 60px;
+}
 .bottom10{
     margin-bottom:10px;
 }

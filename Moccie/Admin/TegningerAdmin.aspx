@@ -10,6 +10,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
     <div class="tegnogbilled">
+        <h2>* Felter der er røde virker ikke!</h2>
+        
         <div class="ErrorBox" style="margin-left:80px;">
             <asp:Label ID="Label_besked" runat="server" Text=""  CssClass="ErrorMsg"></asp:Label>
         </div>
@@ -126,7 +128,7 @@
                     <asp:TextBox ID="TextBoxShowKate" runat="server" Text='<%#Eval("Navn") %>' Width="200"></asp:TextBox>
                     <asp:FileUpload ID="FileUploadKategoriUpdate" runat="server" CssClass="clearBoth Top25" />
                     <img src="../Pictures/KategoriGruppe/<%#Eval("Billed") %>" width="75">
-                    <asp:Button ID="Redigerekate" runat="server" Text="Redigere" CommandArgument='<%#Eval("Id") %>' CommandName="RediKate" />
+                    <asp:Button ID="Redigerekate" runat="server" Text="Rediger" CommandArgument='<%#Eval("Id") %>' CommandName="RediKate" style="background-color:red" />
                     <asp:Button ID="SletKate" runat="server" Text="Slet" CommandArgument='<%#Eval("Id") %>' CommandName="SletKate" />
                     <hr />
                     <br />
@@ -155,7 +157,7 @@
             <asp:Repeater ID="RepeaterKunder" runat="server" DataSourceID="SqlDataSourceKunder" OnItemCommand="RepeaterKunder_ItemCommand">
                 <ItemTemplate>
                     <asp:TextBox ID="TextBoxShowKate" runat="server" Text='<%#Eval("KundeNavn") %>' Width="200"></asp:TextBox>
-                    <asp:Button ID="ButtonRedikunde" runat="server" Text="Redigere" CommandArgument='<%#Eval("Id") %>' CommandName="RediKunde"/>
+                    <asp:Button ID="ButtonRedikunde" runat="server" Text="Redigere" CommandArgument='<%#Eval("Id") %>' CommandName="RediKunde" />
                     <asp:Button ID="ButtonSletkunde" runat="server" Text="Slet" CommandArgument='<%#Eval("Id") %>' CommandName="SletKunde" />
                     <br />
                 </ItemTemplate>

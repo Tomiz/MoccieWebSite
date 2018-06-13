@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     min-height: 100%;
-    background: radial-gradient(#999, #555, #333);
+    background: radial-gradient(#393939, #292929, #242424);
     position: relative;
     /*background-color: red;*/
 }
@@ -15,6 +15,7 @@ header {
 
 /* top nav start */
 ul.topnav {
+    line-height: 0.5;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -99,7 +100,8 @@ li a:hover, .dropdown:hover .dropbtn {
 /* Content Start */
 #wrapper {
     width: 100%;
-    min-height:699px;
+    min-height:711px;
+    /*min-height:699px;*/
     max-height:100%;
     margin: auto;
 }
@@ -145,12 +147,13 @@ section article.FrontText p {
 /* Footer Start */
 footer {
     clear: both;
-    background-color: #333;
+    background-color: #202020;
+    color:#999999;
     width: 100%;
     border-top: 1px solid #FFF;
     bottom: 0;
     position: relative;
-    margin-top: 50px;
+    /*margin-top: 50px;*/
     /*display: none;*/
 }
 
