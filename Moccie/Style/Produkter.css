@@ -92,7 +92,7 @@ div.container {
 
     /*width:850px;*/
     /*max-width: 94.5%;*/
-
+    cursor:pointer;
     position: absolute;
     max-width: 94.5%;
     max-height: 100%;
