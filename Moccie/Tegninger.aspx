@@ -104,7 +104,7 @@
                                         <p><%#Eval("Navn") %></p>
                                     </div>
                                     <div id="produktImageBox">
-                                        <img src="Pictures/Produkter/<%#Eval("Billed") %>" id="MiniProduktImage" />
+                                        <img src="Pictures/Produkter/<%#Eval("Billed") %>" id="MiniProduktImage" class="ProduktImagePosition" />
                                     </div>
                                 </a>
                                 <%--</asp:LinkButton>--%>
@@ -158,8 +158,40 @@
                         <div style="height: 45px;">
                             <h2><%#Eval("Navn") %></h2>
                         </div>
+                        <div id="ProduktBoxSize">
+                            <img src="Pictures/Produkter/<%#Eval("Billed") %>" alt="<%#Eval("Navn") %>" id="produktImage" class="Top10 ProduktImagePosition" style="bottom: inherit;">
+                        </div>
 
-                        <img src="Pictures/Produkter/<%#Eval("Billed") %>" id="produktImage" class="Top10">
+                        <!-- The Modal -->
+                        <div id="myModal" class="modal">
+                            <span class="close">&times;</span>
+                            <img class="modal-content" id="img01" /> 
+                            <h1><div id="caption"></div></h1>
+                        </div>
+
+                        <script>
+                            // Get the modal
+                            var modal = document.getElementById('myModal');
+
+                            // Get the image and insert it inside the modal - use its "alt" text as a caption
+                            var img = document.getElementById('produktImage');
+                            var modalImg = document.getElementById("img01");
+                            var captionText = document.getElementById("caption");
+                            img.onclick = function () {
+                                modal.style.display = "block";
+                                modalImg.src = this.src;
+                                captionText.innerHTML = this.alt;
+                            }
+
+                            // Get the <span> element that closes the modal
+                            var span = document.getElementsByClassName("close")[0];
+
+                            // When the user clicks on <span> (x), close the modal
+                            span.onclick = function () {
+                                modal.style.display = "none";
+                            }
+                        </script>
+
                     </article>
 
                     <div id="ContentInfo" class="rightrep">

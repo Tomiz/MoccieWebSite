@@ -69,22 +69,47 @@ div.container {
             background-color: #ccc;
         }
 
+#ProduktBoxSize {
+    position: relative;
+    max-width: 100%;
+    height: 1000px;
+    max-height: 100%;
+}
 #ProduktCenterImage {
     width: 900px;
-    margin-bottom:50px;
+    margin-bottom: 50px;
     /*margin: 50px auto;*/
     float: left;
 }
 #produktImage {
+    /*position: absolute;
+    max-width: 94.5%;
+    max-height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;*/
+
     /*width:850px;*/
-    max-width:94.5%;
+    /*max-width: 94.5%;*/
+
+    position: absolute;
+    max-width: 94.5%;
+    max-height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    /* width: 850px; */
+    /* max-width: 94.5%; */
+    background-color: #eee;
 }
 #produktImageBox{
+    position:relative;
     width:400px;
     height:200px;
+    background-color:#EEE;
 }
 #MiniProduktImage {
-    height: 100%;
+    position: absolute;
+    max-width: 95%;
+    max-height: 100%;
     background-repeat: no-repeat;
     background-position: center center;
 }
@@ -105,6 +130,14 @@ div.container {
             background-color: #ccc;
         }
 
+.ProduktImagePosition {
+    background-position: center center;
+    right: 0;
+    left: 0;
+     top: 0; 
+     bottom: 0; 
+    margin: auto;
+}
 .produkterCenter {
     margin:5px 0 50px 50%;
     width: 100%;
