@@ -37,7 +37,7 @@
             <ul class="topnav">
                 <li id="CurrentKont" class="right"><a href="Kontakt.aspx">Contact</a></li>
                 <%--<li id="CurrentRank" class="right"><a href="KundeRank.aspx">Rank Liste</a></li>--%>
-                <li id="CurrentBilled" class="right"><a href="Billeder.aspx">Pictures</a></li>
+                <!--<li id="CurrentBilled" class="right"><a href="Billeder.aspx">Pictures</a></li>-->
                 <li id="CurrentTegn" class="right"><a href="Tegninger.aspx">Drawings</a></li>
 
                 <%--<li id="CurrentTegn" class="dropdown right">
@@ -65,7 +65,7 @@
                     </ItemTemplate>
                 </asp:Repeater>
                 <%--<h2>Footer content here</h2>--%>
-                <asp:SqlDataSource runat="server" ID="SqlDataSourceFooter" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT * FROM [InfoText] WHERE ([Lokation] = @Lokation)">
+                <asp:SqlDataSource runat="server" ID="SqlDataSourceFooter" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT * FROM [InfoText] WHERE ([Lokation] = @Lokation)">
                     <SelectParameters>
                         <asp:Parameter DefaultValue="Footer" Name="Lokation" Type="String"></asp:Parameter>
                     </SelectParameters>

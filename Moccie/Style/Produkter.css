@@ -26,7 +26,6 @@
 
 #Grupper {
     margin: 0 20px 0 0;
-    
     width: 310px;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -78,9 +77,17 @@ div.container {
 }
 #produktImage {
     /*width:850px;*/
-    width:94.5%;
+    max-width:94.5%;
 }
-
+#produktImageBox{
+    width:400px;
+    height:200px;
+}
+#MiniProduktImage {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
 #ProduktMenuRight {
     width: 200px;
     margin: 20px 190px 0 0;
@@ -94,10 +101,10 @@ div.container {
         text-decoration: none;
         text-align: center;
     }
-
         #ProduktMenuRight a:hover {
             background-color: #ccc;
         }
+
 .produkterCenter {
     margin:5px 0 50px 50%;
     width: 100%;

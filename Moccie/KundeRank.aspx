@@ -22,7 +22,7 @@
                     <p>* <%#Eval("KundeNavn") %></p>
                 </ItemTemplate>
             </asp:DataList>
-            <asp:SqlDataSource runat="server" ID="SqlDataSourcerank" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT [KundeNavn], [HiddenId] FROM [Kunde] ORDER BY [HiddenId]"></asp:SqlDataSource>
+            <asp:SqlDataSource runat="server" ID="SqlDataSourcerank" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT [KundeNavn], [HiddenId] FROM [Kunde] ORDER BY [HiddenId]"></asp:SqlDataSource>
         </div>
         <%--<div id="RanklisteTopP">
             <div class="RankHeader">
@@ -58,7 +58,7 @@
                         background-color: #dddddd;
                     }
                 </style>
-                <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT COUNT(Produkter.Fk_Kunde) AS Fk_Kunde, Kunde.KundeNavn FROM Produkter INNER JOIN Kunde ON Produkter.Fk_Kunde = Kunde.Id AND Produkter.Fk_Kunde = Kunde.Id AND Produkter.Fk_Kunde = Kunde.Id GROUP BY Produkter.Fk_Kunde, Kunde.KundeNavn ORDER BY Fk_Kunde DESC"></asp:SqlDataSource>
+                <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT COUNT(Produkter.Fk_Kunde) AS Fk_Kunde, Kunde.KundeNavn FROM Produkter INNER JOIN Kunde ON Produkter.Fk_Kunde = Kunde.Id AND Produkter.Fk_Kunde = Kunde.Id AND Produkter.Fk_Kunde = Kunde.Id GROUP BY Produkter.Fk_Kunde, Kunde.KundeNavn ORDER BY Fk_Kunde DESC"></asp:SqlDataSource>
             </div>
         </div>
         <div id="RanklisteTopV">
@@ -77,7 +77,7 @@
                         </ItemTemplate>
                     </asp:Repeater>
                 </table>
-                <asp:SqlDataSource runat="server" ID="SqlDataSource2" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT Platform.Img AS Picture, Kunde.KundeNavn, Kunde.AntalFollowers AS Follow FROM Kunde INNER JOIN Platform ON Kunde.Fk_Platform = Platform.Id GROUP BY Kunde.KundeNavn, Kunde.AntalFollowers, Platform.Img ORDER BY Follow DESC"></asp:SqlDataSource>
+                <asp:SqlDataSource runat="server" ID="SqlDataSource2" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT Platform.Img AS Picture, Kunde.KundeNavn, Kunde.AntalFollowers AS Follow FROM Kunde INNER JOIN Platform ON Kunde.Fk_Platform = Platform.Id GROUP BY Kunde.KundeNavn, Kunde.AntalFollowers, Platform.Img ORDER BY Follow DESC"></asp:SqlDataSource>
             </div>
         </div>--%>
     </section>

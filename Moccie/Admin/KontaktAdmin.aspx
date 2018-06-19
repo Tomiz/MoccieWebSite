@@ -29,7 +29,7 @@
 
                     </ItemTemplate>
                 </asp:Repeater>
-                <asp:SqlDataSource runat="server" ID="SqlDataSourceoverskrifttext" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT Overskrift, Text FROM InfoText WHERE (Lokation = @Lokation)">
+                <asp:SqlDataSource runat="server" ID="SqlDataSourceoverskrifttext" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT Overskrift, Text FROM InfoText WHERE (Lokation = @Lokation)">
                     <SelectParameters>
                         <asp:Parameter DefaultValue="ContainPage" Name="Lokation" Type="String"></asp:Parameter>
                     </SelectParameters>

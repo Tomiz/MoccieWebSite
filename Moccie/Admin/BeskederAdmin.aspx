@@ -29,7 +29,7 @@
 
             </ItemTemplate>
         </asp:Repeater>
-        <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT Beskeder.*, Dato AS Date FROM Beskeder ORDER BY Date DESC"></asp:SqlDataSource>
+        <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT Beskeder.*, Dato AS Date FROM Beskeder ORDER BY Date DESC"></asp:SqlDataSource>
     </div>
 
     <div class="footerClear" style="margin-top: 477px;"></div>

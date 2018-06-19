@@ -25,7 +25,7 @@
                 <li class="right"><asp:Button ID="ButtonLogout" runat="server" Text="Log ud" CssClass="LogoutButton" OnClick="ButtonLogout_Click"/></li>
                 <li id="CurrentKont" class="right"><a href="KontaktAdmin.aspx">Kontakt</a></li>
                 <li id="CurrentBesk" class="right"><a href="BeskederAdmin.aspx">Beskeder</a></li>
-                <li id="CurrentBilled" class="right"><a href="BillederAdmin.aspx">Billeder</a></li>
+                <!--<li id="CurrentBilled" class="right"><a href="BillederAdmin.aspx">Billeder</a></li>-->
                 <li id="CurrentTegn" class="right"><a href="TegningerAdmin.aspx">Tegninger</a></li>
                 <li id="CurrentHome" class="right"><a href="DefaultAdmin.aspx">Hjem</a></li>
             </ul>
@@ -44,7 +44,7 @@
                     </ItemTemplate>
                 </asp:Repeater>
                 <%--<h2>Footer content here</h2>--%
-                <asp:SqlDataSource runat="server" ID="SqlDataSourceFooter" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT * FROM [InfoText] WHERE ([Lokation] = @Lokation)">
+                <asp:SqlDataSource runat="server" ID="SqlDataSourceFooter" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT * FROM [InfoText] WHERE ([Lokation] = @Lokation)">
                     <SelectParameters>
                         <asp:Parameter DefaultValue="Footer" Name="Lokation" Type="String"></asp:Parameter>
                     </SelectParameters>

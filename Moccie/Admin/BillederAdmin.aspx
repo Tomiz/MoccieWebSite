@@ -29,7 +29,7 @@
 
                     </ItemTemplate>
                 </asp:Repeater>
-                <asp:SqlDataSource runat="server" ID="SqlDataSourceoverskrifttext" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT Overskrift, Text FROM InfoText WHERE (Lokation = @Lokation)">
+                <asp:SqlDataSource runat="server" ID="SqlDataSourceoverskrifttext" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT Overskrift, Text FROM InfoText WHERE (Lokation = @Lokation)">
                     <SelectParameters>
                         <asp:Parameter DefaultValue="PicPage" Name="Lokation" Type="String"></asp:Parameter>
                     </SelectParameters>
@@ -47,7 +47,7 @@
         <div class="panel">
             <p>Vælg Kategori</p>
             <asp:DropDownList ID="DropDownListGrupper" runat="server" DataSourceID="SqlDataSourceGrupper" DataTextField="Navn" DataValueField="Id"></asp:DropDownList>
-            <asp:SqlDataSource runat="server" ID="SqlDataSourceGrupper" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT Navn, Id FROM ProduktGruppe WHERE (Fk_ProduktKategori = @Fk_ProduktKategori)">
+            <asp:SqlDataSource runat="server" ID="SqlDataSourceGrupper" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT Navn, Id FROM ProduktGruppe WHERE (Fk_ProduktKategori = @Fk_ProduktKategori)">
                 <SelectParameters>
                     <asp:Parameter DefaultValue="2" Name="Fk_ProduktKategori" Type="Int32"></asp:Parameter>
                 </SelectParameters>
@@ -75,7 +75,7 @@
             <asp:DropDownList ID="DropDownListKunde" runat="server" DataSourceID="SqlDataSourceKunde" DataTextField="KundeNavn" DataValueField="Id">
                 <asp:ListItem Text="Opret kunde først" Value="0" />
             </asp:DropDownList>
-            <asp:SqlDataSource runat="server" ID="SqlDataSourceKunde" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT [KundeNavn], [Id] FROM [Kunde] WHERE ([Id] = @Id)">
+            <asp:SqlDataSource runat="server" ID="SqlDataSourceKunde" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT [KundeNavn], [Id] FROM [Kunde] WHERE ([Id] = @Id)">
                 <SelectParameters>
                     <asp:Parameter DefaultValue="4" Name="Id" Type="Int32"></asp:Parameter>
                 </SelectParameters>
@@ -105,9 +105,9 @@
                     </ItemTemplate>
                 </asp:Repeater>
 
-                <asp:SqlDataSource runat="server" ID="SqlDataSourceRedProdukt" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT DISTINCT Produkter.ProduktHeader, Produkter.Navn, Produkter.ProduktInfo, ProduktGruppe.Navn AS ProduktKategori, Produkter.Id AS ProduktId, Kunde.Id AS KundeId, Kunde.KundeNavn, ProduktGruppe.Id AS GruppeId, ProduktKategori.Id FROM Produkter INNER JOIN ProduktGruppe ON Produkter.Fk_ProduktGruppe = ProduktGruppe.Id INNER JOIN Kunde ON Produkter.Fk_Kunde = Kunde.Id INNER JOIN ProduktKategori ON Produkter.Fk_ProduktKategori = ProduktKategori.Id AND ProduktGruppe.Fk_ProduktKategori = ProduktKategori.Id WHERE (ProduktKategori.Id = 2)"></asp:SqlDataSource>
-                <asp:SqlDataSource runat="server" ID="SqlDataSourceProduktkategoriDropdown" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT DISTINCT Id AS ProduktGruppeId, Navn FROM ProduktGruppe"></asp:SqlDataSource>
-                <asp:SqlDataSource runat="server" ID="SqlDataSourceProduktKunder" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT [KundeNavn], [Id] FROM [Kunde]"></asp:SqlDataSource>
+                <asp:SqlDataSource runat="server" ID="SqlDataSourceRedProdukt" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT DISTINCT Produkter.ProduktHeader, Produkter.Navn, Produkter.ProduktInfo, ProduktGruppe.Navn AS ProduktKategori, Produkter.Id AS ProduktId, Kunde.Id AS KundeId, Kunde.KundeNavn, ProduktGruppe.Id AS GruppeId, ProduktKategori.Id FROM Produkter INNER JOIN ProduktGruppe ON Produkter.Fk_ProduktGruppe = ProduktGruppe.Id INNER JOIN Kunde ON Produkter.Fk_Kunde = Kunde.Id INNER JOIN ProduktKategori ON Produkter.Fk_ProduktKategori = ProduktKategori.Id AND ProduktGruppe.Fk_ProduktKategori = ProduktKategori.Id WHERE (ProduktKategori.Id = 2)"></asp:SqlDataSource>
+                <asp:SqlDataSource runat="server" ID="SqlDataSourceProduktkategoriDropdown" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT DISTINCT Id AS ProduktGruppeId, Navn FROM ProduktGruppe"></asp:SqlDataSource>
+                <asp:SqlDataSource runat="server" ID="SqlDataSourceProduktKunder" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT [KundeNavn], [Id] FROM [Kunde]"></asp:SqlDataSource>
 
             </div>
         </div>
@@ -132,8 +132,8 @@
                     <br />
                 </ItemTemplate>
             </asp:Repeater>
-            <asp:SqlDataSource runat="server" ID="SqlDataSourceKategoriProdukt" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT * FROM [ProduktKategori]"></asp:SqlDataSource>
-            <asp:SqlDataSource runat="server" ID="SqlDataSourceKategorier" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT [Navn], [Billed], [Id] FROM [ProduktGruppe] WHERE ([Fk_ProduktKategori] = @Fk_ProduktKategori)">
+            <asp:SqlDataSource runat="server" ID="SqlDataSourceKategoriProdukt" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT * FROM [ProduktKategori]"></asp:SqlDataSource>
+            <asp:SqlDataSource runat="server" ID="SqlDataSourceKategorier" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT [Navn], [Billed], [Id] FROM [ProduktGruppe] WHERE ([Fk_ProduktKategori] = @Fk_ProduktKategori)">
                 <SelectParameters>
                     <asp:Parameter DefaultValue="2" Name="Fk_ProduktKategori" Type="Int32"></asp:Parameter>
                 </SelectParameters>

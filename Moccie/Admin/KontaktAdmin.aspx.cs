@@ -21,7 +21,7 @@ public partial class Admin_KontaktAdmin : System.Web.UI.Page
             if (tOverskrift != null && tText != null)
             {
                 SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
+                conn.ConnectionString = ConfigurationManager.ConnectionStrings["tomis_dk_dbConnectionString"].ToString();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
 

@@ -34,7 +34,7 @@
 
                     </ItemTemplate>
                 </asp:Repeater>
-                <asp:SqlDataSource runat="server" ID="SqlDataSourceoverskrifttext" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT Overskrift, Text FROM InfoText WHERE (Lokation = @Lokation)">
+                <asp:SqlDataSource runat="server" ID="SqlDataSourceoverskrifttext" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT Overskrift, Text FROM InfoText WHERE (Lokation = @Lokation)">
                     <SelectParameters>
                         <asp:Parameter DefaultValue="TegnPage" Name="Lokation" Type="String"></asp:Parameter>
                     </SelectParameters>
@@ -52,7 +52,7 @@
         <div class="panel">
             <p>Vælg Kategori</p>
             <asp:DropDownList ID="DropDownListGrupper" runat="server" DataSourceID="SqlDataSourceGrupper" DataTextField="Navn" DataValueField="Id"></asp:DropDownList>
-            <asp:SqlDataSource runat="server" ID="SqlDataSourceGrupper" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT [Navn], [Id] FROM [ProduktGruppe] WHERE ([Fk_ProduktKategori] = @Fk_ProduktKategori)">
+            <asp:SqlDataSource runat="server" ID="SqlDataSourceGrupper" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT [Navn], [Id] FROM [ProduktGruppe] WHERE ([Fk_ProduktKategori] = @Fk_ProduktKategori)">
                 <SelectParameters>
                     <asp:Parameter DefaultValue="1" Name="Fk_ProduktKategori" Type="Int32"></asp:Parameter>
                 </SelectParameters>
@@ -80,7 +80,7 @@
             <asp:DropDownList ID="DropDownListKunde" runat="server" DataSourceID="SqlDataSourceKunde" DataTextField="KundeNavn" DataValueField="Id">
                 <asp:ListItem Text="Opret kunde først" Value="0" />
             </asp:DropDownList>
-            <asp:SqlDataSource runat="server" ID="SqlDataSourceKunde" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT [KundeNavn], [Id] FROM [Kunde]"></asp:SqlDataSource>
+            <asp:SqlDataSource runat="server" ID="SqlDataSourceKunde" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT [KundeNavn], [Id] FROM [Kunde]"></asp:SqlDataSource>
             <asp:Button ID="ButtonGemProdukt" runat="server" Text="Tilføj nyt Elemet" OnClick="ButtonGemProdukt_Click" />
             <!--OnClick="ButtonGemProdukt_Click"-->
         </div>
@@ -112,9 +112,9 @@
                     </ItemTemplate>
                 </asp:Repeater>
 
-                <asp:SqlDataSource runat="server" ID="SqlDataSourceRedProdukt" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT DISTINCT Produkter.ProduktHeader, Produkter.Navn, Produkter.ProduktInfo, ProduktGruppe.Navn AS ProduktKategori, Produkter.Id AS ProduktId, Kunde.Id AS KundeId, Kunde.KundeNavn, ProduktGruppe.Id AS GruppeId, ProduktKategori.Id, Billeder.Id AS Expr1, Billeder.Billed, Billeder.Fk_ProduktBilled FROM Produkter INNER JOIN ProduktGruppe ON Produkter.Fk_ProduktGruppe = ProduktGruppe.Id INNER JOIN Kunde ON Produkter.Fk_Kunde = Kunde.Id INNER JOIN ProduktKategori ON Produkter.Fk_ProduktKategori = ProduktKategori.Id AND ProduktGruppe.Fk_ProduktKategori = ProduktKategori.Id INNER JOIN Billeder ON Produkter.Id = Billeder.Fk_ProduktBilled WHERE (ProduktKategori.Id = 1)"></asp:SqlDataSource>
-                <asp:SqlDataSource runat="server" ID="SqlDataSourceProduktkategoriDropdown" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT DISTINCT Id AS ProduktGruppeId, Navn FROM ProduktGruppe"></asp:SqlDataSource>
-                <asp:SqlDataSource runat="server" ID="SqlDataSourceProduktKunder" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT [KundeNavn], [Id] FROM [Kunde]"></asp:SqlDataSource>
+                <asp:SqlDataSource runat="server" ID="SqlDataSourceRedProdukt" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT DISTINCT Produkter.ProduktHeader, Produkter.Navn, Produkter.ProduktInfo, ProduktGruppe.Navn AS ProduktKategori, Produkter.Id AS ProduktId, Kunde.Id AS KundeId, Kunde.KundeNavn, ProduktGruppe.Id AS GruppeId, ProduktKategori.Id, Billeder.Id AS Expr1, Billeder.Billed, Billeder.Fk_ProduktBilled FROM Produkter INNER JOIN ProduktGruppe ON Produkter.Fk_ProduktGruppe = ProduktGruppe.Id INNER JOIN Kunde ON Produkter.Fk_Kunde = Kunde.Id INNER JOIN ProduktKategori ON Produkter.Fk_ProduktKategori = ProduktKategori.Id AND ProduktGruppe.Fk_ProduktKategori = ProduktKategori.Id INNER JOIN Billeder ON Produkter.Id = Billeder.Fk_ProduktBilled WHERE (ProduktKategori.Id = 1)"></asp:SqlDataSource>
+                <asp:SqlDataSource runat="server" ID="SqlDataSourceProduktkategoriDropdown" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT DISTINCT Id AS ProduktGruppeId, Navn FROM ProduktGruppe"></asp:SqlDataSource>
+                <asp:SqlDataSource runat="server" ID="SqlDataSourceProduktKunder" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT [KundeNavn], [Id] FROM [Kunde]"></asp:SqlDataSource>
 
             </div>
         </div>
@@ -142,8 +142,8 @@
                     <br />
                 </ItemTemplate>
             </asp:Repeater>
-            <asp:SqlDataSource runat="server" ID="SqlDataSourceKategoriProdukt" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT * FROM [ProduktKategori]"></asp:SqlDataSource>
-            <asp:SqlDataSource runat="server" ID="SqlDataSourceKategorier" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT [Navn], [Billed], [Id] FROM [ProduktGruppe] WHERE ([Fk_ProduktKategori] = @Fk_ProduktKategori)">
+            <asp:SqlDataSource runat="server" ID="SqlDataSourceKategoriProdukt" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT * FROM [ProduktKategori]"></asp:SqlDataSource>
+            <asp:SqlDataSource runat="server" ID="SqlDataSourceKategorier" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT [Navn], [Billed], [Id] FROM [ProduktGruppe] WHERE ([Fk_ProduktKategori] = @Fk_ProduktKategori)">
                 <SelectParameters>
                     <asp:Parameter DefaultValue="1" Name="Fk_ProduktKategori" Type="Int32"></asp:Parameter>
                 </SelectParameters>
@@ -157,7 +157,7 @@
             <asp:TextBox ID="Kundenavn" runat="server" Text="" placeholder="Kunde Navn"></asp:TextBox>
             <asp:TextBox ID="KundeLink" runat="server" Text="" placeholder="Kunde Link"></asp:TextBox>
             <%--<asp:DropDownList ID="DropDownListplatform" runat="server" DataSourceID="SqlDataSourcePlaftform" DataTextField="Navn" DataValueField="Id"></asp:DropDownList>--%>
-            <asp:SqlDataSource runat="server" ID="SqlDataSourcePlaftform" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT * FROM [Platform]"></asp:SqlDataSource>
+            <asp:SqlDataSource runat="server" ID="SqlDataSourcePlaftform" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT * FROM [Platform]"></asp:SqlDataSource>
             <%--<asp:TextBox ID="Followers" runat="server" Text="" placeHolder="Antal followers/subsriber"></asp:TextBox>--%>
             <asp:Button ID="ButtonGemKunde" runat="server" Text="Tilføj ny Kunde" OnClick="ButtonGemKunde_Click" /><br />
             <br />
@@ -171,7 +171,7 @@
                 </ItemTemplate>
             </asp:Repeater>
 
-            <asp:SqlDataSource runat="server" ID="SqlDataSourceKunder" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT * FROM [Kunde]"></asp:SqlDataSource>
+            <asp:SqlDataSource runat="server" ID="SqlDataSourceKunder" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT * FROM [Kunde]"></asp:SqlDataSource>
         </div>
 
         <!-- Priser -->

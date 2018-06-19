@@ -21,7 +21,7 @@ public partial class Admin_NewsAdmin : System.Web.UI.Page
             if (tOverskrift != null && tText != null)
             {
                 SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
+                conn.ConnectionString = ConfigurationManager.ConnectionStrings["tomis_dk_dbConnectionString"].ToString();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
 
@@ -49,7 +49,7 @@ public partial class Admin_NewsAdmin : System.Web.UI.Page
         {
 
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["tomis_dk_dbConnectionString"].ToString();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
 
@@ -102,7 +102,7 @@ public partial class Admin_NewsAdmin : System.Web.UI.Page
         if (e.CommandName == "SletProdukt")
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["tomis_dk_dbConnectionString"].ToString();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
 
@@ -126,7 +126,7 @@ public partial class Admin_NewsAdmin : System.Web.UI.Page
         if (e.CommandName == "RedigerProdukt")
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["tomis_dk_dbConnectionString"].ToString();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
 
@@ -162,7 +162,7 @@ public partial class Admin_NewsAdmin : System.Web.UI.Page
         if (File.Exists(Server.MapPath("~/Pictures/KategoriGruppe/") + FileUploadkategori.FileName))
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["tomis_dk_dbConnectionString"].ToString();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
 
@@ -193,7 +193,7 @@ public partial class Admin_NewsAdmin : System.Web.UI.Page
 
 
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["tomis_dk_dbConnectionString"].ToString();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
 

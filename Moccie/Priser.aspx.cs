@@ -117,7 +117,7 @@ public partial class Priser : System.Web.UI.Page
         //if (e.CommandName == "GemKnap")
         //{
         //    SqlConnection conn = new SqlConnection();
-        //    conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
+        //    conn.ConnectionString = ConfigurationManager.ConnectionStrings["tomis_dk_dbConnectionString"].ToString();
         //    SqlCommand cmd = new SqlCommand();
         //    cmd.Connection = conn;
 
@@ -148,7 +148,7 @@ public partial class Priser : System.Web.UI.Page
                 //string OrderId = h1.Value;
 
                 SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
+                conn.ConnectionString = ConfigurationManager.ConnectionStrings["tomis_dk_dbConnectionString"].ToString();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
 

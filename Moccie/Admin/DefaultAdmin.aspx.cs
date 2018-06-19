@@ -25,7 +25,7 @@ public partial class Admin_DefaultAdmin : System.Web.UI.Page
             if (tOverskrift != null && tText != null)
             {
                 SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
+                conn.ConnectionString = ConfigurationManager.ConnectionStrings["tomis_dk_dbConnectionString"].ToString();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
 
@@ -56,7 +56,7 @@ public partial class Admin_DefaultAdmin : System.Web.UI.Page
             if (tAboutOverskrift != null && tAboutText != null) //&& fAbout != null)
             {
                 SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
+                conn.ConnectionString = ConfigurationManager.ConnectionStrings["tomis_dk_dbConnectionString"].ToString();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
 
@@ -86,7 +86,7 @@ public partial class Admin_DefaultAdmin : System.Web.UI.Page
             if (fAbout != null)
             {
                 SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
+                conn.ConnectionString = ConfigurationManager.ConnectionStrings["tomis_dk_dbConnectionString"].ToString();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
 
@@ -126,7 +126,7 @@ public partial class Admin_DefaultAdmin : System.Web.UI.Page
             if (tFooter != null)
             {
                 SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
+                conn.ConnectionString = ConfigurationManager.ConnectionStrings["tomis_dk_dbConnectionString"].ToString();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
 

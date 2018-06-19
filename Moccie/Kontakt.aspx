@@ -18,7 +18,7 @@
                 </ItemTemplate>
             </asp:Repeater>
 
-            <asp:SqlDataSource runat="server" ID="SqlDataSourceIndexText" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT * FROM [InfoText] WHERE ([Lokation] = @Lokation)">
+            <asp:SqlDataSource runat="server" ID="SqlDataSourceIndexText" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT * FROM [InfoText] WHERE ([Lokation] = @Lokation)">
                 <SelectParameters>
                     <asp:Parameter DefaultValue="ContainPage" Name="Lokation" Type="String"></asp:Parameter>
                 </SelectParameters>

@@ -21,7 +21,7 @@ public partial class Admin_TegningerAdmin : System.Web.UI.Page
             if (tOverskrift != null && tText != null)
             {
                 SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
+                conn.ConnectionString = ConfigurationManager.ConnectionStrings["tomis_dk_dbConnectionString"].ToString();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
 
@@ -50,7 +50,7 @@ public partial class Admin_TegningerAdmin : System.Web.UI.Page
         {
 
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["tomis_dk_dbConnectionString"].ToString();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
 
@@ -108,7 +108,7 @@ public partial class Admin_TegningerAdmin : System.Web.UI.Page
     protected void ButtonGemKunde_Click(object sender, EventArgs e)
     {
         SqlConnection conn = new SqlConnection();
-        conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
+        conn.ConnectionString = ConfigurationManager.ConnectionStrings["tomis_dk_dbConnectionString"].ToString();
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = conn;
 
@@ -140,7 +140,7 @@ public partial class Admin_TegningerAdmin : System.Web.UI.Page
         if (e.CommandName == "SletProdukt")
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["tomis_dk_dbConnectionString"].ToString();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
 
@@ -164,7 +164,7 @@ public partial class Admin_TegningerAdmin : System.Web.UI.Page
         if (e.CommandName == "RedigerProdukt")
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["tomis_dk_dbConnectionString"].ToString();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
 
@@ -200,7 +200,7 @@ public partial class Admin_TegningerAdmin : System.Web.UI.Page
         if (File.Exists(Server.MapPath("~/Pictures/KategoriGruppe/") + FileUploadkategori.FileName))
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["tomis_dk_dbConnectionString"].ToString();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
 
@@ -231,7 +231,7 @@ public partial class Admin_TegningerAdmin : System.Web.UI.Page
 
 
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["tomis_dk_dbConnectionString"].ToString();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
 
@@ -290,7 +290,7 @@ public partial class Admin_TegningerAdmin : System.Web.UI.Page
                 //if (fKategori != null)
                 //{
                 SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
+                conn.ConnectionString = ConfigurationManager.ConnectionStrings["tomis_dk_dbConnectionString"].ToString();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
 
@@ -331,7 +331,7 @@ public partial class Admin_TegningerAdmin : System.Web.UI.Page
         if (e.CommandName == "RediKunde")
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["tomis_dk_dbConnectionString"].ToString();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
 
@@ -356,7 +356,7 @@ public partial class Admin_TegningerAdmin : System.Web.UI.Page
         if (e.CommandName == "SletKunde")
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["tomis_dk_dbConnectionString"].ToString();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
 

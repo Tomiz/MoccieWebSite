@@ -19,7 +19,7 @@ public partial class Kontakt : System.Web.UI.Page
     protected void ButtonSendMail_Click(object sender, EventArgs e)
     {
         SqlConnection conn = new SqlConnection();
-        conn.ConnectionString = ConfigurationManager.ConnectionStrings["MoccieDBConnectionString"].ToString();
+        conn.ConnectionString = ConfigurationManager.ConnectionStrings["tomis_dk_dbConnectionString"].ToString();
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = conn;
 

@@ -19,7 +19,7 @@
 
                     </ItemTemplate>
                 </asp:Repeater>
-                <asp:SqlDataSource runat="server" ID="SqlDataSourceoverskrifttext" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT [Overskrift], [Text] FROM [InfoText] WHERE ([Lokation] = @Lokation)">
+                <asp:SqlDataSource runat="server" ID="SqlDataSourceoverskrifttext" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT [Overskrift], [Text] FROM [InfoText] WHERE ([Lokation] = @Lokation)">
                     <SelectParameters>
                         <asp:Parameter DefaultValue="FrontPage" Name="Lokation" Type="String"></asp:Parameter>
                     </SelectParameters>
@@ -41,7 +41,7 @@
 
                     </ItemTemplate>
                 </asp:Repeater>
-                <asp:SqlDataSource runat="server" ID="SqlDataSourceGetFrontPageImageName" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT * FROM [IndexText]"></asp:SqlDataSource>
+                <asp:SqlDataSource runat="server" ID="SqlDataSourceGetFrontPageImageName" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT * FROM [IndexText]"></asp:SqlDataSource>
                 <br />
                 <asp:Button ID="Button_About" runat="server" Text="Gem" OnClick="Button_About_Click" />
                 <br />
@@ -55,7 +55,7 @@
                         <img src="../Pictures/Profil/<%#Eval("Image") %>" width="75" class="">
                     </ItemTemplate>
                 </asp:Repeater>
-                <asp:SqlDataSource runat="server" ID="SqlDataSourceProfilePic" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT * FROM [IndexText]"></asp:SqlDataSource>
+                <asp:SqlDataSource runat="server" ID="SqlDataSourceProfilePic" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT * FROM [IndexText]"></asp:SqlDataSource>
                 <br />
                 <asp:Button ID="ButtonProfilePic" runat="server" Text="Gem" CssClass="Top10" OnClick="ButtonProfilePic_Click" />
             </article>
@@ -67,7 +67,7 @@
                         <asp:TextBox ID="TextBoxFootertext" runat="server" Text='<%#Eval("Text") %>'></asp:TextBox>
                     </ItemTemplate>
                 </asp:Repeater>
-                <asp:SqlDataSource runat="server" ID="SqlDataSourceFooter" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT * FROM [InfoText] WHERE ([Lokation] = @Lokation)">
+                <asp:SqlDataSource runat="server" ID="SqlDataSourceFooter" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT * FROM [InfoText] WHERE ([Lokation] = @Lokation)">
                     <SelectParameters>
                         <asp:Parameter DefaultValue="Footer" Name="Lokation" Type="String"></asp:Parameter>
                     </SelectParameters>

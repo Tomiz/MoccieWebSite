@@ -19,7 +19,7 @@
                 </ItemTemplate>
             </asp:Repeater>
 
-            <asp:SqlDataSource runat="server" ID="SqlDataSourceIndexText" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT * FROM [InfoText] WHERE ([Lokation] = @Lokation)">
+            <asp:SqlDataSource runat="server" ID="SqlDataSourceIndexText" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT * FROM [InfoText] WHERE ([Lokation] = @Lokation)">
                 <SelectParameters>
                     <asp:Parameter DefaultValue="FrontPage" Name="Lokation" Type="String"></asp:Parameter>
                 </SelectParameters>
@@ -35,7 +35,7 @@
                         </ItemTemplate>
                     </asp:Repeater>
                 </ul>
-                <asp:SqlDataSource runat="server" ID="SqlDataSourceSlider" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT TOP (3) Produkter.Id, Produkter.Navn, Billeder.Billed, Billeder.Fk_ProduktBilled, Produkter.Dato FROM Produkter INNER JOIN Billeder ON Produkter.Id = Billeder.Fk_ProduktBilled ORDER BY Produkter.Dato DESC, Produkter.Id DESC"></asp:SqlDataSource>
+                <asp:SqlDataSource runat="server" ID="SqlDataSourceSlider" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT TOP (3) Produkter.Id, Produkter.Navn, Billeder.Billed, Billeder.Fk_ProduktBilled, Produkter.Dato FROM Produkter INNER JOIN Billeder ON Produkter.Id = Billeder.Fk_ProduktBilled ORDER BY Produkter.Dato DESC, Produkter.Id DESC"></asp:SqlDataSource>
 
                 <asp:Button ID="ButtonPrev" runat="server" Text="&#10094;" CssClass="w3-button w3-black w3-display-left" OnClientClick="return plusDivs(-1);" UseSubmitBehavior="False" />
                 <asp:Button ID="ButtonNext" runat="server" Text="&#10095;" CssClass="w3-button w3-black w3-display-right" OnClientClick="return plusDivs(1);" UseSubmitBehavior="False" />
@@ -61,20 +61,20 @@
                 x[slideIndex - 1].style.display = "block";
             }
 
-        var myIndex = 0;
-        carousel();
+        //var myIndex = 0;
+        //carousel();
 
-        function carousel() {
-            var i;
-            var x = document.getElementsByClassName("mySlides");
-            for (i = 0; i < x.length; i++) {
-               x[i].style.display = "none";  
-            }
-            myIndex++;
-            if (myIndex > x.length) {myIndex = 1}    
-            x[myIndex-1].style.display = "block";  
-            setTimeout(carousel, 5000); // Change image every 2 seconds
-        }
+        //function carousel() {
+        //    var i;
+        //    var x = document.getElementsByClassName("mySlides");
+        //    for (i = 0; i < x.length; i++) {
+        //       x[i].style.display = "none";  
+        //    }
+        //    myIndex++;
+        //    if (myIndex > x.length) {myIndex = 1}    
+        //    x[myIndex-1].style.display = "block";  
+        //    setTimeout(carousel, 5000); // Change image every 2 seconds
+        //}
 
         </script>
 
@@ -87,7 +87,7 @@
                                 <li><a class="ns-img" href="Pictures/Produkter/<%#Eval("Billed") %>"></a></li>
                             </ItemTemplate>
                         </asp:Repeater>
-                        <asp:SqlDataSource runat="server" ID="SqlDataSourceSlider" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT TOP (3) Produkter.Id, Produkter.Navn, Billeder.Billed, Billeder.Fk_ProduktBilled, Produkter.Dato FROM Produkter INNER JOIN Billeder ON Produkter.Id = Billeder.Fk_ProduktBilled ORDER BY Produkter.Dato DESC, Produkter.Id DESC"></asp:SqlDataSource>
+                        <asp:SqlDataSource runat="server" ID="SqlDataSourceSlider" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT TOP (3) Produkter.Id, Produkter.Navn, Billeder.Billed, Billeder.Fk_ProduktBilled, Produkter.Dato FROM Produkter INNER JOIN Billeder ON Produkter.Id = Billeder.Fk_ProduktBilled ORDER BY Produkter.Dato DESC, Produkter.Id DESC"></asp:SqlDataSource>
                     </ul>
                 </div>
             </div>
@@ -104,7 +104,7 @@
                     <img src="Pictures/Profil/<%#Eval("Image") %>" width="150" height="150" class="profilePic" />
                 </ItemTemplate>
             </asp:Repeater>
-            <asp:SqlDataSource runat="server" ID="SqlDataSourceAboutMoccie" ConnectionString='<%$ ConnectionStrings:MoccieDBConnectionString %>' SelectCommand="SELECT * FROM [IndexText]"></asp:SqlDataSource>
+            <asp:SqlDataSource runat="server" ID="SqlDataSourceAboutMoccie" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT * FROM [IndexText]"></asp:SqlDataSource>
         </article>
     </section>
 
