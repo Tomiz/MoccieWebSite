@@ -63,7 +63,7 @@
                     <div class="menuitemrep">
                         <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
                             <ItemTemplate>
-                                <a href="Tegninger.aspx?view=1&KategoriId=<%#Eval ("Id") %>"><%#Eval ("Navn") %></a>
+                                <a class="UnderlineMenu" href="Tegninger.aspx?view=1&KategoriId=<%#Eval ("Id") %>"><%#Eval ("Navn") %></a>
                             </ItemTemplate>
                         </asp:Repeater>
 
@@ -139,7 +139,7 @@
                     <div class="menuitemrep">
                         <asp:Repeater ID="Repeater2" runat="server" DataSourceID="SqlDataSource1">
                             <ItemTemplate>
-                                <a href="Tegninger.aspx?view=1&KategoriId=<%#Eval ("Id") %>"><%#Eval ("Navn") %></a>
+                                <a class="UnderlineMenu" href="Tegninger.aspx?view=1&KategoriId=<%#Eval ("Id") %>"><%#Eval ("Navn") %></a>
                             </ItemTemplate>
                         </asp:Repeater>
 
@@ -218,7 +218,7 @@
                 <div class="produkterCenter">
                     <asp:Repeater ID="RepeaterProduktMenu" runat="server" DataSourceID="SqlDataSourceProduktMenu">
                         <ItemTemplate>
-                            <a title="Dette er produkter lavet til <%#Eval("KundeNavn") %>" href='Tegninger.aspx?view=2&KategoriId=<%#Eval("Fk_ProduktGruppe") %>&ProduktId=<%#Eval("Id") %>&KundeId=<%#Eval("Fk_Kunde") %>'><%#Eval("Navn") %></a>
+                            <a title="Dette er produkter lavet til <%#Eval("KundeNavn") %>" class="UnderlineMenu" href='Tegninger.aspx?view=2&KategoriId=<%#Eval("Fk_ProduktGruppe") %>&ProduktId=<%#Eval("Id") %>&KundeId=<%#Eval("Fk_Kunde") %>'><%#Eval("Navn") %></a>
                         </ItemTemplate>
                     </asp:Repeater>
                 </div>
@@ -229,7 +229,7 @@
                     </SelectParameters>
                 </asp:SqlDataSource>
             </div>
-            </div>
+           
 
         </asp:View>
     </asp:MultiView>

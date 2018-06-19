@@ -10,14 +10,16 @@
 #ProduktGruppe {
     width: 60%; /*52%*/
     margin: 50px auto;
-    clear:both;
-    margin-left:470px;
+    clear: both;
+    margin-left: 470px;
 }
+
 @media only screen and (max-width:1470px) {
     #ProduktGruppe {
         margin-left: 200px;
     }
 }
+
 @media only screen and (max-width:1200px) {
     #ProduktGruppe {
         margin-left: 50px;
@@ -30,10 +32,9 @@
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-bottom: 25px;
-    border:5px;
-    border-color:black;
-    border-style:solid;
-    
+    border: 5px;
+    border-color: black;
+    border-style: solid;
 }
 
 div.container {
@@ -81,6 +82,7 @@ div.container {
     /*margin: 50px auto;*/
     float: left;
 }
+
 #produktImage {
     /*position: absolute;
     max-width: 94.5%;
@@ -106,6 +108,7 @@ div.container {
     height:200px;
     background-color:#EEE;
 }
+
 #MiniProduktImage {
     position: absolute;
     max-width: 95%;
@@ -113,11 +116,13 @@ div.container {
     background-repeat: no-repeat;
     background-position: center center;
 }
+
 #ProduktMenuRight {
     width: 200px;
     margin: 20px 190px 0 0;
     float: left;
 }
+
     #ProduktMenuRight a {
         background-color: #eee;
         color: black;
@@ -126,6 +131,7 @@ div.container {
         text-decoration: none;
         text-align: center;
     }
+
         #ProduktMenuRight a:hover {
             background-color: #ccc;
         }
@@ -139,8 +145,12 @@ div.container {
     margin: auto;
 }
 .produkterCenter {
-    margin:5px 0 50px 50%;
+    margin: 5px 0 50px 50%;
     width: 100%;
+}
+
+.UnderlineMenu {
+    border-bottom: 1px solid black;
 }
 
 #ProduktMenu {
@@ -162,96 +172,98 @@ div.container {
             background-color: #ccc;
         }
 
-    #ProduktCenter {
-        /*width: 1800px;*/
-        width: 100%;
-        margin: 50px auto;
+#ProduktCenter {
+    /*width: 1800px;*/
+    width: 100%;
+    margin: 50px auto;
+}
+
+#ContentInfo {
+    background-color: #eee;
+    width: 400px;
+    /*width:22.25%;*/
+    height: 100%;
+    padding: 0 0 80px 0;
+    float: left;
+    position: relative;
+}
+
+    #ContentInfo p {
+        padding: 0 10px 0 10px;
     }
 
-    #ContentInfo {
-        background-color: #eee;
-        width: 400px;
-        /*width:22.25%;*/
-        height: 100%;
-        padding: 0 0 80px 0;
-        float: left;
-        position: relative;
+    #ContentInfo h2 {
+        padding: 10px 0 0 0;
     }
 
-        #ContentInfo p {
-            padding: 0 10px 0 10px;
-        }
-        #ContentInfo h2{
-            padding:10px 0 0 0;
-        }
-
-    /*.DetajleGrid {
+/*.DetajleGrid {
     width: 1000px;
     margin: auto;
     text-align: center;
     background-color: white;
 }
 */
-    .DetajleGridButtons {
-        margin: 0;
-        padding: 0;
-        width: 300px;
-        background-color: none;
+.DetajleGridButtons {
+    margin: 0;
+    padding: 0;
+    width: 300px;
+    background-color: none;
+}
+
+table.blueTable {
+    background-color: #E8E8E8;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+    table.blueTable td, table.blueTable th {
+        border: 0px solid #AAAAAA;
+        padding: 10px 10px;
     }
 
-    table.blueTable {
-        background-color: #E8E8E8;
-        width: 100%;
-        text-align: center;
-        border-collapse: collapse;
+    table.blueTable tbody td {
+        font-size: 17px;
+        font-weight: bold;
     }
 
-        table.blueTable td, table.blueTable th {
-            border: 0px solid #AAAAAA;
-            padding: 10px 10px;
-        }
+    table.blueTable td:nth-child(even) {
+        background: #C1C1C1;
+    }
 
-        table.blueTable tbody td {
-            font-size: 17px;
+    table.blueTable thead {
+        background: #585858;
+        background: -moz-linear-gradient(top, #828282 0%, #686868 66%, #585858 100%);
+        background: -webkit-linear-gradient(top, #828282 0%, #686868 66%, #585858 100%);
+        background: linear-gradient(to bottom, #828282 0%, #686868 66%, #585858 100%);
+    }
+
+        table.blueTable thead th {
+            font-size: 18px;
             font-weight: bold;
+            color: #FFFFFF;
+            text-align: center;
+            border-left: 0px solid #D0E4F5;
         }
 
-        table.blueTable td:nth-child(even) {
-            background: #C1C1C1;
-        }
-
-        table.blueTable thead {
-            background: #585858;
-            background: -moz-linear-gradient(top, #828282 0%, #686868 66%, #585858 100%);
-            background: -webkit-linear-gradient(top, #828282 0%, #686868 66%, #585858 100%);
-            background: linear-gradient(to bottom, #828282 0%, #686868 66%, #585858 100%);
-        }
-
-            table.blueTable thead th {
-                font-size: 18px;
-                font-weight: bold;
-                color: #FFFFFF;
-                text-align: center;
-                border-left: 0px solid #D0E4F5;
+            table.blueTable thead th:first-child {
+                border-left: none;
             }
 
-                table.blueTable thead th:first-child {
-                    border-left: none;
-                }
+    table.blueTable tfoot {
+        font-size: 23px;
+        font-weight: bold;
+        background: #C1C1C1;
+        background: -moz-linear-gradient(top, #d0d0d0 0%, #c7c7c7 66%, #C1C1C1 100%);
+        background: -webkit-linear-gradient(top, #d0d0d0 0%, #c7c7c7 66%, #C1C1C1 100%);
+        background: linear-gradient(to bottom, #d0d0d0 0%, #c7c7c7 66%, #C1C1C1 100%);
+        border-top: 2px solid #444444;
+    }
 
-        table.blueTable tfoot {
+        table.blueTable tfoot td {
             font-size: 23px;
-            font-weight: bold;
-            background: #C1C1C1;
-            background: -moz-linear-gradient(top, #d0d0d0 0%, #c7c7c7 66%, #C1C1C1 100%);
-            background: -webkit-linear-gradient(top, #d0d0d0 0%, #c7c7c7 66%, #C1C1C1 100%);
-            background: linear-gradient(to bottom, #d0d0d0 0%, #c7c7c7 66%, #C1C1C1 100%);
-            border-top: 2px solid #444444;
         }
 
-            table.blueTable tfoot td {
-                font-size: 23px;
-            }
-.produktpicTilføj{
-    max-height:170px;
+.produktpicTilføj {
+    max-height: 170px;
 }
