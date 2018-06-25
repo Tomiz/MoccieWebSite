@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MMasterPage.master.cs" Inherits="MasterPage" %>
 
 <!DOCTYPE html>
 
@@ -8,17 +8,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Moccie</title>
-    <link href="Style/StyleSheet.css" rel="stylesheet" />
-    <link href="Style/Repeatable.css" rel="stylesheet" />
     <link href="Style/Default.css" rel="stylesheet" />
-    <link href="Style/Produkter.css" rel="stylesheet" />
-    <link href="Style/Ranklist.css" rel="stylesheet" />
-    <link href="Style/responsive.css" rel="stylesheet" />
     <link href="Style/LightBox.css" rel="stylesheet" />
+    <link href="Style/Produkter.css" rel="stylesheet" />
+    <link href="Style/repeatable.css" rel="stylesheet" />
+    <link href="Style/responsive.css" rel="stylesheet" />
+    <link href="Style/StyleSheet.css" rel="stylesheet" />
 
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%--<meta name="viewport" content="width=device-width, initial-scale=1.0">--%>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link href="Style/SliderCss.css" rel="stylesheet" />
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -26,14 +27,14 @@
 <body>
     <form id="form1" runat="server">
         <header>
-            <a href="Default.aspx"><img src="Pictures/banner.png" width="100%" /></a>
+            <a href="MDefault.aspx"><img src="../Pictures/banner.png" width="100%" /></a>
         </header>
         <nav>
             <ul class="topnav">
-                <li id="CurrentKont" class="right"><a href="Kontakt.aspx">Contact</a></li>
+                <li id="CurrentKont" class="right"><a href="MKontakt.aspx">Contact</a></li>
                 <%--<li id="CurrentRank" class="right"><a href="KundeRank.aspx">Rank Liste</a></li>--%>
                 <!--<li id="CurrentBilled" class="right"><a href="Billeder.aspx">Pictures</a></li>-->
-                <li id="CurrentTegn" class="right"><a href="Tegninger.aspx">Drawings</a></li>
+                <li id="CurrentTegn" class="right"><a href="MTegninger.aspx">Drawings</a></li>
 
                 <%--<li id="CurrentTegn" class="dropdown right">
                     <a href="Tegninger.aspx" class="dropbtn">Tegninger</a>
@@ -43,7 +44,7 @@
                     </div>
                 </li>--%>
 
-                <li id="CurrentHome" class="right"><a href="Default.aspx">Home</a></li>
+                <li id="CurrentHome" class="right"><a href="MDefault.aspx">Home</a></li>
             </ul>
         </nav>
 

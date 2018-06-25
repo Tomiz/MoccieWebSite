@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Mobile/MMasterPage.master" AutoEventWireup="true" CodeFile="MDefault.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <style type="text/css">
@@ -7,12 +7,11 @@
         }
         /*.mySlides {display:none;}*/
     </style>
-    <link href="Style/SliderCss.css" rel="stylesheet" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%--<link href="Style/SliderCss.css" rel="stylesheet" />--%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <section style="width: 1200px; margin: auto;">
-        <article class="FrontText" style="height:110px;">
+    <section style="width: 100%;">
+        <%--<article class="FrontText" style="height:110px;">
             <asp:Repeater ID="Repeater_FrontPageInfo" runat="server" DataSourceID="SqlDataSourceIndexText">
                 <ItemTemplate>
                     <h2><%#Eval("Overskrift") %></h2>
@@ -25,14 +24,14 @@
                     <asp:Parameter DefaultValue="FrontPage" Name="Lokation" Type="String"></asp:Parameter>
                 </SelectParameters>
             </asp:SqlDataSource>
-        </article>
+        </article>--%>
 
         <article class="w3-content w3-display-container">
             <div id="ImageSlider">
                 <ul style="padding-top: 66.6667%; height: 0px;">
                     <asp:Repeater ID="Repeater_slider" runat="server" DataSourceID="SqlDataSourceSlider">
                         <ItemTemplate>
-                            <li><img class="mySlides ImageSlide" src="Pictures/Produkter/<%#Eval("Billed") %>"></li>
+                            <li><img class="mySlides ImageSlide" src="../Pictures/Produkter/<%#Eval("Billed") %>"></li>
                         </ItemTemplate>
                     </asp:Repeater>
                 </ul>
@@ -76,23 +75,7 @@
         //    x[myIndex-1].style.display = "block";  
         //    setTimeout(carousel, 5000); // Change image every 2 seconds
         //}
-
         </script>
-
-        <%--<article class="slider_box">
-            <div id="ninja-slider">
-                <div class="inner">
-                    <ul>
-                        <asp:Repeater ID="Repeater_slider" runat="server" DataSourceID="SqlDataSourceSlider">
-                            <ItemTemplate>
-                                <li><a class="ns-img" href="Pictures/Produkter/<%#Eval("Billed") %>"></a></li>
-                            </ItemTemplate>
-                        </asp:Repeater>
-                        <asp:SqlDataSource runat="server" ID="SqlDataSourceSlider" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT TOP (3) Produkter.Id, Produkter.Navn, Billeder.Billed, Billeder.Fk_ProduktBilled, Produkter.Dato FROM Produkter INNER JOIN Billeder ON Produkter.Id = Billeder.Fk_ProduktBilled ORDER BY Produkter.Dato DESC, Produkter.Id DESC"></asp:SqlDataSource>
-                    </ul>
-                </div>
-            </div>
-        </article>--%>
 
         <article class="About">
             <asp:Repeater ID="Repeater_AboutSite" runat="server" DataSourceID="SqlDataSourceAboutMoccie">
@@ -101,8 +84,7 @@
                     <p>
                         <%#Eval("Text") %>
                     </p>
-
-                    <img src="Pictures/Profil/<%#Eval("Image") %>" width="150" height="150" class="profilePic" />
+                    <img src="../Pictures/Profil/<%#Eval("Image") %>" width="150" height="150" class="profilePic" />
                 </ItemTemplate>
             </asp:Repeater>
             <asp:SqlDataSource runat="server" ID="SqlDataSourceAboutMoccie" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT * FROM [IndexText]"></asp:SqlDataSource>

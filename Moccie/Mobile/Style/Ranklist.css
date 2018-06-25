@@ -1,0 +1,47 @@
+﻿#KundeLink {
+    width: 400px;
+    margin: 0 0 10px 0;
+    bottom: 0;
+    position: absolute;
+}
+
+#RanklisteTopP {
+    width: 450px;
+    float: left;
+    margin-bottom:50px;
+}
+
+    #RanklisteTopP h1 {
+        text-align: center;
+        padding-top: 10px;
+    }
+
+#RanklisteTopV {
+    width: 450px;
+    float: right;
+    margin-bottom: 50px;
+}
+
+    #RanklisteTopV h1 {
+        text-align: center;
+        padding-top: 10px;
+    }
+
+.RankHeader {
+    background-color: white;
+    border-radius: 20px 20px 0 0;
+    height: 50px;
+}
+.Rankerbox {
+    text-align:center;
+}
+.Ranker {
+    font-size: 25px;
+    font-weight: bold;
+   
+    width: 600px;
+    margin: auto;
+    padding:0 0 0 150px;
+}
+
+

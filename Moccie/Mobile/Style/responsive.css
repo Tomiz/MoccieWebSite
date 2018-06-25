@@ -1,0 +1,172 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+.menurep {
+    float: left;
+    width: 20%;
+}
+
+.menuitemrep {
+
+    margin-top: 7px;
+
+}
+.headrep {
+    float: left;
+    width: 62%;
+    padding: 0 20px;
+    overflow: hidden;
+}
+.headrep2 {
+    float: left;
+    width: 62%;
+    padding: 0 20px;
+    overflow: hidden;
+}
+.headrep3 {
+}
+
+.mainrep {
+    float: left;
+    overflow: hidden;
+}
+.mainrep2 {
+    float: left;
+    /*padding: 0 20px;*/
+    overflow: hidden;
+}
+
+.rightrep {
+    background-color: lightblue;
+    float: left;
+    width: 20%;
+    padding: 10px 15px;
+    margin-top: 7px;
+}
+
+@media only screen and (max-width:800px) {
+    /* For tablets: */
+    .headrep {
+        clear:both;
+        width:60%;
+        padding: 0 ;
+    }
+    
+    .mainrep .mainrep2 {
+        width: 60%;
+        padding: 0;
+    }
+
+    .rightrep {
+        width: 100%;
+        /*margin-left: 300px;*/
+    }
+}
+
+@media only screen and (max-width:500px) {
+    /* For mobile phones: */
+    .menurep, .mainrep, .mainrep2, .rightrep, .headrep {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:1400px) {
+    /* For tablets: */
+    .headrep2 {
+        clear: both;
+        width: 60%;
+        padding: 0;
+        margin-top:50px;
+    }
+}
+
+/* Default.aspx */
+@media screen and (max-width: 1100px) {
+    section article.About {
+        margin: 30px 0 0 50px;
+    }
+}
+
+@media screen and (max-width: 1040px) {
+    section article.About {
+        margin: 30px 0 0 25px;
+    }
+}
+
+@media screen and (max-width: 1010px) {
+    section article.About {
+        margin: 30px 0 0 10px;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    section article.About {
+        margin: 130px 0 30px 15px;
+        clear: left;
+    }
+}
+
+
+/* tegninger.aspx */
+@media only screen and (max-width:1780px) {
+    #ProduktMenu {
+        margin: 0 140px 0 60px;
+    }
+}
+
+@media only screen and (max-width:1740px) {
+    #ProduktMenu {
+        margin: 0 90px 0 60px;
+    }
+}
+
+@media only screen and (max-width:1680px) {
+    #ProduktMenu {
+        margin: 0 50px 0 60px;
+    }
+}
+
+@media only screen and (max-width:900px) {
+    #ProduktCenterImage {
+        width: 800px;
+    }
+}
+@media only screen and (max-width:780px) {
+    #ProduktCenterImage {
+        width: 700px;
+    }
+}
+@media only screen and (max-width:690px) {
+    #ProduktCenterImage {
+        width: 600px;
+    }
+}
+@media only screen and (max-width:590px) {
+    #ProduktCenterImage {
+        width: 500px;
+    }
+}
+@media only screen and (max-width:1626px) {
+    #ContentInfo {
+        margin:0 0 50px 35%;
+    }
+}
+@media only screen and (max-width:1226px) {
+    #ContentInfo {
+        margin: 0 0 50px 50px;
+    }
+}
+
+/* Kontakt.aspx */
+@media only screen and (max-width:1150px) {
+    #KontaktForm {
+        clear:both;
+        float:left;
+        margin-top:50px;
+    }
+
+    section article.FrontText {
+        width:55%;
+    }
+}
