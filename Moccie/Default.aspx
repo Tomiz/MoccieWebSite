@@ -38,8 +38,8 @@
                 </ul>
                 <asp:SqlDataSource runat="server" ID="SqlDataSourceSlider" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT TOP (3) Produkter.Id, Produkter.Navn, Billeder.Billed, Billeder.Fk_ProduktBilled, Produkter.Dato FROM Produkter INNER JOIN Billeder ON Produkter.Id = Billeder.Fk_ProduktBilled ORDER BY Produkter.Dato DESC, Produkter.Id DESC"></asp:SqlDataSource>
 
-                <asp:Button ID="ButtonPrev" runat="server" Text="&#10094;" CssClass="w3-button w3-black w3-display-left" OnClientClick="return plusDivs(-1);" UseSubmitBehavior="False" />
-                <asp:Button ID="ButtonNext" runat="server" Text="&#10095;" CssClass="w3-button w3-black w3-display-right" OnClientClick="return plusDivs(1);" UseSubmitBehavior="False" />
+                <asp:Button ID="ButtonPrev" runat="server" Text="❮" CssClass="w3-button w3-black w3-display-left" OnClientClick="return plusDivs(-1);" UseSubmitBehavior="False" />
+                <asp:Button ID="ButtonNext" runat="server" Text="❯" CssClass="w3-button w3-black w3-display-right" OnClientClick="return plusDivs(1);" UseSubmitBehavior="False" />
             </div>
         </article>
 
@@ -62,20 +62,20 @@
                 x[slideIndex - 1].style.display = "block";
             }
 
-        //var myIndex = 0;
-        //carousel();
+        var myIndex = 0;
+        carousel();
 
-        //function carousel() {
-        //    var i;
-        //    var x = document.getElementsByClassName("mySlides");
-        //    for (i = 0; i < x.length; i++) {
-        //       x[i].style.display = "none";  
-        //    }
-        //    myIndex++;
-        //    if (myIndex > x.length) {myIndex = 1}    
-        //    x[myIndex-1].style.display = "block";  
-        //    setTimeout(carousel, 5000); // Change image every 2 seconds
-        //}
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+               x[i].style.display = "none";  
+            }
+            myIndex++;
+            if (myIndex > x.length) {myIndex = 1}    
+            x[myIndex-1].style.display = "block";  
+            setTimeout(carousel, 5000); // Change image every 2 seconds
+        }
 
         </script>
 

@@ -13,7 +13,9 @@ header {
     height: 100%;
     background-color: White;
 }
-
+.HeadImg{
+	vertical-align: middle;
+}
 /* top nav start */
 ul.topnav {
     line-height: 0.5;

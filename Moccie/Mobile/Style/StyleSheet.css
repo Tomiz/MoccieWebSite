@@ -82,12 +82,12 @@ li a:hover, .dropdown:hover .dropbtn {
     max-height:100%;
     margin: auto;
 }
-@media screen and (max-height: 1080px) {
+/*@media screen and (max-height: 1080px) {
     #wrapper {
-        /*height: 659px;*/
-        /*background-color: #666;*/
+        height: 659px;
+        background-color: #666;
     }
-}
+}*/
 @media screen and (max-height: 900px) {
     #wrapper {
         height: 500px;

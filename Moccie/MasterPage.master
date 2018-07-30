@@ -16,6 +16,8 @@
     <link href="Style/responsive.css" rel="stylesheet" />
     <link href="Style/LightBox.css" rel="stylesheet" />
 
+    <script src="Js/redirection-mobile.js"></script>
+
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -25,9 +27,19 @@
 
 <body>
     <form id="form1" runat="server">
+
+        <script>
+            SA.redirection_mobile({
+                mobile_url: "moccie.tomis.dk/Mobile/MDefault.aspx",
+                //mobile_prefix: "https"
+            });
+
+        </script>
+
+
         <header>
             <a href="Default.aspx">
-                <img src="Pictures/banner.png" width="100%" /></a>
+                <img src="Pictures/banner.png" width="100%" class="HeadImg" /></a>
         </header>
         <nav>
             <ul class="topnav">
@@ -56,10 +68,13 @@
         <footer>
             <article>
                 <h3>
-                <asp:HyperLink ID="HyperLinkFace" runat="server" NavigateUrl="http://www.Twitch.tv/Moccie" style="color:#4999aa;">MoccieMoo</asp:HyperLink> |
-                <asp:HyperLink ID="HyperLinkTwit" runat="server" NavigateUrl="http://www.Twitter.com/M0ccie" style="color:#4999aa;">M0ccie</asp:HyperLink> |
-                <asp:HyperLink ID="HyperLinkTwitch" runat="server" NavigateUrl="https://www.facebook.com/MoccieMoo/" style="color:#4999aa;">Moccie</asp:HyperLink> |
-                <a href="Kontakt.aspx" style="color:#4999aa;">Kontakt</a></h3>
+                    <asp:HyperLink ID="HyperLinkFace" runat="server" NavigateUrl="http://www.Twitch.tv/Moccie" Style="color: #4999aa;">MoccieMoo</asp:HyperLink>
+                    |
+                <asp:HyperLink ID="HyperLinkTwit" runat="server" NavigateUrl="http://www.Twitter.com/M0ccie" Style="color: #4999aa;">M0ccie</asp:HyperLink>
+                    |
+                <asp:HyperLink ID="HyperLinkTwitch" runat="server" NavigateUrl="https://www.facebook.com/MoccieMoo/" Style="color: #4999aa;">Moccie</asp:HyperLink>
+                    |
+                <a href="Kontakt.aspx" style="color: #4999aa;">Kontakt</a></h3>
                 <%--<asp:Repeater ID="RepeaterFooter" runat="server" DataSourceID="SqlDataSourceFooter">
                     <ItemTemplate>
                         <h3><%#Eval("Text") %></h3>
