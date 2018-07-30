@@ -58,28 +58,28 @@
         </article>
 
         <article id="KontaktForm">
-            <label for="Firstn">Fornavn</label>
-            <asp:TextBox ID="TextBoxFornavn" runat="server" placeholder="Dit Fornavn.."></asp:TextBox>
+            <label for="Firstn">First Name</label>
+            <asp:TextBox ID="TextBoxFornavn" runat="server" placeholder="Your First Name.."></asp:TextBox>
 
-            <label for="Lastn">Efternavn</label>
-            <asp:TextBox ID="TextBoxEfternavn" runat="server" placeholder="Dit Efternavn.."></asp:TextBox>
+            <label for="Lastn">Last Name</label>
+            <asp:TextBox ID="TextBoxEfternavn" runat="server" placeholder="Your Last Name.."></asp:TextBox>
 
             <label for="Email">Email</label>
-            <asp:TextBox ID="TextBoxEmail" runat="server" placeholder="Din Mail.."></asp:TextBox>
+            <asp:TextBox ID="TextBoxEmail" runat="server" placeholder="Your Mail.."></asp:TextBox>
 
-            <label for="Email2">Godkend Email</label>
-            <asp:TextBox ID="TextBoxEmail2" runat="server" placeholder="Godkend din Mail.."></asp:TextBox>
+            <label for="Email2">Confirm Email</label>
+            <asp:TextBox ID="TextBoxEmail2" runat="server" placeholder="Confim your Mail.."></asp:TextBox>
 
-            <label for="Grund">Årsag</label>
+            <label for="Grund">Reason</label>
             <asp:DropDownList ID="DropDownListGrund" runat="server">
                 <%--<asp:ListItem>Forespørgsel</asp:ListItem>--%>
-                <asp:ListItem>Bestilling</asp:ListItem>
-                <asp:ListItem>Spørgsmål</asp:ListItem>
+                <asp:ListItem>Order</asp:ListItem>
+                <asp:ListItem>Questions</asp:ListItem>
             </asp:DropDownList>
 
-            <label for="subject">Begrundelse</label>
+            <label for="subject">Message</label>
 
-            <asp:TextBox ID="TextBoxSubject" runat="server" TextMode="MultiLine" Rows="3" Text="" Placeholder="Produkt Info text"></asp:TextBox>
+            <asp:TextBox ID="TextBoxSubject" runat="server" TextMode="MultiLine" Rows="3" Text="" Placeholder="Tekts"></asp:TextBox>
             <script type="text/javascript">
                 CKEDITOR.replace("ContentPlaceHolder1_TextBoxSubject");
             </script>

@@ -11,6 +11,8 @@
     <section class="AdminSection">
         <div class="AdminArticle">
             <article class="Overskrift">
+                <h2>Google docs file</h2>
+                <h2>https://docs.google.com/document/d/1hKRq80J3jqkf7qsysG0xHMiCJJm3bshsAeocok82wOQ/edit?usp=sharing</h2>
                 <h2>Overskrift og tekst på forsiden</h2>
                 <asp:Repeater ID="RepeaterAdminDefaultTextboxText" runat="server" DataSourceID="SqlDataSourceoverskrifttext">
                     <ItemTemplate>
