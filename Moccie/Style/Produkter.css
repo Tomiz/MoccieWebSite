@@ -43,9 +43,10 @@ div.container {
     text-align: center;
     padding: 9px 20px;
     min-height: 41px;
-    max-height:70px;
+    max-height: 70px;
     font-size: 17px;
     font-weight: bold;
+    border-bottom: 1px black solid;
 }
 
 #Produktalign {
