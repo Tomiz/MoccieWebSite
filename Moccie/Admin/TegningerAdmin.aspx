@@ -76,14 +76,14 @@
             Upload billede<asp:FileUpload ID="FileUploadProduktBilled" runat="server" /><br />
             <br />
 
-             <span style="margin-left: 5px; margin-right: 100px;">Title på info Box. </span><span style="margin-right: 140px;">Valg af kunde.</span>
+             <span style="margin-left: 5px; margin-right: 100px;">Title på info Box. </span><span style="margin-right: 250px;">Valg af kunde.</span>
 
 
             <%--<p>Title på info Box</p>--%>
             <asp:TextBox ID="TextBoxHeaderInfoText" runat="server" Text="" Placeholder="Produkt Info Title" Width="500px"></asp:TextBox>
 
             <%--<p>Valg af kunde</p>--%>
-            <asp:DropDownList ID="DropDownListKunde" runat="server" DataSourceID="SqlDataSourceKunde" DataTextField="KundeNavn" DataValueField="Id" Width="250px">
+            <asp:DropDownList id="DropDownListKunde" runat="server" DataSourceID="SqlDataSourceKunde" DataTextField="KundeNavn" DataValueField="Id" Width="250px">
                 <asp:ListItem Text="Opret kunde først" Value="0" />
             </asp:DropDownList>
             <asp:SqlDataSource runat="server" ID="SqlDataSourceKunde" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT [KundeNavn], [Id] FROM [Kunde]"></asp:SqlDataSource>
@@ -97,11 +97,6 @@
             </script>
 
             <br />
-            <p>Valg af kunde</p>
-            <asp:DropDownList ID="DropDownListKunde" runat="server" DataSourceID="SqlDataSourceKunde" DataTextField="KundeNavn" DataValueField="Id">
-                <asp:ListItem Text="Opret kunde først" Value="0" />
-            </asp:DropDownList>
-            <asp:SqlDataSource runat="server" ID="SqlDataSourceKunde" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT [KundeNavn], [Id] FROM [Kunde]"></asp:SqlDataSource>
             <asp:Button ID="ButtonGemProdukt" runat="server" Text="Tilføj nyt Elemet" OnClick="ButtonGemProdukt_Click" />
             <!--OnClick="ButtonGemProdukt_Click"-->
         </div>
