@@ -104,8 +104,12 @@
 
                         <img src="../Pictures/Produkter/<%#Eval("Billed") %>" width="125" class="floatRight produktpicTilføj" />
                         <br />
-                        <asp:Button ID="RedigerProd" runat="server" Text="Rediger" CommandArgument='<%#Eval("ProduktId") %>' CommandName="RedigerProdukt" />
+                        <asp:Button ID="RedigerProd" runat="server" Text="Gem" CommandArgument='<%#Eval("ProduktId") %>' CommandName="RedigerProdukt" />
                         <asp:Button ID="SletProd" runat="server" Text="Slet" CommandArgument='<%#Eval("ProduktId") %>' CommandName="SletProdukt" />
+
+                        <asp:FileUpload ID="FileUploadRedigerProduktBilled" runat="server" />
+                        <asp:Button ID="RedigerProdPic" runat="server" Text="Gem Billed" CommandArgument='<%#Eval("ProduktId") %>' CommandName="RedigerProduktBilled" />
+
 
 
                         <hr />
@@ -127,17 +131,18 @@
             <asp:DropDownList ID="DropDownListProduktKategori" runat="server" DataSourceID="SqlDataSourceKategoriProdukt" DataTextField="Navn" DataValueField="Id" Width="45%"></asp:DropDownList>
             <br />
             Billed skal være 300x150
-            <asp:FileUpload ID="FileUploadkategori" runat="server" CssClass="clearBoth width100" />
+            <asp:FileUpload ID="FileUploadkategori" runat="server" CssClass="clearBoth width100"  />
             <asp:Button ID="GemKate" runat="server" Text="Tilføj ny Kategori" CssClass="clearBoth Top10" OnClick="GemKate_Click" /><br />
             <br />
             <hr />
             <asp:Repeater ID="Repeaterkategorier" runat="server" DataSourceID="SqlDataSourceKategorier" OnItemCommand="Repeaterkategorier_ItemCommand">
                 <ItemTemplate>
-                    <asp:TextBox ID="TextBoxShowKate" runat="server" Text='<%#Eval("Navn") %>' Width="200"></asp:TextBox>
-                    <asp:FileUpload ID="FileUploadKategoriUpdate" runat="server" CssClass="clearBoth Top25" />
+                    <%--<asp:TextBox ID="TextBoxShowKate" runat="server" Text='<%#Eval("Navn") %>' Width="200"></asp:TextBox>--%>
                     <img src="../Pictures/KategoriGruppe/<%#Eval("Billed") %>" width="75">
-                    <asp:Button ID="Redigerekate" runat="server" Text="Rediger" CommandArgument='<%#Eval("Id") %>' CommandName="RediKate" Style="background-color: red" />
-                    <asp:Button ID="SletKate" runat="server" Text="Slet" CommandArgument='<%#Eval("Id") %>' CommandName="SletKate" />
+                    <asp:FileUpload ID="FileUploadKategoriUpdate" runat="server" CssClass="clearBoth Top25" />
+                    <asp:Button ID="SletKate" runat="server" Text="Slet" CommandArgument='<%#Eval("Id") %>' CommandName="SletKate"  CssClass="floatRight"/>
+                    <asp:Button ID="Redigerekate" runat="server" Text="Gem" CommandArgument='<%#Eval("Id") %>' CommandName="RediKate"  CssClass="floatRight right2"/>
+                    
                     <hr />
                     <br />
                 </ItemTemplate>

@@ -222,9 +222,8 @@
                         </ItemTemplate>
                     </asp:Repeater>
                 </div>
-                <asp:SqlDataSource runat="server" ID="SqlDataSourceProduktMenu" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT DISTINCT Produkter.Fk_ProduktKategori, Produkter.Fk_ProduktGruppe, Produkter.Id, Produkter.Navn, Produkter.Fk_Kunde, Kunde.KundeNavn FROM Produkter INNER JOIN Kunde ON Produkter.Fk_Kunde = Kunde.Id WHERE (Produkter.Fk_ProduktGruppe = @Fk_ProduktGruppe) AND (Produkter.Fk_Kunde = @KundeId)">
+                <asp:SqlDataSource runat="server" ID="SqlDataSourceProduktMenu" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT DISTINCT Produkter.Fk_ProduktKategori, Produkter.Fk_ProduktGruppe, Produkter.Id, Produkter.Navn, Produkter.Fk_Kunde, Kunde.KundeNavn FROM Produkter INNER JOIN Kunde ON Produkter.Fk_Kunde = Kunde.Id WHERE (Produkter.Fk_Kunde = @KundeId)">
                     <SelectParameters>
-                        <asp:QueryStringParameter QueryStringField="KategoriId" DefaultValue="0" Name="Fk_ProduktGruppe" Type="Int32"></asp:QueryStringParameter>
                         <asp:QueryStringParameter QueryStringField="KundeId" DefaultValue="0" Name="KundeId"></asp:QueryStringParameter>
                     </SelectParameters>
                 </asp:SqlDataSource>
