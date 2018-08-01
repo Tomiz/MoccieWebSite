@@ -55,17 +55,25 @@
 
        <footer>
             <article>
-                <asp:Repeater ID="RepeaterFooter" runat="server" DataSourceID="SqlDataSourceFooter">
+                <h3>
+                    <asp:HyperLink ID="HyperLinkFace" runat="server" NavigateUrl="http://www.Twitch.tv/Moccie" Style="color: #4999aa;">MoccieMoo</asp:HyperLink>
+                    |
+                <asp:HyperLink ID="HyperLinkTwit" runat="server" NavigateUrl="http://www.Twitter.com/M0ccie" Style="color: #4999aa;">M0ccie</asp:HyperLink>
+                    |
+                <asp:HyperLink ID="HyperLinkTwitch" runat="server" NavigateUrl="https://www.facebook.com/MoccieMoo/" Style="color: #4999aa;">Moccie</asp:HyperLink>
+                    |
+                <a href="Kontakt.aspx" style="color: #4999aa;">Kontakt</a></h3>
+                <%--<asp:Repeater ID="RepeaterFooter" runat="server" DataSourceID="SqlDataSourceFooter">
                     <ItemTemplate>
                         <h3><%#Eval("Text") %></h3>
                     </ItemTemplate>
                 </asp:Repeater>
-                <%--<h2>Footer content here</h2>--%>
+                <h2>Footer content here</h2>
                 <asp:SqlDataSource runat="server" ID="SqlDataSourceFooter" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT * FROM [InfoText] WHERE ([Lokation] = @Lokation)">
                     <SelectParameters>
                         <asp:Parameter DefaultValue="Footer" Name="Lokation" Type="String"></asp:Parameter>
                     </SelectParameters>
-                </asp:SqlDataSource>
+                </asp:SqlDataSource>--%>
             </article>
         </footer>
 
