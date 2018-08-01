@@ -1,6 +1,7 @@
 ﻿.Produkter {
     margin: 0 20px 0 0;
     width: 400px;
+    max-height:241px;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-bottom: 25px;
@@ -41,7 +42,8 @@
 div.container {
     text-align: center;
     padding: 9px 20px;
-    height: 41px;
+    min-height: 41px;
+    max-height:70px;
     font-size: 17px;
     font-weight: bold;
 }

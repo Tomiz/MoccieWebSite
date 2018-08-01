@@ -11,8 +11,10 @@ using System.Web.UI.WebControls;
 
 public partial class Admin_TegningerAdmin : System.Web.UI.Page
 {
+
     protected void Button_tegnPage_Click(object sender, EventArgs e)
     {
+
         foreach (RepeaterItem item in RepeaterAdminDefaultTextboxText.Items)
         {
             TextBox tOverskrift = (TextBox)item.FindControl("TextBox_tegnOverskrift");
@@ -190,6 +192,45 @@ public partial class Admin_TegningerAdmin : System.Web.UI.Page
             Label_besked.Text = "";
             Label_besked.Style.Clear();
         }
+
+        //finder e.commadname som er RedigerProduktBilled
+        if (e.CommandName == "RedigerProduktBilled")
+        {
+            FileUpload fProduktFileUplaod = (FileUpload)e.Item.FindControl("FileUploadRedigerProduktBilled");
+
+            fProduktFileUplaod.SaveAs(Server.MapPath("~/Pictures/Produkter/") + fProduktFileUplaod.FileName);
+
+            if (File.Exists(Server.MapPath("~/Pictures/Produkter/") + fProduktFileUplaod.FileName))
+            {
+                if (fProduktFileUplaod != null)
+                {
+                    SqlConnection conn = new SqlConnection();
+                    conn.ConnectionString = ConfigurationManager.ConnectionStrings["tomis_dk_dbConnectionString"].ToString();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+
+                    foreach (var billed in fProduktFileUplaod.PostedFiles)
+                    {
+                        cmd.CommandText += "UPDATE Billeder SET Billed = @Billed WHERE Fk_ProduktBilled = @Id"; //(url, fk_brandeovnId) VALUES ('" + billed.FileName + "', @produktId);";
+                                                                                                       //gemmer billederne i en mappe
+                        billed.SaveAs(Server.MapPath("~/Pictures/Produkter/") + billed.FileName);
+                        cmd.Parameters.Add("@Billed", SqlDbType.NVarChar).Value = fProduktFileUplaod.FileName;
+                        cmd.Parameters.Add("@Id", SqlDbType.Int).Value = e.CommandArgument;
+                    }
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+
+                    //reloader repeateren
+                    Repeaterkategorier.DataBind();
+                    Label_besked.Text = "";
+                    Label_besked.Style.Clear();
+                    Response.Redirect("../Admin/TegningerAdmin.aspx");
+                }
+            }
+        }
+
     }
 
 
@@ -279,50 +320,42 @@ public partial class Admin_TegningerAdmin : System.Web.UI.Page
 
         if (e.CommandName == "RediKate")
         {
-            foreach (RepeaterItem item in Repeaterkategorier.Items)
+            //foreach (RepeaterItem item in Repeaterkategorier.Items)
+            //{
+            FileUpload fKategoriUplaod = (FileUpload)e.Item.FindControl("FileUploadKategoriUpdate");
+
+            fKategoriUplaod.SaveAs(Server.MapPath("~/Pictures/KategoriGruppe/") + fKategoriUplaod.FileName);
+            //fKategori.SaveAs(Server.MapPath("/Pictures/KategoriGruppe/") + fKategori.FileName); //\Pictures\KategoriGruppe
+
+            if (File.Exists(Server.MapPath("~/Pictures/KategoriGruppe/") + fKategoriUplaod.FileName))
             {
-                FileUpload fKategori = (FileUpload)item.FindControl("FileUploadKategoriUpdate");
-
-                //fKategori.SaveAs(Server.MapPath("~/Pictures/KategoriGruppe/") + fKategori.FileName); //\Pictures\KategoriGruppe
-
-                //if (File.Exists(Server.MapPath("~/Pictures/KategoriGruppe/") + fKategori.FileName))
-                //{
-                //if (fKategori != null)
-                //{
-                SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = ConfigurationManager.ConnectionStrings["tomis_dk_dbConnectionString"].ToString();
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = conn;
-
-                foreach (var billed in fKategori.PostedFiles)
+                if (fKategoriUplaod != null)
                 {
-                    cmd.CommandText += "UPDATE ProduktGruppe SET Billed = @Billed WHERE Id = @Id"; //(url, fk_brandeovnId) VALUES ('" + billed.FileName + "', @produktId);";
-                    //gemmer billederne i en mappe
-                    billed.SaveAs(Server.MapPath(@"~\Pictures\KategoriGruppe\") + billed.FileName);
-                    cmd.Parameters.Add("@Billed", SqlDbType.NVarChar).Value = fKategori.FileName;
-                    cmd.Parameters.Add("@Id", SqlDbType.Int).Value = e.CommandArgument;
+                    SqlConnection conn = new SqlConnection();
+                    conn.ConnectionString = ConfigurationManager.ConnectionStrings["tomis_dk_dbConnectionString"].ToString();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+
+                    foreach (var billed in fKategoriUplaod.PostedFiles)
+                    {
+                        cmd.CommandText += "UPDATE ProduktGruppe SET Billed = @Billed WHERE Id = @Id"; //(url, fk_brandeovnId) VALUES ('" + billed.FileName + "', @produktId);";
+                                                                                                       //gemmer billederne i en mappe
+                        billed.SaveAs(Server.MapPath("~/Pictures/KategoriGruppe/") + billed.FileName);
+                        cmd.Parameters.Add("@Billed", SqlDbType.NVarChar).Value = fKategoriUplaod.FileName;
+                        cmd.Parameters.Add("@Id", SqlDbType.Int).Value = e.CommandArgument;
+                    }
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+
+                    //reloader repeateren
+                    Repeaterkategorier.DataBind();
+                    Label_besked.Text = "";
+                    Label_besked.Style.Clear();
                 }
-
-                ////opadatere tablene i databasen
-                //cmd.CommandText += "UPDATE ProduktGruppe SET Navn = @Navn WHERE Id = @Id";
-
-                ////finder Id'et på produktet når man trykker på knappen
-                //cmd.Parameters.Add("@Id", SqlDbType.Int).Value = e.CommandArgument;
-
-                ////finder de foreskellige textboxes med e.item.findcontrol("navn på textbox")
-                //cmd.Parameters.Add("@Navn", SqlDbType.NVarChar).Value = ((TextBox)e.Item.FindControl("TextBoxShowKate")).Text;
-
-
-                conn.Open();
-                cmd.ExecuteNonQuery();
-                conn.Close();
-
-                //reloader repeateren
-                Repeaterkategorier.DataBind();
-                Label_besked.Text = "";
-                Label_besked.Style.Clear();
-                //}
             }
+            //}
         }
     }
 
