@@ -74,7 +74,7 @@
                     |
                 <asp:HyperLink ID="HyperLinkTwitch" runat="server" NavigateUrl="https://www.facebook.com/MoccieMoo/" Style="color: #4999aa;">Moccie</asp:HyperLink>
                     |
-                <a href="Kontakt.aspx" style="color: #4999aa;">Kontakt</a></h3>
+                <a href="Kontakt.aspx" style="color: #4999aa;">Contakt</a></h3>
                 <%--<asp:Repeater ID="RepeaterFooter" runat="server" DataSourceID="SqlDataSourceFooter">
                     <ItemTemplate>
                         <h3><%#Eval("Text") %></h3>
