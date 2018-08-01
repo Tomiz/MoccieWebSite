@@ -76,7 +76,7 @@
             Upload billede<asp:FileUpload ID="FileUploadProduktBilled" runat="server" /><br />
             <br />
 
-             <span style="margin-left: 5px; margin-right: 100px;">Title på info Box. </span><span style="margin-right: 250px;">Valg af kunde.</span>
+             <span style="margin-left: 5px; margin-right: 400px;">Title på info Box. </span><span">Valg af kunde.</span>
 
 
             <%--<p>Title på info Box</p>--%>
@@ -86,7 +86,7 @@
             <asp:DropDownList id="DropDownListKunde" runat="server" DataSourceID="SqlDataSourceKunde" DataTextField="KundeNavn" DataValueField="Id" Width="250px">
                 <asp:ListItem Text="Opret kunde først" Value="0" />
             </asp:DropDownList>
-            <asp:SqlDataSource runat="server" ID="SqlDataSourceKunde" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT [KundeNavn], [Id] FROM [Kunde]"></asp:SqlDataSource>
+            <asp:SqlDataSource runat="server" ID="SqlDataSourceKunde" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT [KundeNavn], [Id] FROM [Kunde] ORDER BY [KundeNavn]"></asp:SqlDataSource>
             
 
 
