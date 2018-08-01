@@ -80,7 +80,7 @@
             <asp:DropDownList ID="DropDownListKunde" runat="server" DataSourceID="SqlDataSourceKunde" DataTextField="KundeNavn" DataValueField="Id">
                 <asp:ListItem Text="Opret kunde først" Value="0" />
             </asp:DropDownList>
-            <asp:SqlDataSource runat="server" ID="SqlDataSourceKunde" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT [KundeNavn], [Id] FROM [Kunde]"></asp:SqlDataSource>
+            <asp:SqlDataSource runat="server" ID="SqlDataSourceKunde" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT [KundeNavn], [Id] FROM [Kunde] ORDER BY [KundeNavn]"></asp:SqlDataSource>
             <asp:Button ID="ButtonGemProdukt" runat="server" Text="Tilføj nyt Elemet" OnClick="ButtonGemProdukt_Click" />
             <!--OnClick="ButtonGemProdukt_Click"-->
         </div>
@@ -117,8 +117,8 @@
                 </asp:Repeater>
 
                 <asp:SqlDataSource runat="server" ID="SqlDataSourceRedProdukt" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT DISTINCT Produkter.ProduktHeader, Produkter.Navn, Produkter.ProduktInfo, ProduktGruppe.Navn AS ProduktKategori, Produkter.Id AS ProduktId, Kunde.Id AS KundeId, Kunde.KundeNavn, ProduktGruppe.Id AS GruppeId, ProduktKategori.Id, Billeder.Id AS Expr1, Billeder.Billed, Billeder.Fk_ProduktBilled, Produkter.Dato FROM Produkter INNER JOIN ProduktGruppe ON Produkter.Fk_ProduktGruppe = ProduktGruppe.Id INNER JOIN Kunde ON Produkter.Fk_Kunde = Kunde.Id INNER JOIN ProduktKategori ON Produkter.Fk_ProduktKategori = ProduktKategori.Id AND ProduktGruppe.Fk_ProduktKategori = ProduktKategori.Id INNER JOIN Billeder ON Produkter.Id = Billeder.Fk_ProduktBilled WHERE (ProduktKategori.Id = 1) ORDER BY Produkter.Dato DESC"></asp:SqlDataSource>
-                <asp:SqlDataSource runat="server" ID="SqlDataSourceProduktkategoriDropdown" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT DISTINCT Id AS ProduktGruppeId, Navn FROM ProduktGruppe"></asp:SqlDataSource>
-                <asp:SqlDataSource runat="server" ID="SqlDataSourceProduktKunder" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT [KundeNavn], [Id] FROM [Kunde]"></asp:SqlDataSource>
+                <asp:SqlDataSource runat="server" ID="SqlDataSourceProduktkategoriDropdown" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT DISTINCT Id AS ProduktGruppeId, Navn FROM ProduktGruppe ORDER BY Navn"></asp:SqlDataSource>
+                <asp:SqlDataSource runat="server" ID="SqlDataSourceProduktKunder" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT [KundeNavn], [Id] FROM [Kunde] ORDER BY [KundeNavn]"></asp:SqlDataSource>
 
             </div>
         </div>
@@ -148,7 +148,7 @@
                 </ItemTemplate>
             </asp:Repeater>
             <asp:SqlDataSource runat="server" ID="SqlDataSourceKategoriProdukt" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT * FROM [ProduktKategori]"></asp:SqlDataSource>
-            <asp:SqlDataSource runat="server" ID="SqlDataSourceKategorier" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT [Navn], [Billed], [Id] FROM [ProduktGruppe] WHERE ([Fk_ProduktKategori] = @Fk_ProduktKategori)">
+            <asp:SqlDataSource runat="server" ID="SqlDataSourceKategorier" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT Navn, Billed, Id FROM ProduktGruppe WHERE (Fk_ProduktKategori = @Fk_ProduktKategori) ORDER BY Navn">
                 <SelectParameters>
                     <asp:Parameter DefaultValue="1" Name="Fk_ProduktKategori" Type="Int32"></asp:Parameter>
                 </SelectParameters>

@@ -43,7 +43,7 @@
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
-                    <asp:SqlDataSource runat="server" ID="SqlDataSourceGruppeKategori" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT * FROM [ProduktGruppe] WHERE ([Fk_ProduktKategori] = @Fk_ProduktKategori)">
+                    <asp:SqlDataSource runat="server" ID="SqlDataSourceGruppeKategori" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT Id, Fk_ProduktKategori, Navn, Billed, HiddenId FROM ProduktGruppe WHERE (Fk_ProduktKategori = @Fk_ProduktKategori) ORDER BY Navn">
                         <SelectParameters>
                             <asp:Parameter DefaultValue="1" Name="Fk_ProduktKategori" Type="Int32"></asp:Parameter>
                         </SelectParameters>
