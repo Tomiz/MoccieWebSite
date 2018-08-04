@@ -1,10 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="MDefault.aspx.cs" Inherits="Mobile_MDefault" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Mobile/MMasterPage.master" AutoEventWireup="true" CodeFile="MDefault.aspx.cs" Inherits="Mobile_MDefault" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <section style="width: 100%;">
-        <article class="FrontText" style="height:110px;">
+        <%--<article class="FrontText" style="height:110px;">--%>
+        <article class="FrontText" style="height:170px;">
             
             <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSourceIndexText">
                 <ItemTemplate>
@@ -19,7 +20,7 @@
                 </SelectParameters>
             </asp:SqlDataSource>
         </article>
-
+        
         <article class="w3-content w3-display-container">
             <div id="ImageSlider">
                 <ul style="padding-top: 66.6667%; height: 0px;">
@@ -55,20 +56,20 @@
                 x[slideIndex - 1].style.display = "block";
             }
 
-        //var myIndex = 0;
-        //carousel();
+        var myIndex = 0;
+        carousel();
 
-        //function carousel() {
-        //    var i;
-        //    var x = document.getElementsByClassName("mySlides");
-        //    for (i = 0; i < x.length; i++) {
-        //       x[i].style.display = "none";  
-        //    }
-        //    myIndex++;
-        //    if (myIndex > x.length) {myIndex = 1}    
-        //    x[myIndex-1].style.display = "block";  
-        //    setTimeout(carousel, 5000); // Change image every 2 seconds
-        //}
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+               x[i].style.display = "none";  
+            }
+            myIndex++;
+            if (myIndex > x.length) {myIndex = 1}    
+            x[myIndex-1].style.display = "block";  
+            setTimeout(carousel, 5000); // Change image every 2 seconds
+        }
         </script>
 
         <%--<article class="About">
