@@ -50,7 +50,7 @@
             <br />
             <%--<p>Du kan også se mine tegninger på min Facebook side</p>--%>
             <h2>
-                <asp:HyperLink ID="Hyper3" runat="server" NavigateUrl="https://www.facebook.com/MoccieMoo/" style="color:#4999aa;">Facebook.com/MoccieMoo</asp:HyperLink></h2>
+                <asp:HyperLink ID="Hyper3" runat="server" NavigateUrl="https://www.facebook.com/MoccieMoo/" style="color:#4999aa;">Facebook.com/M0ccieMoo</asp:HyperLink></h2>
             <br />
             </div>
 
