@@ -29,24 +29,24 @@
         <header>
             <a href="MDefault.aspx"><img src="../Pictures/banner.png" width="100%" /></a>
         </header>
-        <nav>
+        <%--<nav>
             <ul class="topnav">
                 <li id="CurrentKont" class="right"><a href="MKontakt.aspx">Contact</a></li>
-                <%--<li id="CurrentRank" class="right"><a href="KundeRank.aspx">Rank Liste</a></li>--%>
+                %--<li id="CurrentRank" class="right"><a href="KundeRank.aspx">Rank Liste</a></li>--%
                 <!--<li id="CurrentBilled" class="right"><a href="Billeder.aspx">Pictures</a></li>-->
                 <li id="CurrentTegn" class="right"><a href="MTegninger.aspx">Drawings</a></li>
 
-                <%--<li id="CurrentTegn" class="dropdown right">
+                %--<li id="CurrentTegn" class="dropdown right">
                     <a href="Tegninger.aspx" class="dropbtn">Tegninger</a>
                     <div class="dropdown-content">
                         <a href="Tegninger.aspx">Tegninger</a>
                         <a href="Priser.aspx">Priser</a>
                     </div>
-                </li>--%>
+                </li>--%
 
                 <li id="CurrentHome" class="right"><a href="MDefault.aspx">Home</a></li>
             </ul>
-        </nav>
+        </nav>--%>
 
         <div id="wrapper">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
@@ -56,13 +56,16 @@
        <footer>
             <article>
                 <h3>
-                    <asp:HyperLink ID="HyperLinkFace" runat="server" NavigateUrl="http://www.Twitch.tv/Moccie" Style="color: #4999aa;">MoccieMoo</asp:HyperLink>
+                     <%--<a href="http://www.Twitch.tv/Moccie"></a>--%>
+                    <asp:HyperLink ID="HyperLinkFace" runat="server" NavigateUrl="http://www.Twitch.tv/Moccie" Style="color: #4999aa;">Moccie</asp:HyperLink>
                     |
-                <asp:HyperLink ID="HyperLinkTwit" runat="server" NavigateUrl="http://www.Twitter.com/M0ccie" Style="color: #4999aa;">M0ccie</asp:HyperLink>
+                    <%--<a href="http://www.Twitter.com/M0ccie"></a>--%>
+                    <asp:HyperLink ID="HyperLinkTwit" runat="server" NavigateUrl="http://www.Twitter.com/M0ccie" Style="color: #4999aa;">M0ccie</asp:HyperLink>
                     |
-                <asp:HyperLink ID="HyperLinkTwitch" runat="server" NavigateUrl="https://www.facebook.com/MoccieMoo/" Style="color: #4999aa;">Moccie</asp:HyperLink>
+                    <%--<a href="https://www.facebook.com/MoccieMoo/"></a>--%>
+                    <asp:HyperLink ID="HyperLinkTwitch" runat="server" NavigateUrl="https://www.facebook.com/MoccieMoo/" Style="color: #4999aa;">MoccieMoo</asp:HyperLink>
                     |
-                <a href="Kontakt.aspx" style="color: #4999aa;">Kontakt</a></h3>
+                    <a href="Kontakt.aspx" style="color: #4999aa;">Contact</a></h3>
                 <%--<asp:Repeater ID="RepeaterFooter" runat="server" DataSourceID="SqlDataSourceFooter">
                     <ItemTemplate>
                         <h3><%#Eval("Text") %></h3>
