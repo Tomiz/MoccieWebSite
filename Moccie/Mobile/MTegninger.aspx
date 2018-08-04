@@ -37,7 +37,8 @@
                             <div class="mainrep">
                                 <div id="Grupper">
                                     <asp:LinkButton ID="LinkButtonGrupper" runat="server" OnCommand="LinkButtonGrupper_Command" CommandArgument='<%#Eval("Id") %>' CssClass="ALink">
-                                    <img src="Pictures/KategoriGruppe/<%#Eval("Billed") %>" width="300px" height="150px" />
+                                        <%--<asp:Image ID="ImageProduktGruppe" runat="server" ImageUrl='~/Pictures/KategoriGruppe/<%#Eval("Billed") %>' width="300px" height="150px"/>--%>
+                                    <img src="../Pictures/KategoriGruppe/<%#Eval("Billed") %>" width="300px" height="150px" />
                                     </asp:LinkButton>
                                 </div>
                             </div>
@@ -63,7 +64,7 @@
                     <div class="menuitemrep">
                         <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
                             <ItemTemplate>
-                                <a class="UnderlineMenu" href="Tegninger.aspx?view=1&KategoriId=<%#Eval ("Id") %>"><%#Eval ("Navn") %></a>
+                                <a class="UnderlineMenu" href="MTegninger.aspx?view=1&KategoriId=<%#Eval ("Id") %>"><%#Eval ("Navn") %></a>
                             </ItemTemplate>
                         </asp:Repeater>
 
@@ -99,12 +100,12 @@
                         <ItemTemplate>
                             <div class="Produkter mainrep2">
                                 <%--<asp:LinkButton ID="LinkButtonEnkeltProdukt" runat="server" OnCommand="LinkButtonEnkeltProdukt_Command" CommandArgument='<%#Eval("GruppeId") %>' CommandName='<%#Eval("ProduktId") %>' CssClass="ALink">--%>
-                                <a href="Tegninger.aspx?view=2&KategoriId=<%#Eval("GruppeId") %>&ProduktId=<%#Eval("ProduktId") %>&KundeId=<%#Eval("Fk_Kunde") %>">
+                                <a href="MTegninger.aspx?view=2&KategoriId=<%#Eval("GruppeId") %>&ProduktId=<%#Eval("ProduktId") %>&KundeId=<%#Eval("Fk_Kunde") %>">
                                     <div class="container">
                                         <p><%#Eval("Navn") %></p>
                                     </div>
                                     <div id="produktImageBox">
-                                        <img src="Pictures/Produkter/<%#Eval("Billed") %>" id="MiniProduktImage" class="ProduktImagePosition" />
+                                        <img src="../Pictures/Produkter/<%#Eval("Billed") %>" id="MiniProduktImage" class="ProduktImagePosition" />
                                     </div>
                                 </a>
                                 <%--</asp:LinkButton>--%>
@@ -128,7 +129,7 @@
                 <div id="ProduktMenu">
                     <asp:Repeater ID="RepeaterProduktMenuTilbage" runat="server" DataSourceID="SqlDataSource2">
                         <ItemTemplate>
-                            <a href="Tegninger.aspx?view=1&KategoriId=<%#Eval("Fk_ProduktGruppe") %>">Tilbage</a>
+                            <a href="MTegninger.aspx?view=1&KategoriId=<%#Eval("Fk_ProduktGruppe") %>">Tilbage</a>
                         </ItemTemplate>
                     </asp:Repeater>
                     <asp:SqlDataSource runat="server" ID="SqlDataSource2" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT top(1) [Fk_ProduktGruppe] FROM [Produkter] WHERE ([Fk_ProduktGruppe] = @Fk_ProduktGruppe2)">
@@ -139,7 +140,7 @@
                     <div class="menuitemrep">
                         <asp:Repeater ID="Repeater2" runat="server" DataSourceID="SqlDataSource1">
                             <ItemTemplate>
-                                <a class="UnderlineMenu" href="Tegninger.aspx?view=1&KategoriId=<%#Eval ("Id") %>"><%#Eval ("Navn") %></a>
+                                <a class="UnderlineMenu" href="MTegninger.aspx?view=1&KategoriId=<%#Eval ("Id") %>"><%#Eval ("Navn") %></a>
                             </ItemTemplate>
                         </asp:Repeater>
 
@@ -159,7 +160,7 @@
                             <h2><%#Eval("Navn") %></h2>
                         </div>
                         <div id="ProduktBoxSize">
-                            <img src="Pictures/Produkter/<%#Eval("Billed") %>" alt="<%#Eval("Navn") %>" id="produktImage" class="Top10 ProduktImagePosition" style="bottom: inherit;">
+                            <img src="../Pictures/Produkter/<%#Eval("Billed") %>" alt="<%#Eval("Navn") %>" id="produktImage" class="Top10 ProduktImagePosition" style="bottom: inherit;">
                         </div>
 
                         <!-- The Modal -->

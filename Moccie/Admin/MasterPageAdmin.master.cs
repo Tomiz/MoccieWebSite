@@ -9,10 +9,10 @@ public partial class Admin_MasterPageAdmin : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        //if (Session["bruger_id"] == null)
-        //{
-        //    Response.Redirect("../Default.aspx");
-        //}
+        if (Session["bruger_id"] == null)
+        {
+            Response.Redirect("../Default.aspx");
+        }
     }
 
     protected void ButtonLogout_Click(object sender, EventArgs e)
