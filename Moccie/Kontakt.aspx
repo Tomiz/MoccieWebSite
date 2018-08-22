@@ -58,7 +58,7 @@
         </article>
 
         <article id="KontaktForm">
-            <label for="Firstn">First Name</label>
+            <label for="Firstn">First Name</label> <asp:TextBox ID="TextBoxName" runat="server" Visible="false"></asp:TextBox>
             <asp:TextBox ID="TextBoxFornavn" runat="server" placeholder="Your First Name.."></asp:TextBox>
 
             <label for="Lastn">Last Name</label>
@@ -67,8 +67,8 @@
             <label for="Email">Email</label>
             <asp:TextBox ID="TextBoxEmail" runat="server" placeholder="Your Mail.."></asp:TextBox>
 
-            <label for="Email2">Confirm Email</label>
-            <asp:TextBox ID="TextBoxEmail2" runat="server" placeholder="Confim your Mail.."></asp:TextBox>
+            <%--<label for="Email2">Confirm Email</label>
+            <asp:TextBox ID="TextBoxEmail2" runat="server" placeholder="Confim your Mail.."></asp:TextBox>--%>
 
             <label for="Grund">Reason</label>
             <asp:DropDownList ID="DropDownListGrund" runat="server">

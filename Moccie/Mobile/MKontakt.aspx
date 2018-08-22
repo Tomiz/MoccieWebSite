@@ -58,7 +58,7 @@
         </article>
 
         <article id="KontaktForm">
-            <label for="Firstn">Fornavn</label>
+            <label for="Firstn">Fornavn</label> <asp:TextBox ID="TextBoxName" runat="server" Visible="false"></asp:TextBox>
             <asp:TextBox ID="TextBoxFornavn" runat="server" placeholder="Dit Fornavn.."></asp:TextBox>
 
             <label for="Lastn">Efternavn</label>
