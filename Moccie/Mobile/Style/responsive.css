@@ -36,6 +36,10 @@
     /*padding: 0 20px;*/
     overflow: hidden;
 }
+.mainrep3 {
+    float: left;
+    overflow: hidden;
+}
 
 .rightrep {
     background-color: lightblue;
@@ -75,7 +79,7 @@
     /* For tablets: */
     .headrep2 {
         clear: both;
-        width: 60%;
+        width: 100%;
         padding: 0;
         margin-top:50px;
     }

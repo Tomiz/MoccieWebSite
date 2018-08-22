@@ -34,7 +34,7 @@
 
                     <asp:Repeater ID="RepeaterTegn" runat="server" DataSourceID="SqlDataSourceGruppeKategori">
                         <ItemTemplate>
-                            <div class="mainrep">
+                            <div class="mainrep3">
                                 <div id="Grupper">
                                     <asp:LinkButton ID="LinkButtonGrupper" runat="server" OnCommand="LinkButtonGrupper_Command" CommandArgument='<%#Eval("Id") %>' CssClass="ALink">
                                     <img src="../Pictures/KategoriGruppe/<%#Eval("Billed") %>" width="300px" height="150px" />

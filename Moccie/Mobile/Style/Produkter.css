@@ -22,7 +22,7 @@
 
 @media only screen and (max-width:1200px) {
     #ProduktGruppe {
-        margin-left: 65px;
+        margin-left: 35px;
     }
 }
 
@@ -94,7 +94,7 @@ div.container {
     /*max-width: 94.5%;*/
     cursor: pointer;
     /*position: absolute;*/
-    max-width: 100%;
+    width: 100%;
     max-height: 100%;
     background-repeat: no-repeat;
     background-position: center center;
@@ -104,7 +104,7 @@ div.container {
 }
 #produktImageBox{
     position:relative;
-    width:400px;
+    width:100%;
     height:200px;
     background-color:#EEE;
 }
