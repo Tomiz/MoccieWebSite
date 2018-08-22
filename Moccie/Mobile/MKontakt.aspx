@@ -8,7 +8,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <section style="width: 1200px; margin: auto;">
+    <section style="width: 100%; margin: auto;">
         <article class="FrontText mainrep">
 
             <asp:Repeater ID="Repeater_KontaktPageInfo" runat="server" DataSourceID="SqlDataSourceIndexText">
@@ -30,7 +30,7 @@
 
         <article id="TekstForm">
             <br />
-                        <img src="Pictures/gMVFPfsX_400x400.jpg" style="border-radius: 50%; width:250px;"/>
+                        <img src="../Pictures/gMVFPfsX_400x400.jpg" style="border-radius: 50%; width:250px;"/>
             <div style="color:#4999aa;">                
             <%--<p>Mit navn er</p>--%>
             <h2>Monique Løfqvist</h2>
