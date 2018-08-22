@@ -54,11 +54,12 @@
 .w3-content {
     /*max-width: 980px;
     margin: auto*/
-    width: 350px;
+    width: 90%;
     height: 150px;
     float: left;
     background-color: #000;
-    margin-left:15px;
+    margin-left:20px;
+    margin-right:20px;
 }
 
 *, *:before, *:after {

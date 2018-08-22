@@ -50,7 +50,8 @@ ul.topnav li.right {
 @media screen and (max-width: 600px) {
     ul.topnav li.right,
     ul.topnav li {
-        float: none;
+        /*float: none;*/
+        width: 33.33%;
     }
 }
 
@@ -100,7 +101,7 @@ section {
 }
 
 section article.FrontText {
-    padding: 10px;
+    /*padding: 10px;*/
     text-align: center;
     width: 100%;
     color:#e0e0e0;

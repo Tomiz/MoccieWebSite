@@ -46,6 +46,7 @@ public partial class Admin_TegningerAdmin : System.Web.UI.Page
 
     protected void ButtonGemProdukt_Click(object sender, EventArgs e)
     {
+        string FileName2 = string.Format(@"{0}.pdf", Guid.NewGuid());
         FileUploadProduktBilled.SaveAs(Server.MapPath("~/Pictures/Produkter/") + FileUploadProduktBilled.FileName);
 
         if (File.Exists(Server.MapPath("~/Pictures/Produkter/") + FileUploadProduktBilled.FileName))

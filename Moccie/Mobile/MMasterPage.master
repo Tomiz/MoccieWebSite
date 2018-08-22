@@ -29,24 +29,23 @@
         <header>
             <a href="MDefault.aspx"><img src="../Pictures/banner.png" width="100%" /></a>
         </header>
-        <%--<nav>
+        <nav>
             <ul class="topnav">
                 <li id="CurrentKont" class="right"><a href="MKontakt.aspx">Contact</a></li>
-                %--<li id="CurrentRank" class="right"><a href="KundeRank.aspx">Rank Liste</a></li>--%
-                <!--<li id="CurrentBilled" class="right"><a href="Billeder.aspx">Pictures</a></li>-->
+                <%--<li id="CurrentBilled" class="right"><a href="Billeder.aspx">Pictures</a></li>--%>
                 <li id="CurrentTegn" class="right"><a href="MTegninger.aspx">Drawings</a></li>
 
-                %--<li id="CurrentTegn" class="dropdown right">
+                <%--<li id="CurrentTegn" class="dropdown right">
                     <a href="Tegninger.aspx" class="dropbtn">Tegninger</a>
                     <div class="dropdown-content">
                         <a href="Tegninger.aspx">Tegninger</a>
                         <a href="Priser.aspx">Priser</a>
                     </div>
-                </li>--%
+                </li>--%>
 
-                <li id="CurrentHome" class="right"><a href="MDefault.aspx">Home</a></li>
+                <li id="CurrentHome" class="right"><a href="MooDefault.aspx">Home</a></li>
             </ul>
-        </nav>--%>
+        </nav>
 
         <div id="wrapper">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
