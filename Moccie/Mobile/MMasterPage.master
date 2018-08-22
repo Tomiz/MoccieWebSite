@@ -43,7 +43,7 @@
                     </div>
                 </li>--%>
 
-                <li id="CurrentHome" class="right"><a href="MooDefault.aspx">Home</a></li>
+                <li id="CurrentHome" class="right"><a href="MDefault.aspx">Home</a></li>
             </ul>
         </nav>
 
