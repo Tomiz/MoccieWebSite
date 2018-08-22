@@ -1,5 +1,5 @@
 ﻿.Produkter {
-    margin: 0 20px 0 0;
+    margin: 0 20px 0 30px;
     width: 400px;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -22,14 +22,14 @@
 
 @media only screen and (max-width:1200px) {
     #ProduktGruppe {
-        margin-left: 50px;
+        margin-left: 65px;
     }
 }
 
 #Grupper {
     margin: 0 20px 0 0;
-    width: 310px;
-    background-color: white;
+    width: 400px;
+    background-color: black;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-bottom: 25px;
     border: 5px;
@@ -73,7 +73,7 @@ div.container {
 #ProduktBoxSize {
     position: relative;
     max-width: 100%;
-    height: 1000px;
+    height: 100%;
     max-height: 100%;
 }
 #ProduktCenterImage {
@@ -88,13 +88,13 @@ div.container {
     max-width: 94.5%;
     max-height: 100%;
     background-repeat: no-repeat;
-    background-position: center center;*/
-
+    background-position: center center;
+    */
     /*width:850px;*/
     /*max-width: 94.5%;*/
-    cursor:pointer;
-    position: absolute;
-    max-width: 94.5%;
+    cursor: pointer;
+    /*position: absolute;*/
+    max-width: 100%;
     max-height: 100%;
     background-repeat: no-repeat;
     background-position: center center;
@@ -118,7 +118,7 @@ div.container {
 }
 
 #ProduktMenuRight {
-    width: 200px;
+    width: 50%;
     margin: 20px 190px 0 0;
     float: left;
 }
@@ -180,10 +180,11 @@ div.container {
 
 #ContentInfo {
     background-color: #eee;
-    width: 400px;
+    width: 80%;
     /*width:22.25%;*/
-    height: 100%;
-    padding: 0 0 80px 0;
+    max-height: 100%;
+    min-height:27%;
+    padding: 0 0 0 0;
     float: left;
     position: relative;
 }
@@ -266,4 +267,255 @@ table.blueTable {
 
 .produktpicTilføj {
     max-height: 170px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+}
+
+    .topnav a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+.dropdown {
+    
+    overflow: hidden;
+}
+
+    .dropdown .dropbtn {
+        font-size: 17px;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+    }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+    .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+.topnav a:hover, .dropdown:hover .dropbtn {
+    background-color: #555;
+    color: white;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+@media screen and (max-width: 600px) {
+    .topnav a:not(:first-child), .dropdown .dropbtn {
+        display: none;
+    }
+
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .topnav.responsive {
+        position: relative;
+    }
+
+        .topnav.responsive .icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .topnav.responsive a {
+            float: none;
+            display: block;
+            text-align: left;
+        }
+
+        .topnav.responsive .dropdown {
+            float: none;
+        }
+
+        .topnav.responsive .dropdown-content {
+            position: relative;
+        }
+
+        .topnav.responsive .dropdown .dropbtn {
+            display: block;
+            width: 100%;
+            text-align: left;
+        }
+}
+
+
+
+
+
+
+
+
+
+.topnav2 {
+    overflow: hidden;
+    background-color: #333;
+}
+
+    .topnav2 a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.topnav2 .icon {
+    display: none;
+}
+
+.dropdown {
+    overflow: hidden;
+}
+
+    .dropdown .dropbtn {
+        font-size: 17px;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+    }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+    .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+.topnav2 a:hover, .dropdown:hover .dropbtn {
+    background-color: #555;
+    color: white;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+@media screen and (max-width: 600px) {
+    .topnav2 a:not(:first-child), .dropdown .dropbtn {
+        display: none;
+    }
+
+    .topnav2 a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .topnav2.responsive {
+        position: relative;
+    }
+
+        .topnav2.responsive .icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .topnav2.responsive a {
+            float: none;
+            display: block;
+            text-align: left;
+        }
+
+        .topnav2.responsive .dropdown {
+            float: none;
+        }
+
+        .topnav2.responsive .dropdown-content {
+            position: relative;
+        }
+
+        .topnav2.responsive .dropdown .dropbtn {
+            display: block;
+            width: 100%;
+            text-align: left;
+        }
 }

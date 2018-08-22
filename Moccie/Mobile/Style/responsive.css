@@ -67,7 +67,7 @@
 @media only screen and (max-width:500px) {
     /* For mobile phones: */
     .menurep, .mainrep, .mainrep2, .rightrep, .headrep {
-        width: 100%;
+        width: 120%;
     }
 }
 
@@ -144,7 +144,7 @@
 }
 @media only screen and (max-width:590px) {
     #ProduktCenterImage {
-        width: 500px;
+        width: 100%;
     }
 }
 @media only screen and (max-width:1626px) {
