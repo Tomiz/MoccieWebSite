@@ -46,65 +46,74 @@ public partial class Admin_TegningerAdmin : System.Web.UI.Page
 
     protected void ButtonGemProdukt_Click(object sender, EventArgs e)
     {
-        string FileName2 = string.Format(@"{0}.pdf", Guid.NewGuid());
-        FileUploadProduktBilled.SaveAs(Server.MapPath("~/Pictures/Produkter/") + FileUploadProduktBilled.FileName);
-
-        if (File.Exists(Server.MapPath("~/Pictures/Produkter/") + FileUploadProduktBilled.FileName))
+        if (FileUploadProduktBilled.HasFile == true)
         {
+            string filename = Guid.NewGuid().ToString(); // laver et random generated fil navn
 
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = ConfigurationManager.ConnectionStrings["tomis_dk_dbConnectionString"].ToString();
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = conn;
+            filename = filename + ".png";
 
+            FileUploadProduktBilled.SaveAs(Server.MapPath("~/Pictures/Produkter/") + filename);
 
-            cmd.CommandText += "INSERT INTO  Produkter (Fk_ProduktKategori, Fk_ProduktGruppe, Navn, ProduktHeader, ProduktInfo, Fk_Kunde, Dato) VALUES (1, @Fk_ProduktGrupper, @Navn, @ProduktHeader, @ProduktInfo, @Fk_Kunde, @Dato);";
+            //FileUploadProduktBilled.SaveAs(Server.MapPath("~/Pictures/Produkter/") + FileUploadProduktBilled.FileName);
 
-            //finder automatisk ID'et på produktet som den skal bruge
-            cmd.CommandText += " Declare @produktId Int ; SET @produktId = @@Identity ;";
-            bool first = true;
-
-            // indsætter billederne i Databasen
-            foreach (var billed in FileUploadProduktBilled.PostedFiles)
+            if (File.Exists(Server.MapPath("~/Pictures/Produkter/") + filename))
             {
-                cmd.CommandText += "INSERT INTO Billeder (Billed, Fk_ProduktBilled) VALUES ('" + billed.FileName + "', @produktId);";
-                if (first)
+
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = ConfigurationManager.ConnectionStrings["tomis_dk_dbConnectionString"].ToString();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+
+
+                cmd.CommandText += "INSERT INTO  Produkter (Fk_ProduktKategori, Fk_ProduktGruppe, Navn, ProduktHeader, ProduktInfo, Fk_Kunde, Dato) VALUES (1, @Fk_ProduktGrupper, @Navn, @ProduktHeader, @ProduktInfo, @Fk_Kunde, @Dato);";
+
+                //finder automatisk ID'et på produktet som den skal bruge
+                cmd.CommandText += " Declare @produktId Int ; SET @produktId = @@Identity ;";
+                bool first = true;
+
+                // indsætter billederne i Databasen
+                foreach (var billed in FileUploadProduktBilled.PostedFiles)
                 {
-                    //finder automatisk ID'et på billedet som den skal bruge
-                    cmd.CommandText += "Declare @ImgId Int ; SET @ImgId = @@Identity;";
-                    first = false;
+                    //string Billed = billed + filename;
+                    cmd.CommandText += "INSERT INTO Billeder (Billed, Fk_ProduktBilled) VALUES ('" + filename + "', @produktId);";
+                    if (first)
+                    {
+                        //finder automatisk ID'et på billedet som den skal bruge
+                        cmd.CommandText += "Declare @ImgId Int ; SET @ImgId = @@Identity;";
+                        first = false;
+                    }
+                    //gemmer billederne i en mappe
+                    billed.SaveAs(Server.MapPath("~/Pictures/Produkter/") + filename);
                 }
-                //gemmer billederne i en mappe
-                billed.SaveAs(Server.MapPath("~/Pictures/Produkter/") + billed.FileName);
+
+
+                cmd.Parameters.Add("@Fk_ProduktGrupper", SqlDbType.Int).Value = DropDownListGrupper.SelectedValue;
+                cmd.Parameters.Add("@Navn", SqlDbType.NVarChar).Value = TextBoxHeaderText.Text;
+                cmd.Parameters.Add("@ProduktHeader", SqlDbType.NVarChar).Value = TextBoxHeaderInfoText.Text;
+                cmd.Parameters.Add("@ProduktInfo", SqlDbType.NVarChar).Value = TextBoxInfoText.Text;
+                cmd.Parameters.Add("@Fk_Kunde", SqlDbType.Int).Value = DropDownListKunde.SelectedValue;
+                cmd.Parameters.Add("@Dato", SqlDbType.Date).Value = TextBoxDate.Text;
+
+                conn.Open();
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+
+                TextBoxHeaderText.Text = "";
+                TextBoxHeaderInfoText.Text = "";
+                TextBoxInfoText.Text = "";
+
+                Page.DataBind();
+                Label_besked.Text = "Produkt tilføjet til databasen";
+                Label_besked.Style.Add("color", "#FFF");
+                Label_besked.Style.Add("background-color", "#E06973");
+                Label_besked.Style.Add("height", "100%");
+                Label_besked.Style.Add("border-radius", "15px");
+                Label_besked.Style.Add("padding", "25px");
+                Label_besked.Style.Clear();
+
             }
-
-
-            cmd.Parameters.Add("@Fk_ProduktGrupper", SqlDbType.Int).Value = DropDownListGrupper.SelectedValue;
-            cmd.Parameters.Add("@Navn", SqlDbType.NVarChar).Value = TextBoxHeaderText.Text;
-            cmd.Parameters.Add("@ProduktHeader", SqlDbType.NVarChar).Value = TextBoxHeaderInfoText.Text;
-            cmd.Parameters.Add("@ProduktInfo", SqlDbType.NVarChar).Value = TextBoxInfoText.Text;
-            cmd.Parameters.Add("@Fk_Kunde", SqlDbType.Int).Value = DropDownListKunde.SelectedValue;
-            cmd.Parameters.Add("@Dato", SqlDbType.Date).Value = TextBoxDate.Text;
-
-            conn.Open();
-
-            cmd.ExecuteNonQuery();
-
-            conn.Close();
-
-            TextBoxHeaderText.Text = "";
-            TextBoxHeaderInfoText.Text = "";
-            TextBoxInfoText.Text = "";
-
-            Page.DataBind();
-            Label_besked.Text = "Produkt tilføjet til databasen";
-            Label_besked.Style.Add("color", "#FFF");
-            Label_besked.Style.Add("background-color", "#E06973");
-            Label_besked.Style.Add("height", "100%");
-            Label_besked.Style.Add("border-radius", "15px");
-            Label_besked.Style.Add("padding", "25px");
-            Label_besked.Style.Clear();
-
         }
     }
 
