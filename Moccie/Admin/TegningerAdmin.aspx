@@ -76,7 +76,7 @@
             Upload billede<asp:FileUpload ID="FileUploadProduktBilled" runat="server" /><br />
             <br />
 
-            <span style="margin-left: 5px; margin-right: 400px;">Title på info Box. </span><span">Valg af kunde.</span>
+             <span style="margin-left: 5px; margin-right: 400px;">Title på info Box. </span><span">Valg af kunde.</span>
 
 
             <%--<p>Title på info Box</p>--%>
@@ -105,12 +105,8 @@
         <asp:Button class="accordion" runat="server" Text="Redigere nuværende produkter" OnClientClick="return false;" />
         <div class="panel">
             <div>
-                
                 <asp:Repeater ID="RepeaterRedigerProdukter" runat="server" DataSourceID="SqlDataSourceRedProdukt" OnItemCommand="RepeaterRedigerProdukter_ItemCommand">
                     <ItemTemplate>
-                        <asp:Button ID="ButtonGemAllTop" runat="server" Text="Gem ændringer" CssClass="clearBoth" CommandName="GemAllTop" />
-                        <hr />
-
                         <span style="margin-left: 5px; margin-right: 40px;">Kategori. </span><span style="margin-right: 165px;">Navn på billedet.</span><span style="margin-right: 55px;"> Kunde.</span> <span>Overskift på tekst.</span><br />
                         <asp:DropDownList ID="DropDownListProduktKategorier" runat="server" DataTextField="Navn" DataValueField="ProduktGruppeId" DataSourceID="SqlDataSourceProduktkategoriDropdown" SelectedValue='<%# Eval("GruppeId") %>' Width="100px"></asp:DropDownList>
                         <asp:TextBox ID="TextBoxProduktNavn" runat="server" Text='<%#Eval("Navn") %>' Width="275"></asp:TextBox>

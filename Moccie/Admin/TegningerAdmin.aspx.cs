@@ -173,37 +173,6 @@ public partial class Admin_TegningerAdmin : System.Web.UI.Page
         }
 
         //finder e.commadname som er RedigerProd
-        if (e.CommandName == "GemAllTop")
-        {
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = ConfigurationManager.ConnectionStrings["tomis_dk_dbConnectionString"].ToString();
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = conn;
-
-            //opadatere tablene i databasen
-            cmd.CommandText = "UPDATE Produkter SET Navn = @Navn, ProduktHeader = @ProduktHeader, ProduktInfo = @ProduktInfo, Fk_Kunde = @Fk_Kunde, Fk_ProduktGruppe = @Fk_ProduktGruppe";
-
-            //finder Id'et på produktet når man trykker på knappen
-            //cmd.Parameters.Add("@Id", SqlDbType.Int).Value = e.CommandArgument;
-
-            //finder de foreskellige textboxes med e.item.findcontrol("navn på textbox")
-            cmd.Parameters.Add("@Navn", SqlDbType.NVarChar).Value = ((TextBox)e.Item.FindControl("TextBoxProduktNavn")).Text;
-            cmd.Parameters.Add("@ProduktHeader", SqlDbType.NVarChar).Value = ((TextBox)e.Item.FindControl("TextBoxProduktheader")).Text;
-            cmd.Parameters.Add("@ProduktInfo", SqlDbType.NVarChar).Value = ((TextBox)e.Item.FindControl("TextBoxProduktInfo")).Text;
-            cmd.Parameters.Add("@Fk_Kunde", SqlDbType.Int).Value = ((DropDownList)e.Item.FindControl("DropDownListProduktEjer")).SelectedValue;
-            cmd.Parameters.Add("@Fk_ProduktGruppe", SqlDbType.Int).Value = ((DropDownList)e.Item.FindControl("DropDownListProduktKategorier")).SelectedValue;
-
-            conn.Open();
-            cmd.ExecuteNonQuery();
-            conn.Close();
-
-            //reloader repeateren
-            RepeaterRedigerProdukter.DataBind();
-            Label_besked.Text = "";
-            Label_besked.Style.Clear();
-        }
-
-        //finder e.commadname som er RedigerProd
         if (e.CommandName == "RedigerProdukt")
         {
             SqlConnection conn = new SqlConnection();
@@ -253,7 +222,7 @@ public partial class Admin_TegningerAdmin : System.Web.UI.Page
                     foreach (var billed in fProduktFileUplaod.PostedFiles)
                     {
                         cmd.CommandText += "UPDATE Billeder SET Billed = @Billed WHERE Fk_ProduktBilled = @Id"; //(url, fk_brandeovnId) VALUES ('" + billed.FileName + "', @produktId);";
-                                                                                                                //gemmer billederne i en mappe
+                                                                                                       //gemmer billederne i en mappe
                         billed.SaveAs(Server.MapPath("~/Pictures/Produkter/") + billed.FileName);
                         cmd.Parameters.Add("@Billed", SqlDbType.NVarChar).Value = fProduktFileUplaod.FileName;
                         cmd.Parameters.Add("@Id", SqlDbType.Int).Value = e.CommandArgument;
@@ -273,6 +242,7 @@ public partial class Admin_TegningerAdmin : System.Web.UI.Page
         }
 
     }
+
 
     protected void GemKate_Click(object sender, EventArgs e)
     {
@@ -303,10 +273,14 @@ public partial class Admin_TegningerAdmin : System.Web.UI.Page
         }
     }
 
+
+
     protected void Repeaterkategorier_ItemCommand(object source, RepeaterCommandEventArgs e)
     {
         if (e.CommandName == "SletKate")
         {
+
+
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = ConfigurationManager.ConnectionStrings["tomis_dk_dbConnectionString"].ToString();
             SqlCommand cmd = new SqlCommand();
@@ -347,6 +321,7 @@ public partial class Admin_TegningerAdmin : System.Web.UI.Page
                 conn.Close();
                 conn.Dispose();
             }
+
 
             //conn.Close();
             //reloader repeateren
@@ -444,6 +419,4 @@ public partial class Admin_TegningerAdmin : System.Web.UI.Page
             Label_besked.Style.Clear();
         }
     }
-
-
 }
