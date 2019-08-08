@@ -186,6 +186,7 @@
             <asp:Repeater ID="RepeaterKunder" runat="server" DataSourceID="SqlDataSourceKunder" OnItemCommand="RepeaterKunder_ItemCommand">
                 <ItemTemplate>
                     <asp:TextBox ID="TextBoxShowKate" runat="server" Text='<%#Eval("KundeNavn") %>' Width="200"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxShowKundelink" runat="server" Text='<%#Eval("KundeLink") %>' Width="200"></asp:TextBox>
                     <asp:Button ID="ButtonRedikunde" runat="server" Text="Redigere" CommandArgument='<%#Eval("Id") %>' CommandName="RediKunde" />
                     <asp:Button ID="ButtonSletkunde" runat="server" Text="Slet" CommandArgument='<%#Eval("Id") %>' CommandName="SletKunde" />
                     <br />
