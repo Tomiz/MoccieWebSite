@@ -10,8 +10,8 @@ section article.About p {
 section article.About {
     margin: 30px 0 0 100px;
     background-color: #FFF;
-    width: 345px;
-    height: 400px;
+    width: 90%;
+    height: 420px;
     float: left;
     border: 2px solid #FFF;
     position: relative;

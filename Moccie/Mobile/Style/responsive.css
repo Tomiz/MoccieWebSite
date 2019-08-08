@@ -36,6 +36,10 @@
     /*padding: 0 20px;*/
     overflow: hidden;
 }
+.mainrep3 {
+    float: left;
+    overflow: hidden;
+}
 
 .rightrep {
     background-color: lightblue;
@@ -67,7 +71,7 @@
 @media only screen and (max-width:500px) {
     /* For mobile phones: */
     .menurep, .mainrep, .mainrep2, .rightrep, .headrep {
-        width: 100%;
+        width: 120%;
     }
 }
 
@@ -75,7 +79,7 @@
     /* For tablets: */
     .headrep2 {
         clear: both;
-        width: 60%;
+        width: 100%;
         padding: 0;
         margin-top:50px;
     }
@@ -102,7 +106,7 @@
 
 @media screen and (max-width: 990px) {
     section article.About {
-        margin: 130px 0 30px 15px;
+        margin: 160px 20px 30px 20px;
         clear: left;
     }
 }
@@ -144,7 +148,7 @@
 }
 @media only screen and (max-width:590px) {
     #ProduktCenterImage {
-        width: 500px;
+        width: 100%;
     }
 }
 @media only screen and (max-width:1626px) {

@@ -30,7 +30,7 @@
 
         <script>
             SA.redirection_mobile({
-                mobile_url: "moccie.tomis.dk/Mobile/MDefault.aspx",
+                mobile_url: "",
                 //mobile_prefix: "https"
             });
 

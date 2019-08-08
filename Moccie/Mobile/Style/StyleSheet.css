@@ -50,7 +50,8 @@ ul.topnav li.right {
 @media screen and (max-width: 600px) {
     ul.topnav li.right,
     ul.topnav li {
-        float: none;
+        /*float: none;*/
+        width: 33.33%;
     }
 }
 
@@ -100,7 +101,7 @@ section {
 }
 
 section article.FrontText {
-    padding: 10px;
+    /*padding: 10px;*/
     text-align: center;
     width: 100%;
     color:#e0e0e0;
@@ -108,7 +109,7 @@ section article.FrontText {
 
 section article.FrontText p {
     margin: auto;
-    width: 35%;
+    width: 70%;
 }
 /* Content End */
 
@@ -122,6 +123,7 @@ footer {
     bottom: 0;
     position: relative;
 }
+
 
     footer article {
         text-align: center;
@@ -139,14 +141,14 @@ footer {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
-    width: 500px;
-    float: right;
-    margin-right:50px;
+    width: 80%;
+    margin: 40px 0 40px 24px;
+    /*float: right;
+    margin-right:50px;*/
 }
 #TekstForm {
-    width: 500px;
-    float: left;
-    margin-left: 50px;
+    /*width: 500px;
+    float: left;*/
     text-align:center;
 }
 /*#TekstForm, h2 {
