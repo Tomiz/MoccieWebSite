@@ -15,7 +15,8 @@
     <link href="Style/Ranklist.css" rel="stylesheet" />
     <link href="Style/responsive.css" rel="stylesheet" />
     <link href="Style/LightBox.css" rel="stylesheet" />
-
+    <link href="NewStyles/FrontPage.css" rel="stylesheet" />
+    <link href="NewStyles/Masterpage_moccie.css" rel="stylesheet" />
     <script src="Js/redirection-mobile.js"></script>
 
 
