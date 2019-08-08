@@ -4,17 +4,94 @@
 
 <html>
 <head runat="server">
-    <title></title>
-    <asp:ContentPlaceHolder id="head" runat="server">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Moccie</title>
+    <link href="Style/StyleSheet.css" rel="stylesheet" />
+    <link href="Style/Repeatable.css" rel="stylesheet" />
+    <link href="Style/Default.css" rel="stylesheet" />
+    <link href="Style/Produkter.css" rel="stylesheet" />
+    <link href="Style/Ranklist.css" rel="stylesheet" />
+    <link href="Style/responsive.css" rel="stylesheet" />
+    <link href="Style/LightBox.css" rel="stylesheet" />
+
+    <script src="Js/redirection-mobile.js"></script>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
-    </div>
+        <script>
+            SA.redirection_mobile({
+                mobile_url: "",
+                //mobile_prefix: "https"
+            });
+
+        </script>
+
+
+        <header>
+            <a href="Default.aspx">
+                <img src="Pictures/banner.png" width="100%" class="HeadImg" /></a>
+        </header>
+        <nav>
+            <ul class="topnav">
+                <li id="CurrentKont" class="right"><a href="Kontakt.aspx">Contact</a></li>
+                <%--<li id="CurrentRank" class="right"><a href="KundeRank.aspx">Rank Liste</a></li>--%>
+                <!--<li id="CurrentBilled" class="right"><a href="Billeder.aspx">Pictures</a></li>-->
+                <li id="CurrentTegn" class="right"><a href="Tegninger.aspx">Drawings</a></li>
+
+                <%--<li id="CurrentTegn" class="dropdown right">
+                    <a href="Tegninger.aspx" class="dropbtn">Tegninger</a>
+                    <div class="dropdown-content">
+                        <a href="Tegninger.aspx">Tegninger</a>
+                        <a href="Priser.aspx">Priser</a>
+                    </div>
+                </li>--%>
+
+                <li id="CurrentHome" class="right"><a href="Default.aspx">Home</a></li>
+            </ul>
+        </nav>
+
+        <div id="wrapper">
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+        </div>
+
+        <footer>
+            <article>
+                <h3>
+                    <%--<a href="http://www.Twitch.tv/Moccie"></a>--%>
+                    <asp:HyperLink ID="HyperLinkFace" runat="server" NavigateUrl="http://www.Twitch.tv/Moccie" Style="color: #4999aa;">Moccie</asp:HyperLink>
+                    |
+                    <%--<a href="http://www.Twitter.com/M0ccie"></a>--%>
+                    <asp:HyperLink ID="HyperLinkTwit" runat="server" NavigateUrl="http://www.Twitter.com/M0ccie" Style="color: #4999aa;">M0ccie</asp:HyperLink>
+                    |
+                    <%--<a href="https://www.facebook.com/MoccieMoo/"></a>--%>
+                    <asp:HyperLink ID="HyperLinkTwitch" runat="server" NavigateUrl="https://www.facebook.com/MoccieMoo/" Style="color: #4999aa;">MoccieMoo</asp:HyperLink>
+                    |
+                    <a href="Kontakt.aspx" style="color: #4999aa;">Contact</a></h3>
+                <%--<asp:Repeater ID="RepeaterFooter" runat="server" DataSourceID="SqlDataSourceFooter">
+                    <ItemTemplate>
+                        <h3><%#Eval("Text") %></h3>
+                    </ItemTemplate>
+                </asp:Repeater>
+                <h2>Footer content here</h2>
+                <asp:SqlDataSource runat="server" ID="SqlDataSourceFooter" ConnectionString='<%$ ConnectionStrings:tomis_dk_dbConnectionString %>' SelectCommand="SELECT * FROM [InfoText] WHERE ([Lokation] = @Lokation)">
+                    <SelectParameters>
+                        <asp:Parameter DefaultValue="Footer" Name="Lokation" Type="String"></asp:Parameter>
+                    </SelectParameters>
+                </asp:SqlDataSource>--%>
+            </article>
+        </footer>
+
     </form>
 </body>
 </html>
