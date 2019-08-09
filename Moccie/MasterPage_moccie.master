@@ -17,6 +17,7 @@
     <link href="Style/LightBox.css" rel="stylesheet" />
     <link href="NewStyles/FrontPage.css" rel="stylesheet" />
     <link href="NewStyles/Masterpage_moccie.css" rel="stylesheet" />
+
     <script src="Js/redirection-mobile.js"></script>
 
 
@@ -36,23 +37,33 @@
         </script>
 
         <header>
+            <img src="Pictures/banner.png" width="500" height="80" class="imgbanner" />
+            <ul class="minitopnav">
+                <li id="CurrentLog" class="right"><a href="#">Log in</a></li>
+                <li id="CurrentContact" class="right"><a href="#">Contact</a></li>
+                <li id="CurrentAbouut" class="right"><a href="#">About Art</a></li>
+                <li id="CurrentTerms" class="right"><a href="#">Terms and Conditions</a></li>
+            </ul>
+            </nav>
+
+            <hr />
+
             <nav>
-                <ul class="topnav">
-                    <li id="CurrentTerms" class="right"><a href="#">Terms and Conditions</a></li>
-                    <li id="CurrentAbouut" class="right"><a href="#">About Art</a></li>
-                    <li id="CurrentContact" class="right"><a href="#">Contact</a></li>
-                    <li id="CurrentLog" class="right"><a href="#">Log in</a></li>
-                </ul>
+                <section id="topnavnmain">
+                    <ul class="topnavmain">
+                        <li id="CurrentAvatars" class="right"><a href="Default.aspx">Avatars</a></li>
+                        <li id="CurrentBack" class="right"><a href="Tegninger.aspx">Backgrounds</a></li>
+                        <li id="CurrentBadges" class="right"><a href="Kontakt.aspx">Bagdes</a></li>
+                        <li id="CurrentBanners" class="right"><a href="Kontakt.aspx">Banners</a></li>
+                        <li id="CurrentEmotes" class="right"><a href="Kontakt.aspx">Emotes</a></li>
+                        <li id="CurrentFrames" class="right"><a href="Kontakt.aspx">Frames</a></li>
+                        <li id="CurrentLogos" class="right"><a href="Kontakt.aspx">Logos</a></li>
+                        <li id="CurrentOverlays" class="right"><a href="Kontakt.aspx">Overlays</a></li>
+                        <li id="CurrentPanels" class="right"><a href="Kontakt.aspx">Panels</a></li>
+                    </ul>
+                </section>
             </nav>
         </header>
-        <nav>
-            <ul class="topnav">
-                <li id="CurrentKont" class="right"><a href="Kontakt.aspx">Contact</a></li>
-                <li id="CurrentTegn" class="right"><a href="Tegninger.aspx">Drawings</a></li>
-                <li id="CurrentHome" class="right"><a href="Default.aspx">Home</a></li>
-            </ul>
-        </nav>
-
         <div id="wrapper">
 
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
